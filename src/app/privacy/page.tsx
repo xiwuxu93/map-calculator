@@ -1,4 +1,4 @@
-import HomePage, { generateMetadata as generateLocaleMetadata } from './[locale]/page';
+import PrivacyPage, { generateMetadata as generateLocaleMetadata } from '../[locale]/privacy/page';
 import { defaultLocale } from '@/lib/i18n';
 
 export async function generateMetadata() {
@@ -6,5 +6,6 @@ export async function generateMetadata() {
 }
 
 export default function Page() {
-  return <HomePage params={{ locale: defaultLocale }} />;
+  return <PrivacyPage params={{ locale: defaultLocale }} />;
 }
+
