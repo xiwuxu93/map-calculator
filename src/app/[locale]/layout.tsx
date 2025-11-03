@@ -2,6 +2,8 @@ import { ReactNode } from 'react';
 import { notFound } from 'next/navigation';
 import { NextIntlClientProvider } from 'next-intl';
 import { getMessages, unstable_setRequestLocale } from 'next-intl/server';
+import ResourceHints from '@/components/ResourceHints';
+import ThirdPartyScripts from '@/components/ThirdPartyScripts';
 import { Locale, locales } from '@/lib/i18n';
 import '@/styles/globals.css';
 
@@ -29,7 +31,11 @@ export default async function LocaleLayout({
 
   return (
     <html lang={locale}>
+      <head>
+        <ResourceHints />
+      </head>
       <body className="bg-gray-100 text-gray-900 antialiased">
+        <ThirdPartyScripts />
         <NextIntlClientProvider locale={locale} messages={messages}>
           {children}
         </NextIntlClientProvider>

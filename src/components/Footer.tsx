@@ -1,16 +1,13 @@
-'use client';
-
 import Link from 'next/link';
-import { useLocale, useTranslations } from 'next-intl';
+import { getLocale, getTranslations } from 'next-intl/server';
+import CurrentYear from '@/components/CurrentYear';
 import { defaultLocale } from '@/lib/i18n';
 
 const getLocalePrefix = (locale: string, fallbackLocale: string) =>
   locale === fallbackLocale ? '' : `/${locale}`;
 
-export default function Footer() {
-  const t = useTranslations('common');
-  const year = new Date().getFullYear();
-  const locale = useLocale();
+export default async function Footer() {
+  const [t, locale] = await Promise.all([getTranslations('common'), getLocale()]);
   const basePath = getLocalePrefix(locale, defaultLocale);
   const withPrefix = (path: string) => `${basePath}${path}`;
 
@@ -32,7 +29,7 @@ export default function Footer() {
           </Link>
         </div>
         <span className="text-gray-500">
-          © {year}. {t('allRightsReserved')}
+          © <CurrentYear />. {t('allRightsReserved')}
         </span>
       </div>
     </footer>

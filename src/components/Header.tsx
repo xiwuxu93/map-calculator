@@ -1,10 +1,8 @@
-'use client';
-
-import { useTranslations } from 'next-intl';
+import { getTranslations } from 'next-intl/server';
 import LanguageSwitcher from '@/components/LanguageSwitcher';
 
-export default function Header() {
-  const t = useTranslations('common');
+export default async function Header() {
+  const t = await getTranslations('common');
 
   return (
     <header className="border-b border-gray-200 bg-white/80 backdrop-blur">
