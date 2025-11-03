@@ -76,7 +76,7 @@
     "termsTitle": "Terms of Service",
     "termsContent": "By using this tool you agree it is provided \"as is\" for educational reference. It is not a substitute for professional medical judgment. You are responsible for verifying results before applying them in clinical practice.",
     "contactTitle": "Contact",
-    "contactContent": "Questions or feedback? Reach out to the site administrator at support@example.com.",
+    "contactContent": "Questions or feedback? Reach out to the site administrator at support@mapcalculator.org.",
     "disclaimerCta": "Review the full medical disclaimer",
     "updatedNotice": "Medical standards evolve quickly; review updates regularly.",
     "howToCalculateStepsHeading": "How to Calculate MAP",
@@ -130,7 +130,7 @@
     "updatesHeading": "Policy Updates",
     "updatesContent": "We may update this disclaimer as clinical standards, regulations, or site features evolve. Continued use signifies acceptance of the latest version.",
     "contactHeading": "Contact",
-    "contactContent": "For questions about this disclaimer, email support@example.com."
+    "contactContent": "For questions about this disclaimer, email support@mapcalculator.org."
   },
   "privacy": {
     "title": "Privacy Policy",
@@ -147,7 +147,7 @@
     "changesTitle": "Policy Updates",
     "changesContent": "We may update this policy to reflect product changes or legal requirements. Significant updates will be clearly communicated on this page.",
     "contactTitle": "Contact",
-    "contactContent": "Reach out at support@example.com for questions about privacy."
+    "contactContent": "Reach out at support@mapcalculator.org for questions about privacy."
   },
   "terms": {
     "title": "Terms of Service",
@@ -164,6 +164,6 @@
     "changesTitle": "Changes to Terms",
     "changesContent": "We may update these terms periodically. Continued use after changes take effect constitutes acceptance of the new terms.",
     "contactTitle": "Contact",
-    "contactContent": "Have questions about these terms? Email support@example.com."
+    "contactContent": "Have questions about these terms? Email support@mapcalculator.org."
   }
 }

@@ -76,7 +76,7 @@
     "termsTitle": "服务条款",
     "termsContent": "使用本工具即表示您理解其以“原样”提供，仅供教育参考，不能替代专业医疗判断。您应在临床实践中自行核实结果并承担使用责任。",
     "contactTitle": "联系方式",
-    "contactContent": "如有问题或建议，请通过 support@example.com 联系网站管理员。",
+    "contactContent": "如有问题或建议，请通过 support@mapcalculator.org 联系网站管理员。",
     "disclaimerCta": "查看完整医疗免责声明",
     "updatedNotice": "医学知识持续更新，请定期查看最新信息。",
     "howToCalculateStepsHeading": "如何计算 MAP",
@@ -130,7 +130,7 @@
     "updatesHeading": "免责声明更新",
     "updatesContent": "为了适应临床标准、法律法规或功能变化，本声明可能不时修订。继续使用即表示同意最新版本。",
     "contactHeading": "联系我们",
-    "contactContent": "如对免责声明有疑问，请发送邮件至 support@example.com。"
+    "contactContent": "如对免责声明有疑问，请发送邮件至 support@mapcalculator.org。"
   },
   "privacy": {
     "title": "隐私政策",
@@ -147,7 +147,7 @@
     "changesTitle": "政策更新",
     "changesContent": "我们可能因产品迭代或法律要求而更新本政策。重大变更将于本页明显提示。",
     "contactTitle": "联系方式",
-    "contactContent": "如对隐私有任何疑问，请发送邮件至 support@example.com。"
+    "contactContent": "如对隐私有任何疑问，请发送邮件至 support@mapcalculator.org。"
   },
   "terms": {
     "title": "服务条款",
@@ -164,6 +164,6 @@
     "changesTitle": "条款变更",
     "changesContent": "我们可能定期更新条款。条款更新后继续使用本工具，视为您接受新的条款。",
     "contactTitle": "联系方式",
-    "contactContent": "如对条款有疑问，请发送邮件至 support@example.com。"
+    "contactContent": "如对条款有疑问，请发送邮件至 support@mapcalculator.org。"
   }
 }
