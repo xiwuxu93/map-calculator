@@ -1,13 +1,19 @@
 import { ReactNode } from 'react';
 import { NextIntlClientProvider } from 'next-intl';
 import { getMessages, unstable_setRequestLocale } from 'next-intl/server';
-import { defaultLocale } from '@/lib/i18n';
+import { Locale, defaultLocale, locales } from '@/lib/i18n';
 import ResourceHints from '@/components/ResourceHints';
 import ThirdPartyScripts from '@/components/ThirdPartyScripts';
 import '@/styles/globals.css';
 
-export default async function RootLayout({ children }: { children: ReactNode }) {
-  const locale = defaultLocale;
+type RootLayoutProps = {
+  children: ReactNode;
+  params?: { locale?: string };
+};
+
+export default async function RootLayout({ children, params }: RootLayoutProps) {
+  const localeParam = params?.locale;
+  const locale = locales.includes(localeParam as Locale) ? (localeParam as Locale) : defaultLocale;
   unstable_setRequestLocale(locale);
   const messages = await getMessages({ locale });
 

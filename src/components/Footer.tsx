@@ -13,7 +13,7 @@ export default async function Footer() {
 
   return (
     <footer className="border-t border-gray-200 bg-white/80 backdrop-blur">
-      <div className="mx-auto flex max-w-4xl flex-col gap-3 px-4 py-6 text-sm text-gray-500 md:flex-row md:items-center md:justify-between">
+      <div className="mx-auto flex max-w-4xl flex-col gap-3 px-4 py-6 text-sm text-gray-500">
         <div className="flex flex-wrap items-center gap-4 text-gray-600">
           <span className="font-medium text-gray-800">{t('siteName')}</span>
           <Link href={withPrefix('/disclaimer')} className="transition hover:text-gray-900">
@@ -26,6 +26,19 @@ export default async function Footer() {
           <span className="text-gray-300">|</span>
           <Link href={withPrefix('/terms')} className="transition hover:text-gray-900">
             {t('termsOfService')}
+          </Link>
+        </div>
+        <div className="flex flex-wrap items-center gap-4 text-gray-600">
+          <Link href={withPrefix('/map-calculator-bp')} className="transition hover:text-gray-900">
+            {t('bpCalculatorLink')}
+          </Link>
+          <span className="text-gray-300">|</span>
+          <Link href={withPrefix('/how-to-calculate-map-blood-pressure')} className="transition hover:text-gray-900">
+            {t('howToCalculateLink')}
+          </Link>
+          <span className="text-gray-300">|</span>
+          <Link href={withPrefix('/map-calculation-nursing')} className="transition hover:text-gray-900">
+            {t('nursingGuideLink')}
           </Link>
         </div>
         <span className="text-gray-500">

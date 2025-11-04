@@ -1,9 +1,8 @@
-export type MapStatus = 'low' | 'normal' | 'high';
+export type MapStatus = 'criticalLow' | 'borderline' | 'normal' | 'elevated' | 'high';
 
 export interface MapResult {
   value: number;
   status: MapStatus;
-  messageKey: 'calculator.lowMap' | 'calculator.normalMap' | 'calculator.highMap';
 }
 
 /**
@@ -16,16 +15,14 @@ export function calculateMap(systolic: number, diastolic: number): MapResult {
 
   let status: MapStatus = 'normal';
   if (value < 60) {
-    status = 'low';
-  } else if (value > 100) {
+    status = 'criticalLow';
+  } else if (value < 65) {
+    status = 'borderline';
+  } else if (value > 110) {
     status = 'high';
+  } else if (value > 100) {
+    status = 'elevated';
   }
 
-  const messageKey = status === 'low'
-    ? 'calculator.lowMap'
-    : status === 'high'
-    ? 'calculator.highMap'
-    : 'calculator.normalMap';
-
-  return { value, status, messageKey };
+  return { value, status };
 }

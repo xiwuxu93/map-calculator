@@ -5,19 +5,19 @@ export const mapInputSchema = z
     systolic: z
       .coerce
       .number({
-        invalid_type_error: 'Invalid systolic pressure value.',
-        required_error: 'Systolic pressure is required.',
+        invalid_type_error: 'Please enter a valid systolic blood pressure (70-250 mmHg).',
+        required_error: 'Systolic blood pressure is required.',
       })
-      .min(40, 'Systolic pressure must be between 40 and 300 mmHg.')
-      .max(300, 'Systolic pressure must be between 40 and 300 mmHg.'),
+      .min(70, 'Please enter a valid systolic blood pressure (70-250 mmHg).')
+      .max(250, 'Please enter a valid systolic blood pressure (70-250 mmHg).'),
     diastolic: z
       .coerce
       .number({
-        invalid_type_error: 'Invalid diastolic pressure value.',
-        required_error: 'Diastolic pressure is required.',
+        invalid_type_error: 'Please enter a valid diastolic blood pressure (40-150 mmHg).',
+        required_error: 'Diastolic blood pressure is required.',
       })
-      .min(20, 'Diastolic pressure must be between 20 and 200 mmHg.')
-      .max(200, 'Diastolic pressure must be between 20 and 200 mmHg.'),
+      .min(40, 'Please enter a valid diastolic blood pressure (40-150 mmHg).')
+      .max(150, 'Please enter a valid diastolic blood pressure (40-150 mmHg).'),
   })
   .superRefine((values, ctx) => {
     if (values.systolic <= values.diastolic) {
