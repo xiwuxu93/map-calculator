@@ -1,17 +1,13 @@
 'use client';
 
 import Link from 'next/link';
-import { useLocale } from 'next-intl';
+import { useLocale, useTranslations } from 'next-intl';
 import { usePathname } from 'next/navigation';
-import { defaultLocale, locales } from '@/lib/i18n';
-
-const labels: Record<string, string> = {
-  en: 'EN',
-  zh: '中文',
-};
+import { defaultLocale, locales, resolveLocale } from '@/lib/i18n';
 
 export default function LanguageSwitcher() {
-  const locale = useLocale();
+  const locale = resolveLocale(useLocale());
+  const t = useTranslations('locales');
   const pathname = usePathname();
   const strippedPath =
     pathname?.replace(new RegExp(`^/(?:${locales.join('|')})(?=/|$)`), '') ?? '/';
@@ -30,13 +26,14 @@ export default function LanguageSwitcher() {
           <Link
             key={targetLocale}
             href={href}
+            aria-current={isActive ? 'page' : undefined}
             className={`rounded-full border px-3 py-1 text-sm transition ${
               isActive
                 ? 'border-gray-900 bg-gray-900 text-white'
                 : 'border-gray-300 text-gray-600 hover:border-gray-900 hover:text-gray-900'
             }`}
           >
-            {labels[targetLocale] ?? targetLocale.toUpperCase()}
+            {t(`${targetLocale}.short`)}
           </Link>
         );
       })}

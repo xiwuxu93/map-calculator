@@ -7,7 +7,7 @@ import { useLocale, useTranslations } from 'next-intl';
 import { calculateMap } from '@/lib/calculator';
 import type { MapStatus } from '@/lib/calculator';
 import { validateMapInput } from '@/lib/validator';
-import { defaultLocale } from '@/lib/i18n';
+import { defaultLocale, resolveLocale } from '@/lib/i18n';
 
 type InputsState = {
   systolic: string;
@@ -37,7 +37,8 @@ const badgeStyles: Record<MapStatus, string> = {
 export default function Calculator() {
   const t = useTranslations('calculator');
   const common = useTranslations('common');
-  const locale = useLocale();
+  const locale = resolveLocale(useLocale());
+  console.log('locale',locale);
   const [inputs, setInputs] = useState<InputsState>({ systolic: '', diastolic: '' });
   const [touched, setTouched] = useState<Record<keyof InputsState, boolean>>({
     systolic: false,

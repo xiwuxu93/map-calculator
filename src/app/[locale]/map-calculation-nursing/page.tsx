@@ -2,8 +2,9 @@ import Link from 'next/link';
 import type { Metadata } from 'next';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import localizedTexts from '@/messages/pages/mapCalculationNursing';
 import BpCalculator from '@/components/BpCalculator';
-import { Locale, defaultLocale, locales } from '@/lib/i18n';
+import { Locale, defaultLocale, getLocalePrefix, getLocalizedPath, locales } from '@/lib/i18n';
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? 'http://localhost:3000';
 
@@ -82,7 +83,7 @@ const schemaContent: Record<
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const locale = (locales.includes(params.locale as Locale) ? params.locale : defaultLocale) as Locale;
   const localized = localizedContent[locale] ?? localizedContent[defaultLocale];
-  const localePrefix = locale === defaultLocale ? '' : `/${locale}`;
+  const localePrefix = getLocalePrefix(locale);
   const url = `${SITE_URL}${localePrefix}/map-calculation-nursing`;
   const imageUrl = `${SITE_URL}/og-image.png`;
 
@@ -124,17 +125,13 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 
 export default function MapCalculationNursingPage({ params }: PageProps) {
   const locale = (locales.includes(params.locale as Locale) ? params.locale : defaultLocale) as Locale;
-  const localePrefix = locale === defaultLocale ? '' : `/${locale}`;
+  const texts = localizedTexts[locale] ?? localizedTexts[defaultLocale];
+  const localePrefix = getLocalePrefix(locale);
   const localized = localizedContent[locale] ?? localizedContent[defaultLocale];
   const schema = schemaContent[locale] ?? schemaContent[defaultLocale];
-  const isZh = locale === 'zh';
-  const localizedPath = (path: string) => {
-    if (path === '/' || path === '') {
-      return localePrefix || '/';
-    }
-    return `${localePrefix}${path}`;
-  };
+  const localizedPath = (path: string) => getLocalizedPath(locale, path);
   const imageUrl = `${SITE_URL}/og-image.png`;
+  const nursingLogLines = [texts.t0126, texts.t0127, texts.t0128, texts.t0129];
 
   const structuredData = [
     {
@@ -167,7 +164,7 @@ export default function MapCalculationNursingPage({ params }: PageProps) {
           <section id="hero" className="space-y-6 rounded-2xl bg-white p-8 shadow-lg md:p-12">
             <div className="space-y-4 text-center">
               <p className="text-sm font-semibold uppercase tracking-wide text-rose-600">
-                {isZh ? '床旁参考' : 'Bedside Reference'}
+                {texts.t0001}
               </p>
               <h1 className="text-3xl font-semibold tracking-tight text-gray-900 md:text-4xl">
                 {localized.heroTitle}
@@ -179,19 +176,19 @@ export default function MapCalculationNursingPage({ params }: PageProps) {
             <div className="space-y-4 rounded-xl border border-rose-100 bg-rose-50 p-5 text-sm text-rose-900 md:flex md:items-center md:justify-between">
               <div className="space-y-1">
                 <p className="text-xs uppercase tracking-wide font-semibold text-rose-700">
-                  {isZh ? '速查信息' : 'Quick Reference'}
+                  {texts.t0002}
                 </p>
                 <p className="text-base font-semibold">
-                  {isZh ? '正常 MAP：65-100 mmHg' : 'Normal MAP: 65-100 mmHg'}
+                  {texts.t0003}
                 </p>
-                <p>{isZh ? '脓毒症目标：≥65 mmHg · 危急警示：<60 mmHg' : 'Sepsis target: ≥65 mmHg · Critical concern: <60 mmHg'}</p>
+                <p>{texts.t0004}</p>
               </div>
               <div className="space-y-1 text-rose-900 md:text-right">
                 <p className="text-xs uppercase tracking-wide font-semibold text-rose-700">
-                  {isZh ? '赶时间？' : 'In a hurry?'}
+                  {texts.t0005}
                 </p>
                 <p>
-                  {isZh ? '可直接选常用血压或手动输入生命体征。' : 'Use quick-select values or enter vitals manually below.'}
+                  {texts.t0006}
                 </p>
               </div>
             </div>
@@ -203,117 +200,111 @@ export default function MapCalculationNursingPage({ params }: PageProps) {
                 href={localizedPath('/')}
                 className="inline-flex items-center rounded-full border border-rose-600 px-4 py-2 font-semibold text-rose-700 transition hover:bg-rose-600 hover:text-white"
               >
-                {isZh ? '返回 MAP 主计算器' : 'View Full MAP Calculator'}
+                {texts.t0007}
               </Link>
               <Link
                 href={localizedPath('/how-to-calculate-map-blood-pressure')}
                 className="inline-flex items-center rounded-full border border-rose-600 px-4 py-2 font-semibold text-rose-700 transition hover:bg-rose-600 hover:text-white"
               >
-                {isZh ? '查看分步计算教程' : 'Learn the Calculation Step-by-Step'}
+                {texts.t0008}
               </Link>
             </div>
           </section>
 
           <section id="why-nurses" className="space-y-6 rounded-2xl bg-white p-8 shadow-lg md:p-12">
             <h2 className="text-2xl font-semibold text-gray-900 md:text-3xl">
-              {isZh ? '护理实践中为何关注 MAP' : 'Why MAP Matters in Nursing Practice'}
+              {texts.t0009}
             </h2>
             <p className="text-base text-gray-700">
-              {isZh
-                ? '护士往往最先注意到生命体征的细微变化。每个班次你都多次测量并记录血压，将其换算为 MAP 能帮助你在病情恶化前识别灌注问题。'
-                : 'Nurses are often the first clinicians to notice subtle vital sign trends. You already capture and document blood pressure multiple times per shift; translating those readings into MAP helps you identify perfusion issues before they become crises.'}
+              {texts.t0010}
             </p>
             <div className="grid gap-5 md:grid-cols-2">
               <div className="space-y-3 rounded-xl border border-gray-100 bg-gray-50 p-5">
                 <h3 className="text-xl font-semibold text-gray-900">
-                  {isZh ? '真实护理情境' : 'Real Nursing Scenarios'}
+                  {texts.t0011}
                 </h3>
                 <ul className="list-disc space-y-2 pl-6 text-sm text-gray-700">
                   <li>
-                    <strong>{isZh ? 'ICU 夜班：' : 'ICU night shift:'}</strong>{' '}
-                    {isZh ? 'MAP 4 小时内由 78 降至 69 —— 在患者崩溃前通知重症医生。' : 'MAP trends down from 78 to 69 over 4 hours — call the intensivist before a crash.'}
+                    <strong>{texts.t0012}</strong>{' '}
+                    {texts.t0013}
                   </li>
                   <li>
-                    <strong>{isZh ? 'PACU 交接：' : 'PACU handoff:'}</strong>{' '}
-                    {isZh ? '血压 105/65 → MAP 78 mmHg —— 记录稳定状况，准备转入病房。' : 'BP 105/65 → MAP 78 mmHg — document stability for floor transfer.'}
+                    <strong>{texts.t0014}</strong>{' '}
+                    {texts.t0015}
                   </li>
                   <li>
-                    <strong>{isZh ? '脓毒症流程：' : 'Sepsis protocol:'}</strong>{' '}
-                    {isZh ? '血压 88/54 → MAP 65 mmHg —— 达到最低目标但需严密监测。' : 'BP 88/54 → MAP 65 mmHg — meets minimum target but needs close monitoring.'}
+                    <strong>{texts.t0016}</strong>{' '}
+                    {texts.t0017}
                   </li>
                 </ul>
               </div>
               <div className="space-y-3 rounded-xl border border-gray-100 bg-gray-50 p-5">
                 <h3 className="text-xl font-semibold text-gray-900">
-                  {isZh ? '护士计算 MAP 的原因' : 'Why Nurses Calculate MAP'}
+                  {texts.t0018}
                 </h3>
                 <ul className="list-disc space-y-2 pl-6 text-sm text-gray-700">
-                  <li>{isZh ? '脓毒症护理流程要求 MAP ≥65 mmHg。' : 'Sepsis bundles require MAP ≥65 mmHg.'}</li>
-                  <li>{isZh ? '升压药滴定遵循 MAP 指引。' : 'Vasopressor titration relies on MAP-based protocols.'}</li>
-                  <li>{isZh ? '早期识别与快速反应依赖 MAP 趋势。' : 'Early recognition and rapid response escalation depend on MAP trends.'}</li>
-                  <li>{isZh ? '精确记录有助于团队沟通。' : 'Accurate documentation improves interdisciplinary communication.'}</li>
+                  <li>{texts.t0019}</li>
+                  <li>{texts.t0020}</li>
+                  <li>{texts.t0021}</li>
+                  <li>{texts.t0022}</li>
                 </ul>
               </div>
             </div>
             <div className="rounded-xl border border-rose-100 bg-rose-50 p-5 text-sm text-rose-900">
               <p className="font-semibold uppercase tracking-wide">
-                {isZh ? '核心提示' : 'Bottom Line'}
+                {texts.t0023}
               </p>
               <p>
-                {isZh
-                  ? 'MAP 计算是基础护理技能。掌握数值与趋势，有助于你在恰当时机为患者争取资源并升级治疗。'
-                  : 'MAP calculation is a fundamental nursing skill. When you know the number and the trend, you are better equipped to advocate for patients and escalate care at the right moment.'}
+                {texts.t0024}
               </p>
             </div>
           </section>
 
           <section id="formula-guide" className="space-y-6 rounded-2xl bg-white p-8 shadow-lg md:p-12">
             <h2 className="text-2xl font-semibold text-gray-900 md:text-3xl">
-              {isZh ? '护理公式速查' : 'Quick Nursing Formula Guide'}
+              {texts.t0025}
             </h2>
             <div className="space-y-4 text-base text-gray-700">
               <div className="rounded-xl border border-blue-100 bg-blue-50 p-5 text-blue-900">
                 <p className="text-sm font-semibold uppercase tracking-wide">
-                  {isZh ? '标准公式' : 'Standard Formula'}
+                  {texts.t0026}
                 </p>
                 <p className="text-lg font-semibold">
-                  {isZh ? 'MAP =（收缩压 + 2 × 舒张压）÷ 3' : 'MAP = (Systolic BP + 2 × Diastolic BP) ÷ 3'}
+                  {texts.t0027}
                 </p>
                 <p className="mt-2 text-sm">
-                  {isZh ? '记忆法：<strong>S</strong>收缩压 + <strong>D</strong>舒张压<strong>D</strong>ouble，再<strong>D</strong>ivide by 3。' : 'Memory trick: <strong>S</strong>ystolic + <strong>D</strong>iastolic <strong>D</strong>oubled, then <strong>D</strong>ivide by 3.'}
+                  {texts.t0028}
                 </p>
               </div>
               <div className="rounded-xl border border-gray-100 bg-gray-50 p-5">
                 <h3 className="text-xl font-semibold text-gray-900">
-                  {isZh ? '床旁心算步骤' : 'Bedside Mental Math'}
+                  {texts.t0029}
                 </h3>
                 <ol className="mt-3 list-decimal space-y-2 pl-6 text-sm text-gray-700">
-                  <li>{isZh ? '舒张压 × 2。' : 'Double the diastolic number.'}</li>
-                  <li>{isZh ? '加上收缩压。' : 'Add the systolic number.'}</li>
-                  <li>{isZh ? '除以 3（或按三等分估算）。' : 'Divide by three (or estimate by thirds).'}</li>
+                  <li>{texts.t0030}</li>
+                  <li>{texts.t0031}</li>
+                  <li>{texts.t0032}</li>
                 </ol>
                 <p className="mt-3 text-sm text-gray-700">
-                  {isZh
-                    ? '另一种方式：MAP = 舒张压 +（脉压 ÷ 3），其中脉压 = 收缩压 − 舒张压。'
-                    : 'Alternatively: MAP = DBP + (Pulse Pressure ÷ 3). Pulse pressure is systolic minus diastolic.'}
+                  {texts.t0033}
                 </p>
               </div>
               <div className="rounded-xl border border-gray-100 bg-gray-50 p-5">
                 <h3 className="text-xl font-semibold text-gray-900">
-                  {isZh ? '常见血压速查表' : 'Common BP Values: Quick Reference'}
+                  {texts.t0034}
                 </h3>
                 <div className="not-prose overflow-x-auto">
                   <table className="w-full min-w-[480px] divide-y divide-gray-200 text-left text-sm text-gray-700">
                     <thead className="bg-gray-50">
                       <tr>
                         <th className="px-4 py-3 font-semibold uppercase tracking-wide text-gray-500">
-                          {isZh ? '血压读数' : 'Patient BP'}
+                          {texts.t0035}
                         </th>
                         <th className="px-4 py-3 font-semibold uppercase tracking-wide text-gray-500">
-                          {isZh ? 'MAP' : 'MAP'}
+                          {texts.t0036}
                         </th>
                         <th className="px-4 py-3 font-semibold uppercase tracking-wide text-gray-500">
-                          {isZh ? '临床含义' : 'Clinical Meaning'}
+                          {texts.t0037}
                         </th>
                       </tr>
                     </thead>
@@ -322,73 +313,73 @@ export default function MapCalculationNursingPage({ params }: PageProps) {
                         <td className="px-4 py-3 font-semibold text-gray-900">120/80</td>
                         <td className="px-4 py-3">93 mmHg</td>
                         <td className="px-4 py-3 text-green-700 font-medium">
-                          {isZh ? '✅ 正常——灌注最佳' : '✅ Normal — optimal perfusion'}
+                          {texts.t0038}
                         </td>
                       </tr>
                       <tr>
                         <td className="px-4 py-3 font-semibold text-gray-900">110/70</td>
                         <td className="px-4 py-3">83 mmHg</td>
                         <td className="px-4 py-3 text-green-700 font-medium">
-                          {isZh ? '✅ 正常——健康范围' : '✅ Normal — healthy range'}
+                          {texts.t0039}
                         </td>
                       </tr>
                       <tr>
                         <td className="px-4 py-3 font-semibold text-gray-900">100/60</td>
                         <td className="px-4 py-3">73 mmHg</td>
                         <td className="px-4 py-3 text-amber-700 font-medium">
-                          {isZh ? '⚠️ 正常偏低——ICU 患者需观察' : '⚠️ Low-normal — watch in ICU patients'}
+                          {texts.t0040}
                         </td>
                       </tr>
                       <tr>
                         <td className="px-4 py-3 font-semibold text-gray-900">90/55</td>
                         <td className="px-4 py-3">67 mmHg</td>
                         <td className="px-4 py-3 text-amber-700 font-medium">
-                          {isZh ? '⚠️ 临界值——通知医生' : '⚠️ Borderline — notify provider'}
+                          {texts.t0041}
                         </td>
                       </tr>
                       <tr>
                         <td className="px-4 py-3 font-semibold text-gray-900">85/55</td>
                         <td className="px-4 py-3">65 mmHg</td>
                         <td className="px-4 py-3 text-red-700 font-medium">
-                          {isZh ? '🔴 危急阈值——立即升级' : '🔴 Critical threshold — escalate'}
+                          {texts.t0042}
                         </td>
                       </tr>
                       <tr>
                         <td className="px-4 py-3 font-semibold text-gray-900">80/50</td>
                         <td className="px-4 py-3">60 mmHg</td>
                         <td className="px-4 py-3 text-red-700 font-medium">
-                          {isZh ? '🔴 灌注不足——启动快速反应' : '🔴 Inadequate perfusion — rapid response'}
+                          {texts.t0043}
                         </td>
                       </tr>
                       <tr>
                         <td className="px-4 py-3 font-semibold text-gray-900">140/90</td>
                         <td className="px-4 py-3">107 mmHg</td>
                         <td className="px-4 py-3 text-amber-700 font-medium">
-                          {isZh ? '🟠 升高——评估高血压' : '🟠 Elevated — assess for hypertension'}
+                          {texts.t0044}
                         </td>
                       </tr>
                       <tr>
                         <td className="px-4 py-3 font-semibold text-gray-900">160/100</td>
                         <td className="px-4 py-3">120 mmHg</td>
                         <td className="px-4 py-3 text-red-700 font-medium">
-                          {isZh ? '🔴 极高——需紧急评估' : '🔴 Very high — urgent evaluation'}
+                          {texts.t0045}
                         </td>
                       </tr>
                     </tbody>
                   </table>
                 </div>
                 <p className="mt-3 text-sm text-gray-700">
-                  {isZh ? '提示：将此表打印或覆膜，随身佩戴或放在工作站。' : 'Tip: Print or laminate this table for your badge or workstation.'}
+                  {texts.t0046}
                 </p>
               </div>
               <div className="rounded-xl border border-red-100 bg-red-50 p-5 text-sm text-red-800">
                 <h3 className="text-xl font-semibold">
-                  {isZh ? '避免的计算错误' : 'Calculation Mistakes to Avoid'}
+                  {texts.t0047}
                 </h3>
                 <ul className="mt-2 list-disc space-y-1 pl-6">
-                  <li>{isZh ? '用简单平均代替加权公式。' : 'Using a simple average instead of the weighted formula.'}</li>
-                  <li>{isZh ? '忘记将舒张压翻倍。' : 'Forgetting to double the diastolic number.'}</li>
-                  <li>{isZh ? '在监护设备上颠倒输入收缩压与舒张压。' : 'Entering systolic and diastolic values backwards in monitors.'}</li>
+                  <li>{texts.t0048}</li>
+                  <li>{texts.t0049}</li>
+                  <li>{texts.t0050}</li>
                 </ul>
               </div>
             </div>
@@ -396,95 +387,75 @@ export default function MapCalculationNursingPage({ params }: PageProps) {
 
           <section id="nursing-actions" className="space-y-6 rounded-2xl bg-white p-8 shadow-lg md:p-12">
             <h2 className="text-2xl font-semibold text-gray-900 md:text-3xl">
-              {isZh ? '基于 MAP 的护理处置' : 'Nursing Actions Based on MAP'}
+              {texts.t0051}
             </h2>
             <p className="text-base text-gray-700">
-              {isZh
-                ? '参考以下床旁决策路径判断何时监测、升级或干预，同时结合科室流程与医嘱进行临床判断。'
-                : 'Use these bedside decision pathways to determine when to monitor, escalate, or intervene. Incorporate facility protocols and provider orders alongside your clinical judgment.'}
+              {texts.t0052}
             </p>
             <div className="space-y-4">
               <div className="rounded-xl border border-red-200 bg-red-50 p-5 text-sm text-red-800">
                 <h3 className="text-xl font-semibold">
-                  {isZh ? 'MAP &lt;60 mmHg：危急——立刻行动' : 'MAP <60 mmHg: Critical — Immediate Action'}
+                  {texts.t0053}
                 </h3>
                 <p className="mt-2">
-                  {isZh
-                    ? '评估意识是否下降、肢端凉、毛细血管再充盈延迟、尿量减少及脉搏微弱。立即启动快速反应或通知医生，准备补液或升压药并确保静脉通路通畅。'
-                    : 'Assess for decreased LOC, cool extremities, delayed capillary refill, oliguria, and weak pulses. Activate rapid response or notify the provider immediately. Prepare for fluid bolus or vasopressor initiation and ensure IV access is secured.'}
+                  {texts.t0054}
                 </p>
                 <p className="mt-2 font-semibold">
-                  {isZh ? '记录示例：' : 'Documentation example:'}
+                  {texts.t0055}
                 </p>
                 <p>
-                  {isZh
-                    ? '“MAP 58 mmHg，患者意识淡漠，皮肤冰凉。已通知快速反应团队，按医嘱准备补液。”'
-                    : '"MAP 58 mmHg, patient lethargic, skin cool. Rapid response notified, preparing for fluid bolus per order."'}
+                  {texts.t0056}
                 </p>
               </div>
               <div className="rounded-xl border border-amber-200 bg-amber-50 p-5 text-sm text-amber-800">
                 <h3 className="text-xl font-semibold">
-                  {isZh ? 'MAP 60-64 mmHg：紧急——密切观察' : 'MAP 60-64 mmHg: Urgent — Close Monitoring'}
+                  {texts.t0057}
                 </h3>
                 <p className="mt-2">
-                  {isZh
-                    ? '将生命体征监测频率提高到每 15-30 分钟，关注尿量与意识状态，并查看乳酸等指标（如有医嘱）。若出现下降趋势或灌注指标异常，及时通知医生。'
-                    : 'Increase vital sign frequency (every 15-30 minutes), check urine output, assess mental status, and review lactate if ordered. Notify provider if the trend is downward or perfusion markers are abnormal.'}
+                  {texts.t0058}
                 </p>
               </div>
               <div className="rounded-xl border border-green-200 bg-green-50 p-5 text-sm text-green-800">
                 <h3 className="text-xl font-semibold">
-                  {isZh ? 'MAP 65-80 mmHg：目标范围——维持方案' : 'MAP 65-80 mmHg: Target Range — Continue Protocol'}
+                  {texts.t0059}
                 </h3>
                 <p className="mt-2">
-                  {isZh
-                    ? '保持当前治疗，记录趋势，并在交接班时说明稳定情况。若患者使用升压药，按医嘱在该区间内滴定。'
-                    : 'Maintain current therapy, document trends, and communicate stability during handoff. If the patient is on vasopressors, titrate per order to maintain within this window.'}
+                  {texts.t0060}
                 </p>
               </div>
               <div className="rounded-xl border border-amber-200 bg-amber-50 p-5 text-sm text-amber-800">
                 <h3 className="text-xl font-semibold">
-                  {isZh ? 'MAP 81-100 mmHg：正常偏高——评估背景' : 'MAP 81-100 mmHg: Normal-High — Evaluate Context'}
+                  {texts.t0061}
                 </h3>
                 <p className="mt-2">
-                  {isZh
-                    ? '考虑疼痛、焦虑、膀胱充盈或基础高血压等因素。在申请降压药前，先处理可逆原因（镇痛、如厕、放松指导）。'
-                    : 'Consider pain, anxiety, bladder distension, or baseline hypertension. Address reversible causes (pain meds, toileting, relaxation techniques) before requesting antihypertensives.'}
+                  {texts.t0062}
                 </p>
               </div>
               <div className="rounded-xl border border-red-200 bg-red-50 p-5 text-sm text-red-800">
                 <h3 className="text-xl font-semibold">
-                  {isZh ? 'MAP &gt;110 mmHg：偏高——通知医师' : 'MAP >110 mmHg: High — Notify Provider'}
+                  {texts.t0063}
                 </h3>
                 <p className="mt-2">
-                  {isZh
-                    ? '评估是否出现头痛、视物模糊、胸痛或神经功能缺损。使用合适袖带手动复测血压，预期可能会收到降压药或进一步检查医嘱。'
-                    : 'Evaluate for headache, visual changes, chest pain, or neurologic deficits. Repeat BP manually with correct cuff size to confirm. Anticipate orders for antihypertensives or further diagnostics.'}
+                  {texts.t0064}
                 </p>
               </div>
             </div>
             <div className="rounded-xl border border-blue-100 bg-blue-50 p-5 text-sm text-blue-900">
               <h3 className="text-xl font-semibold">
-                {isZh ? '特别注意事项' : 'Special Considerations'}
+                {texts.t0065}
               </h3>
               <ul className="mt-2 list-disc space-y-2 pl-6">
                 <li>
-                  <strong>{isZh ? '升压药滴定：' : 'Vasopressor titration:'}</strong>{' '}
-                  {isZh
-                    ? '每次调整剂量后 15-30 分钟重新计算 MAP，并记录当前剂量与反应。'
-                    : 'Recalculate MAP 15-30 minutes after any dose change. Document current dose and response.'}
+                  <strong>{texts.t0066}</strong>{' '}
+                  {texts.t0067}
                 </li>
                 <li>
-                  <strong>{isZh ? '脓毒症流程：' : 'Sepsis bundles:'}</strong>{' '}
-                  {isZh
-                    ? '在 1 小时流程内与乳酸、尿量、补液措施一并记录 MAP。'
-                    : 'Document MAP alongside lactate, urine output, and fluid resuscitation steps within the 1-hour bundle.'}
+                  <strong>{texts.t0068}</strong>{' '}
+                  {texts.t0069}
                 </li>
                 <li>
-                  <strong>{isZh ? '术后监测：' : 'Post-op monitoring:'}</strong>{' '}
-                  {isZh
-                    ? '将 MAP 与术前基线比较，下降超过 20% 需立即检查引流、化验与容量状况。'
-                    : 'Compare MAP to preoperative baseline. A drop >20% warrants immediate review of drains, labs, and volume status.'}
+                  <strong>{texts.t0070}</strong>{' '}
+                  {texts.t0071}
                 </li>
               </ul>
             </div>
@@ -492,131 +463,577 @@ export default function MapCalculationNursingPage({ params }: PageProps) {
 
           <section id="documentation" className="space-y-6 rounded-2xl bg-white p-8 shadow-lg md:p-12">
             <h2 className="text-2xl font-semibold text-gray-900 md:text-3xl">
-              {isZh ? '如何有效记录 MAP' : 'How to Document MAP Effectively'}
+              {texts.t0072}
             </h2>
+            <div className="rounded-xl border border-rose-100 bg-rose-50 p-5 text-sm text-rose-900">
+              <h3 className="text-xl font-semibold text-rose-900">
+                {texts.t0073}
+              </h3>
+              <ul className="mt-3 list-disc space-y-2 pl-6">
+                <li>
+                  {texts.t0074}
+                </li>
+                <li>
+                  {texts.t0075}
+                </li>
+                <li>
+                  {texts.t0076}
+                </li>
+                <li>
+                  {texts.t0077}
+                </li>
+                <li>
+                  {texts.t0078}
+                </li>
+              </ul>
+              <p className="mt-4 font-semibold">
+                {texts.t0079}
+              </p>
+            </div>
             <div className="grid gap-5 md:grid-cols-2">
               <div className="space-y-3 rounded-xl border border-gray-100 bg-gray-50 p-5">
                 <h3 className="text-xl font-semibold text-gray-900">
-                  {isZh ? '电子病历（EHR）' : 'Electronic Health Records (EHR)'}
+                  {texts.t0080}
                 </h3>
                 <p className="text-sm text-gray-700">
-                  {isZh
-                    ? '多数 EHR 在输入收缩压与舒张压后会自动计算 MAP。若系统允许手动覆盖，请核对结果，并在流程表与叙述性记录中标注 MAP 趋势。'
-                    : 'Most EHRs auto-calculate MAP when you enter systolic and diastolic values. Verify the calculation, especially if the system allows manual override. Include MAP trends in flowsheets and narrative notes.'}
+                  {texts.t0081}
                 </p>
                 <p className="mt-2 text-sm text-gray-700">
-                  <strong>{isZh ? '记录示例：' : 'Example note:'}</strong>{' '}
-                  {isZh
-                    ? '“BP 90/58，MAP 69 mmHg，较 0800 时的 75 mmHg 下降。患者清醒，尿量 35 mL/小时。已通知医生，改为每 15 分钟监测。”'
-                    : '"BP 90/58, MAP 69 mmHg trending down from 75 mmHg at 0800. Patient alert, urine output 35 mL/hr. Provider notified, monitoring q15 min."'}
+                  <strong>{texts.t0082}</strong>{' '}
+                  {texts.t0083}
                 </p>
               </div>
               <div className="space-y-3 rounded-xl border border-gray-100 bg-gray-50 p-5">
                 <h3 className="text-xl font-semibold text-gray-900">
-                  {isZh ? 'SBAR 交接' : 'SBAR Handoff'}
+                  {texts.t0084}
                 </h3>
                 <p className="text-sm text-gray-700">
-                  {isZh
-                    ? '在 SBAR 报告中纳入当前 MAP、趋势、已执行的干预以及待执行的医嘱，确保信息完整。'
-                    : 'Summarize the current MAP, trend, interventions, and pending orders. Clear communication prevents missed deterioration.'}
+                  {texts.t0085}
                 </p>
                 <ul className="mt-2 list-disc space-y-1 pl-6 text-sm text-gray-700">
-                  <li>{isZh ? '情况： “MAP 保持在 60-65 mmHg。”' : 'Situation: "MAP running 60-65 mmHg."'}</li>
+                  <li>{texts.t0086}</li>
                   <li>
-                    {isZh ? '背景： “脓毒症患者，去甲肾上腺素 6 mcg/min。”' : 'Background: "Sepsis patient on norepinephrine 6 mcg/min."'}
+                    {texts.t0087}
                   </li>
-                  <li>{isZh ? '评估： “少尿但意识清醒。”' : 'Assessment: "Oliguria but mentation intact."'}</li>
+                  <li>{texts.t0088}</li>
                   <li>
-                    {isZh ? '建议： “按流程继续滴定，如 MAP <60 mmHg 立即通知。”' : 'Recommendation: "Continue titration per protocol, notify if MAP <60 mmHg."'}
+                    {texts.t0089}
                   </li>
                 </ul>
               </div>
             </div>
             <div className="rounded-xl border border-gray-100 bg-gray-50 p-5 text-sm text-gray-700">
               <h3 className="text-xl font-semibold text-gray-900">
-                {isZh ? '纸质记录' : 'Paper Charting'}
+                {texts.t0090}
               </h3>
               <p>
-                {isZh
-                  ? '每次记录血压时同步记录 MAP，并注明干预措施与反应。如使用重症流程表，可将 MAP 趋势绘制出来，便于查房沟通。'
-                  : 'Record MAP alongside each blood pressure entry. Include actions taken and responses. If your unit uses a critical care flow sheet, map out MAP trends visually to share during rounds.'}
+                {texts.t0091}
               </p>
-              <div className="mt-3 rounded-lg border border-dashed border-gray-300 bg-white p-4 font-mono text-sm">
-                {isZh ? (
-                  <>
-                    时间  0800  1000  1200
-                    <br />
-                    血压  95/60  90/58  92/60
-                    <br />
-                    MAP  72   69   71
-                    <br />
-                    处置 —  已通知医生  给予 500 mL 乳酸林格
-                  </>
-                ) : (
-                  <>
-                    Time  0800  1000  1200
-                    <br />
-                    BP   95/60  90/58  92/60
-                    <br />
-                    MAP  72   69   71
-                    <br />
-                    Action —  MD notified 500 mL LR bolus given
-                  </>
-                )}
+              <div className="mt-3 space-y-1 rounded-lg border border-dashed border-gray-300 bg-white p-4 font-mono text-sm">
+                {nursingLogLines.map((line) => (
+                  <div key={line}>{line}</div>
+                ))}
               </div>
             </div>
             <div className="rounded-xl border border-rose-100 bg-rose-50 p-5 text-sm text-rose-900">
               <h3 className="text-xl font-semibold">
-                {isZh ? 'NCLEX 风格提醒' : 'NCLEX-Style Reminder'}
+                {texts.t0092}
               </h3>
               <ul className="mt-2 list-disc space-y-2 pl-6">
-                <li>{isZh ? '记录客观数据（BP、MAP、趋势）。' : 'Document objective data (BP, MAP, trends).'}</li>
-                <li>{isZh ? '记录评估结果（意识、尿量、皮肤表现）。' : 'Record assessments (LOC, urine output, skin signs).'}</li>
-                <li>{isZh ? '注明干预措施（补液、升压药、通知）。' : 'Note interventions (fluids, pressors, notifications).'}</li>
-                <li>{isZh ? '评估疗效（例：补液后 MAP 提升至 74 mmHg）。' : 'Evaluate outcomes (MAP improved to 74 mmHg after bolus).'}</li>
+                <li>{texts.t0093}</li>
+                <li>{texts.t0094}</li>
+                <li>{texts.t0095}</li>
+                <li>{texts.t0096}</li>
               </ul>
             </div>
           </section>
 
-          <section id="resources" className="space-y-6 rounded-2xl bg-white p-8 shadow-lg md:p-12">
+          <section id="common-scenarios" className="space-y-6 rounded-2xl bg-white p-8 shadow-lg md:p-12">
             <h2 className="text-2xl font-semibold text-gray-900 md:text-3xl">
-              {isZh ? '护理资源与后续行动' : 'Nursing Resources & Next Steps'}
+              {texts.t0097}
+            </h2>
+            <p className="text-base text-gray-700">
+              {texts.t0098}
+            </p>
+            <div className="space-y-6">
+              <article className="space-y-4 rounded-xl border border-gray-100 bg-gray-50 p-5">
+                <h3 className="text-xl font-semibold text-gray-900">Scenario 1: New Sepsis Admission</h3>
+                <p className="text-sm text-gray-700">
+                  <strong>Patient:</strong> 72-year-old admitted from the ED with pneumonia and suspected sepsis.
+                </p>
+                <div className="rounded-lg border border-gray-200 bg-white p-4 text-sm text-gray-700">
+                  <p className="font-semibold text-gray-900">Vitals on arrival:</p>
+                  <ul className="mt-2 list-disc space-y-1 pl-5">
+                    <li>BP: 88/54 mmHg</li>
+                    <li>HR: 112 bpm</li>
+                    <li>Temperature: 39.2 C</li>
+                    <li>Respiratory rate: 24/min</li>
+                  </ul>
+                </div>
+                <p className="text-sm text-gray-700">
+                  <strong>Your MAP calculation:</strong> (88 + 108) ÷ 3 = 65 mmHg
+                </p>
+                <div className="space-y-2 text-sm text-gray-700">
+                  <p className="font-semibold text-gray-900">Nursing assessment:</p>
+                  <ul className="list-disc space-y-1 pl-5">
+                    <li>MAP exactly at the sepsis threshold (65 mmHg)</li>
+                    <li>Patient alert but appearing ill</li>
+                    <li>Skin warm with fever present</li>
+                    <li>Received 2 L fluid bolus in the ED</li>
+                  </ul>
+                </div>
+                <div className="space-y-2 text-sm text-gray-700">
+                  <p className="font-semibold text-gray-900">Your actions:</p>
+                  <ol className="list-decimal space-y-1 pl-5">
+                    <li>✅ Set up continuous monitoring if not already running</li>
+                    <li>✅ Notify the physician that MAP is at threshold</li>
+                    <li>✅ Increase vital signs to every 15–30 minutes</li>
+                    <li>✅ Prepare for a possible vasopressor order</li>
+                    <li>✅ Document interventions in the sepsis bundle flowsheet</li>
+                    <li>✅ Verify large-bore IV access is patent</li>
+                  </ol>
+                </div>
+                <div className="rounded-lg border border-rose-100 bg-white p-4 text-sm text-gray-700">
+                  <p className="font-semibold text-gray-900">Documentation:</p>
+                  <p>
+                    “Patient admitted with sepsis. MAP 65 mmHg on arrival. Dr. [Name] aware. Sepsis bundle initiated in ED, antibiotics infusing. Monitoring MAP q30 min. Patient alert, following commands.”
+                  </p>
+                </div>
+              </article>
+
+              <article className="space-y-4 rounded-xl border border-gray-100 bg-gray-50 p-5">
+                <h3 className="text-xl font-semibold text-gray-900">Scenario 2: Post-op Patient – Concerning Trend</h3>
+                <p className="text-sm text-gray-700">
+                  <strong>Patient:</strong> Post-abdominal surgery, postoperative day 1 with escalating incision pain (8/10).
+                </p>
+                <div className="grid gap-4 md:grid-cols-2">
+                  <div className="rounded-lg border border-gray-200 bg-white p-4 text-sm text-gray-700">
+                    <p className="font-semibold text-gray-900">MAP trend:</p>
+                    <ul className="mt-2 space-y-1 text-sm">
+                      <li>0600: BP 115/70 → MAP 85 mmHg</li>
+                      <li>0800: BP 108/65 → MAP 79 mmHg</li>
+                      <li>1000: BP 95/60 → MAP 72 mmHg</li>
+                      <li>1200: BP 90/55 → MAP 67 mmHg</li>
+                    </ul>
+                  </div>
+                  <div className="rounded-lg border border-gray-200 bg-white p-4 text-sm text-gray-700">
+                    <p className="font-semibold text-gray-900">Additional findings:</p>
+                    <ul className="mt-2 list-disc space-y-1 pl-5">
+                      <li>Drain output 150 mL serosanguinous this shift</li>
+                      <li>Patient pale, skin slightly cool</li>
+                      <li>Heart rate climbing 78 → 88 → 96 bpm</li>
+                    </ul>
+                  </div>
+                </div>
+                <p className="text-sm text-gray-700">
+                  <strong>Interpretation:</strong> Trend suggests bleeding, hypovolemia, or early shock even though the latest MAP seems "okay."
+                </p>
+                <div className="space-y-2 text-sm text-gray-700">
+                  <p className="font-semibold text-gray-900">Your actions:</p>
+                  <ol className="list-decimal space-y-1 pl-5">
+                    <li>✅ Call the surgeon immediately—do not wait for next routine vital check</li>
+                    <li>✅ Review the most recent hemoglobin against pre-op values</li>
+                    <li>✅ Assess the surgical site and drain for active bleeding</li>
+                    <li>✅ Prepare for CBC, type and screen, and fluid bolus orders</li>
+                    <li>✅ Increase monitoring to every 15 minutes</li>
+                    <li>✅ Document the trend and physician notification</li>
+                  </ol>
+                </div>
+                <div className="rounded-lg border border-amber-100 bg-white p-4 text-sm text-gray-700">
+                  <p className="font-semibold text-gray-900">Key nursing pearl:</p>
+                  <p>A 20% drop over several hours is a red flag. Trends drive escalation even if a single MAP value looks acceptable.</p>
+                </div>
+              </article>
+
+              <article className="space-y-4 rounded-xl border border-gray-100 bg-gray-50 p-5">
+                <h3 className="text-xl font-semibold text-gray-900">Scenario 3: Vasopressor Weaning Challenge</h3>
+                <p className="text-sm text-gray-700">
+                  <strong>Patient:</strong> ICU day 3, septic shock resolving, on norepinephrine.
+                </p>
+                <div className="rounded-lg border border-gray-200 bg-white p-4 text-sm text-gray-700">
+                  <p className="font-semibold text-gray-900">Current status:</p>
+                  <ul className="mt-2 list-disc space-y-1 pl-5">
+                    <li>Norepinephrine 4 mcg/min (was 12 mcg/min yesterday)</li>
+                    <li>BP 102/64 → MAP 77 mmHg</li>
+                    <li>Patient alert, urine output 70 mL/hr, lactate normalized</li>
+                  </ul>
+                </div>
+                <p className="text-sm text-gray-700">
+                  <strong>Physician order:</strong> Wean norepinephrine by 2 mcg/min every hour as tolerated; maintain MAP &gt;65 mmHg.
+                </p>
+                <div className="space-y-2 text-sm text-gray-700">
+                  <p className="font-semibold text-gray-900">Weaning timeline:</p>
+                  <ul className="space-y-1">
+                    <li>1000: Start at 4 mcg/min → decrease to 2 mcg/min</li>
+                    <li>1015: MAP 73 mmHg → continue current dose</li>
+                    <li>1100: MAP 75 mmHg → discontinue vasopressor</li>
+                    <li>1130: MAP 69 mmHg → still above target, observe</li>
+                    <li>1200: MAP 72 mmHg → stable off pressors, notify provider</li>
+                  </ul>
+                </div>
+                <div className="rounded-lg border border-blue-100 bg-white p-4 text-sm text-gray-700">
+                  <p className="font-semibold text-gray-900">Nursing pearl:</p>
+                  <p>Re-check MAP 15–30 minutes after every change. Catch drops early instead of waiting for the full hour.</p>
+                </div>
+              </article>
+
+              <article className="space-y-4 rounded-xl border border-gray-100 bg-gray-50 p-5">
+                <h3 className="text-xl font-semibold text-gray-900">Scenario 4: Hypertensive Patient – When to Hold Medications</h3>
+                <p className="text-sm text-gray-700">
+                  <strong>Patient:</strong> 68-year-old with CHF during routine morning med pass.
+                </p>
+                <div className="grid gap-4 md:grid-cols-2">
+                  <div className="rounded-lg border border-gray-200 bg-white p-4 text-sm text-gray-700">
+                    <p className="font-semibold text-gray-900">Morning vitals:</p>
+                    <ul className="mt-2 list-disc space-y-1 pl-5">
+                      <li>BP 98/62 → MAP 74 mmHg</li>
+                      <li>Patient reports dizziness on standing</li>
+                    </ul>
+                  </div>
+                  <div className="rounded-lg border border-gray-200 bg-white p-4 text-sm text-gray-700">
+                    <p className="font-semibold text-gray-900">Scheduled medications:</p>
+                    <ul className="mt-2 list-disc space-y-1 pl-5">
+                      <li>Metoprolol 50 mg PO</li>
+                      <li>Lisinopril 10 mg PO</li>
+                    </ul>
+                  </div>
+                </div>
+                <p className="text-sm text-gray-700">
+                  <strong>Assessment:</strong> Low-normal MAP with orthostatic symptoms. Antihypertensives likely to lower perfusion further.
+                </p>
+                <div className="space-y-2 text-sm text-gray-700">
+                  <p className="font-semibold text-gray-900">Your actions:</p>
+                  <ol className="list-decimal space-y-1 pl-5">
+                    <li>✅ Hold both medications per protocol (SBP &lt;100 mmHg and symptomatic)</li>
+                    <li>✅ Obtain full orthostatic vitals—lying, sitting, standing</li>
+                    <li>✅ Notify the physician with MAP values and symptoms</li>
+                    <li>✅ Document the hold reason and increase fall precautions</li>
+                  </ol>
+                </div>
+                <div className="rounded-lg border border-rose-100 bg-white p-4 text-sm text-gray-700">
+                  <p className="font-semibold text-gray-900">Documentation:</p>
+                  <p>
+                    “BP 98/62 at 0800 (MAP 74). Patient reports dizziness standing. Orthostatic vitals positive (lying 98/62; sitting 92/58 MAP 69; standing 88/54 MAP 65). Metoprolol and lisinopril held per protocol. Dr. [Name] notified 0815. Fall precautions reinforced.”
+                  </p>
+                </div>
+              </article>
+            </div>
+          </section>
+
+          <section id="nclex-prep" className="space-y-6 rounded-2xl bg-white p-8 shadow-lg md:p-12">
+            <h2 className="text-2xl font-semibold text-gray-900 md:text-3xl">
+              {texts.t0099}
+            </h2>
+            <p className="text-base text-gray-700">
+              {texts.t0100}
+            </p>
+            <div className="space-y-6">
+              <div className="space-y-4 rounded-xl border border-gray-100 bg-gray-50 p-5">
+                <h3 className="text-xl font-semibold text-gray-900">NCLEX-Style Practice Questions</h3>
+                <div className="space-y-3">
+                  <div className="rounded-lg border border-gray-200 bg-white p-4 text-sm text-gray-700">
+                    <p className="font-semibold text-gray-900">
+                      Question 1: A patient with sepsis has BP 84/52 mmHg. What is the MAP and priority nursing action?
+                    </p>
+                    <ul className="mt-2 list-[upper-alpha] space-y-1 pl-6">
+                      <li>MAP = 63 mmHg; continue monitoring</li>
+                      <li>MAP = 68 mmHg; notify physician</li>
+                      <li>MAP = 63 mmHg; notify physician immediately</li>
+                      <li>MAP = 68 mmHg; give fluid bolus</li>
+                    </ul>
+                    <details className="mt-3 rounded-lg border border-emerald-200 bg-emerald-50 p-3">
+                      <summary className="cursor-pointer font-semibold text-emerald-800">Show answer</summary>
+                      <p className="mt-2">
+                        <strong>Correct:</strong> C — MAP (84 + 104) ÷ 3 = 63 mmHg, below the sepsis goal of 65. Notify the physician immediately rather than “monitor only” or giving a bolus without orders.
+                      </p>
+                      <p className="mt-2">
+                        <strong>NCLEX tip:</strong> MAP below 65 in sepsis always triggers provider notification.
+                      </p>
+                    </details>
+                  </div>
+                  <div className="rounded-lg border border-gray-200 bg-white p-4 text-sm text-gray-700">
+                    <p className="font-semibold text-gray-900">
+                      Question 2: A nurse titrating norepinephrine notes MAP 58 mmHg. What is the appropriate response?
+                    </p>
+                    <ul className="mt-2 list-[upper-alpha] space-y-1 pl-6">
+                      <li>Decrease norepinephrine dose</li>
+                      <li>Continue current dose</li>
+                      <li>Increase norepinephrine dose</li>
+                      <li>Discontinue norepinephrine</li>
+                    </ul>
+                    <details className="mt-3 rounded-lg border border-emerald-200 bg-emerald-50 p-3">
+                      <summary className="cursor-pointer font-semibold text-emerald-800">Show answer</summary>
+                      <p className="mt-2">
+                        <strong>Correct:</strong> C — Target MAP in shock is ≥65 mmHg. Increase the vasopressor per protocol; never reduce or discontinue while MAP is below target.
+                      </p>
+                      <p className="mt-2">
+                        <strong>Reminder:</strong> Document the new dose, MAP response, and next reassessment time.
+                      </p>
+                    </details>
+                  </div>
+                  <div className="rounded-lg border border-gray-200 bg-white p-4 text-sm text-gray-700">
+                    <p className="font-semibold text-gray-900">Question 3: Which MAP requires immediate intervention?</p>
+                    <ul className="mt-2 list-[upper-alpha] space-y-1 pl-6">
+                      <li>MAP 72 mmHg in an ICU patient</li>
+                      <li>MAP 58 mmHg in a post-op patient</li>
+                      <li>MAP 95 mmHg in a hypertensive patient</li>
+                      <li>MAP 105 mmHg in an elderly patient</li>
+                    </ul>
+                    <details className="mt-3 rounded-lg border border-emerald-200 bg-emerald-50 p-3">
+                      <summary className="cursor-pointer font-semibold text-emerald-800">Show answer</summary>
+                      <p className="mt-2">
+                        <strong>Correct:</strong> B — MAP 58 mmHg indicates inadequate perfusion. Assess immediately and escalate.
+                      </p>
+                      <p className="mt-2">
+                        <strong>Tip:</strong> Memorize MAP 60 mmHg as your “critical” threshold on exam day.
+                      </p>
+                    </details>
+                  </div>
+                </div>
+              </div>
+              <div className="space-y-4 rounded-xl border border-gray-100 bg-gray-50 p-5 text-sm text-gray-700">
+                <h3 className="text-xl font-semibold text-gray-900">Key Formulas for Nursing School Exams</h3>
+                <ul className="list-decimal space-y-2 pl-6">
+                  <li>
+                    <strong>MAP formula:</strong> (SBP + 2 × DBP) ÷ 3
+                  </li>
+                  <li>
+                    <strong>Sepsis target:</strong> MAP ≥65 mmHg
+                  </li>
+                  <li>
+                    <strong>Critical low:</strong> MAP &lt;60 mmHg
+                  </li>
+                  <li>
+                    <strong>Normal range:</strong> MAP 60–100 mmHg
+                  </li>
+                </ul>
+                <p>
+                  Exam tips: When calculators are not allowed, double the diastolic, add the systolic, and divide by three. Round to the nearest whole number and always include “mmHg.” Show your work for partial credit.
+                </p>
+                <div className="rounded-lg border border-gray-200 bg-white p-4">
+                  <p className="font-semibold text-gray-900">Clinical skills checkoff example:</p>
+                  <p className="mt-1">
+                    “BP 88/56 → MAP 67 mmHg using (88 + 112) ÷ 3. Slightly above the sepsis threshold. I will assess perfusion, increase monitoring frequency, and notify the physician if the MAP trends downward or perfusion worsens.”
+                  </p>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section id="quick-reference" className="space-y-6 rounded-2xl bg-white p-8 shadow-lg md:p-12">
+            <h2 className="text-2xl font-semibold text-gray-900 md:text-3xl">
+              {texts.t0101}
+            </h2>
+            <div className="space-y-6">
+              <div className="space-y-6 rounded-xl border border-gray-100 bg-gray-50 p-5 text-sm text-gray-700">
+                <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
+                  <div>
+                    <p className="text-xs font-semibold uppercase tracking-wide text-rose-600">
+                      {texts.t0102}
+                    </p>
+                    <h3 className="text-xl font-semibold text-gray-900">
+                      {texts.t0103}
+                    </h3>
+                    <p className="mt-1 text-sm text-gray-600">
+                      {texts.t0104}
+                    </p>
+                  </div>
+                  <div className="flex flex-wrap gap-2">
+                    <button
+                      type="button"
+                      className="inline-flex items-center rounded-full border border-rose-600 px-3 py-1 font-semibold text-rose-700 transition hover:bg-rose-600 hover:text-white"
+                      disabled
+                    >
+                      {texts.t0105}
+                    </button>
+                    <button
+                      type="button"
+                      className="inline-flex items-center rounded-full border border-rose-600 px-3 py-1 font-semibold text-rose-700 transition hover:bg-rose-600 hover:text-white"
+                      disabled
+                    >
+                      {texts.t0106}
+                    </button>
+                  </div>
+                </div>
+                <div className="flex justify-center">
+                  <div className="relative w-full max-w-xs">
+                    <div className="rounded-3xl border-2 border-rose-200 bg-gradient-to-br from-rose-50 via-white to-amber-50 p-6 text-sm text-gray-800 shadow-xl shadow-rose-100 print:shadow-none">
+                      <div className="flex items-center justify-between text-xs font-semibold uppercase tracking-wider text-rose-600">
+                        <span>{texts.t0107}</span>
+                        <span>{texts.t0108}</span>
+                      </div>
+                      <hr className="my-3 border-rose-200" />
+                      <div className="rounded-2xl border border-rose-100 bg-white/80 p-4">
+                        <p className="text-xs font-semibold uppercase tracking-wide text-rose-600">
+                          {texts.t0109}
+                        </p>
+                        <p className="mt-2 font-mono text-lg font-semibold text-gray-900">
+                          MAP = (SBP + 2 × DBP) ÷ 3
+                        </p>
+                        <ul className="mt-3 space-y-1 text-xs text-gray-700">
+                          <li>{texts.t0110}</li>
+                          <li>{texts.t0111}</li>
+                          <li>{texts.t0112}</li>
+                        </ul>
+                      </div>
+                      <div className="mt-4 rounded-2xl border border-emerald-100 bg-emerald-50/80 p-4">
+                        <p className="text-xs font-semibold uppercase tracking-wide text-emerald-700">
+                          {texts.t0113}
+                        </p>
+                        <ul className="mt-2 space-y-1 text-xs text-gray-700">
+                          <li>
+                            <span className="font-semibold text-emerald-700">65–100</span> ·{' '}
+                            {texts.t0114}
+                          </li>
+                          <li>
+                            <span className="font-semibold text-amber-700">60–64</span> ·{' '}
+                            {texts.t0115}
+                          </li>
+                          <li>
+                            <span className="font-semibold text-red-700">&lt;60</span> ·{' '}
+                            {texts.t0116}
+                          </li>
+                          <li>
+                            <span className="font-semibold text-red-700">&gt;110</span> ·{' '}
+                            {texts.t0117}
+                          </li>
+                          <li>
+                            <span className="font-semibold text-rose-700">
+                              {texts.t0118}
+                            </span>
+                          </li>
+                        </ul>
+                      </div>
+                      <div className="mt-4 rounded-2xl border border-blue-100 bg-blue-50/80 p-4">
+                        <p className="text-xs font-semibold uppercase tracking-wide text-blue-700">
+                          {texts.t0119}
+                        </p>
+                        <div className="mt-2 space-y-2 text-xs font-semibold text-gray-900">
+                          <div className="flex items-center justify-between">
+                            <span>120/80</span>
+                            <span className="font-mono">MAP 93</span>
+                            <span className="text-emerald-700">{texts.t0120}</span>
+                          </div>
+                          <div className="flex items-center justify-between">
+                            <span>95/60</span>
+                            <span className="font-mono">MAP 72</span>
+                            <span className="text-amber-700">{texts.t0121}</span>
+                          </div>
+                          <div className="flex items-center justify-between">
+                            <span>85/55</span>
+                            <span className="font-mono">MAP 65</span>
+                            <span className="text-amber-700">{texts.t0122}</span>
+                          </div>
+                          <div className="flex items-center justify-between">
+                            <span>80/50</span>
+                            <span className="font-mono">MAP 60</span>
+                            <span className="text-red-700">{texts.t0123}</span>
+                          </div>
+                        </div>
+                      </div>
+                      <p className="mt-4 text-[11px] leading-snug text-gray-600">
+                        {texts.t0124}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="space-y-4 rounded-xl border border-gray-100 bg-gray-50 p-5 text-sm text-gray-700">
+                <h3 className="text-xl font-semibold text-gray-900">Shift Report Template</h3>
+                <p>
+                  “MAP stable 70–75 mmHg overnight; currently 72 mmHg. On norepinephrine 3 mcg/min, weaning per protocol. Monitoring hourly. Next wean attempt at 1400 if MAP remains &gt;70.”
+                </p>
+                <ul className="list-disc space-y-1 pl-5">
+                  <li>Current MAP and trend for the shift</li>
+                  <li>Interventions completed (fluids, vasopressors)</li>
+                  <li>Monitoring frequency and pending orders</li>
+                  <li>Plan for the next nurse to continue</li>
+                </ul>
+              </div>
+            </div>
+          </section>
+
+          <section id="related-resources" className="space-y-6 rounded-2xl bg-white p-8 shadow-lg md:p-12">
+            <h2 className="text-2xl font-semibold text-gray-900 md:text-3xl">
+              {texts.t0125}
             </h2>
             <div className="grid gap-6 md:grid-cols-2">
-              <div className="space-y-3 rounded-xl border border-blue-100 bg-blue-50 p-5 text-sm text-blue-900">
-                <h3 className="text-xl font-semibold">
-                  {isZh ? '下载与工具' : 'Downloadables & Tools'}
-                </h3>
+              <div className="space-y-3 rounded-xl border border-gray-100 bg-gray-50 p-5 text-sm text-gray-700">
+                <h3 className="text-xl font-semibold text-gray-900">Calculation Tools</h3>
                 <ul className="space-y-2">
-                  <li>{isZh ? '床旁胸卡：MAP 公式与速查表（PDF 即将上线）。' : 'Bedside badge card: MAP formula + quick reference (PDF coming soon).'}</li>
-                  <li>{isZh ? '可打印的脓毒症清单，包含 MAP 目标。' : 'Printable sepsis checklist including MAP targets.'}</li>
                   <li>
-                    <Link href={localizedPath('/map-calculator-bp')} className="font-semibold text-blue-800 hover:underline">
-                      {isZh ? '血压换算 MAP 计算器' : 'BP to MAP calculator'}
+                    <Link href={localizedPath('/')} className="font-semibold text-rose-700 hover:underline">
+                      Main MAP Calculator
                     </Link>{' '}
-                    {isZh ? '，在抢救时快速换算。' : 'for rapid conversions during codes.'}
+                    — full calculator for all clinicians
+                  </li>
+                  <li>
+                    <Link href={localizedPath('/map-calculator-bp')} className="font-semibold text-rose-700 hover:underline">
+                      BP to MAP Converter
+                    </Link>{' '}
+                    — quick bedside conversions
+                  </li>
+                  <li>
+                    <Link
+                      href={localizedPath('/how-to-calculate-map-blood-pressure')}
+                      className="font-semibold text-rose-700 hover:underline"
+                    >
+                      Complete Calculation Guide
+                    </Link>{' '}
+                    — step-by-step walkthrough
                   </li>
                 </ul>
               </div>
               <div className="space-y-3 rounded-xl border border-gray-100 bg-gray-50 p-5 text-sm text-gray-700">
-                <h3 className="text-xl font-semibold text-gray-900">
-                  {isZh ? '专业发展' : 'Professional Development'}
-                </h3>
+                <h3 className="text-xl font-semibold text-gray-900">Clinical Guidelines</h3>
                 <ul className="space-y-2">
-                  <li>{isZh ? '在床旁查房和交接会议中主动讨论 MAP。' : 'Incorporate MAP discussion into bedside rounds and shift huddles.'}</li>
-                  <li>{isZh ? '为新成员开展 MAP 计算迷你培训。' : 'Lead a quick in-service on MAP calculation for new team members.'}</li>
-                  <li>{isZh ? '与教学部门合作，将 MAP 场景纳入模拟训练。' : 'Partner with education departments to integrate MAP scenarios into simulations.'}</li>
+                  <li>
+                    <a href="https://www.sccm.org" className="font-semibold text-rose-700 hover:underline" rel="noreferrer" target="_blank">
+                      Surviving Sepsis Campaign
+                    </a>{' '}
+                    — evidence-based protocols
+                  </li>
+                  <li>
+                    <a href="https://www.heart.org" className="font-semibold text-rose-700 hover:underline" rel="noreferrer" target="_blank">
+                      American Heart Association
+                    </a>{' '}
+                    — blood pressure management
+                  </li>
+                  <li>Your facility’s critical care policies and rapid response procedures</li>
                 </ul>
               </div>
             </div>
-            <div className="rounded-xl border border-gray-100 bg-gray-50 p-5 text-sm text-gray-700">
-              <h3 className="text-xl font-semibold text-gray-900">
-                {isZh ? '保持更新' : 'Stay Connected'}
-              </h3>
-              <p>
-                {isZh
-                  ? '订阅 mapcalculator.org 新闻邮件，获取新的床旁参考资料、可打印清单及护理实用技巧。'
-                  : 'Subscribe to the mapcalculator.org newsletter for new bedside reference downloads, printable checklists, and clinical pearls designed for nursing practice.'}
+            <div className="grid gap-6 md:grid-cols-2">
+              <div className="space-y-3 rounded-xl border border-gray-100 bg-gray-50 p-5 text-sm text-gray-700">
+                <h3 className="text-xl font-semibold text-gray-900">For Nursing Students</h3>
+                <ul className="space-y-2">
+                  <li>NCLEX review modules featuring MAP questions</li>
+                  <li>Clinical skills videos covering perfusion assessment (coming soon)</li>
+                  <li>Practice worksheets to build mental math speed</li>
+                </ul>
+              </div>
+              <div className="space-y-3 rounded-xl border border-gray-100 bg-gray-50 p-5 text-sm text-gray-700">
+                <h3 className="text-xl font-semibold text-gray-900">Professional Development</h3>
+                <ul className="space-y-2">
+                  <li>ICU nursing continuing education credits</li>
+                  <li>Critical care certification prep courses</li>
+                  <li>Hemodynamic monitoring workshops</li>
+                </ul>
+              </div>
+            </div>
+            <div className="rounded-xl border border-rose-100 bg-rose-50 p-5 text-sm text-rose-900">
+              <h3 className="text-xl font-semibold text-rose-900">Summary: MAP Essentials for Nurses</h3>
+              <ul className="mt-3 space-y-2">
+                <li>✅ Calculate MAP with (SBP + 2 × DBP) ÷ 3</li>
+                <li>✅ Normal range: 60–100 mmHg</li>
+                <li>✅ Sepsis target: MAP ≥65 mmHg</li>
+                <li>✅ Critical concern: MAP &lt;60 mmHg demands urgent action</li>
+                <li>✅ Watch the trend, not just a single reading</li>
+                <li>✅ Chart MAP, trend, interventions, and patient response</li>
+                <li>✅ Communicate clearly during handoff to prevent safety issues</li>
+              </ul>
+              <p className="mt-3 font-semibold">
+                You are at the bedside—you are the first line of defense when perfusion changes.
               </p>
             </div>
             <div className="flex flex-wrap gap-3 text-sm text-gray-700">
@@ -624,15 +1041,25 @@ export default function MapCalculationNursingPage({ params }: PageProps) {
                 href={localizedPath('/')}
                 className="inline-flex items-center rounded-full border border-rose-600 px-4 py-2 font-semibold text-rose-700 transition hover:bg-rose-600 hover:text-white"
               >
-                {isZh ? '返回主计算器' : 'Return to Main Calculator'}
+                Calculate MAP Now
               </Link>
               <Link
-                href={localizedPath('/how-to-calculate-map-blood-pressure')}
+                href={localizedPath('/map-calculator-bp')}
                 className="inline-flex items-center rounded-full border border-rose-600 px-4 py-2 font-semibold text-rose-700 transition hover:bg-rose-600 hover:text-white"
               >
-                {isZh ? '复习计算教程' : 'Review the Calculation Tutorial'}
+                Print Reference Card
               </Link>
+              <span className="inline-flex items-center rounded-full border border-rose-600 px-4 py-2 font-semibold text-rose-700">
+                Share with Colleagues
+              </span>
             </div>
+            <p className="text-sm text-gray-700">
+              Questions? Reach out to{' '}
+              <a href="/cdn-cgi/l/email-protection" className="font-semibold text-rose-700 hover:underline">
+                [email&nbsp;protected]
+              </a>
+              . This guide is educational; always follow provider orders and facility policy.
+            </p>
           </section>
         </div>
       </main>

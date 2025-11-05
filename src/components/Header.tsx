@@ -15,7 +15,7 @@ export default async function Header() {
             {t('professionalUseOnly')}
           </span>
         </div>
-        <LanguageSwitcher />
+        {/* <LanguageSwitcher /> */}
       </div>
     </header>
   );

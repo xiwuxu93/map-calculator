@@ -1,9 +1,19 @@
-{
+const zh = {
   "metadata": {
     "title": "MAP 计算器：计算平均动脉压（血压计算器）| mapcalculator.org",
     "description": "面向医疗专业人士的免费 MAP 计算器。输入收缩压和舒张压即可计算平均动脉压，全球医师、护士、急救人员共同使用的循证工具。",
     "keywords": "MAP 计算器, 平均动脉压, 血压计算器, 医疗专业人士, 血流动力学, 临床工具",
     "siteName": "MAP 计算器"
+  },
+  "locales": {
+    "en": {
+      "name": "English",
+      "short": "EN"
+    },
+    "zh": {
+      "name": "中文",
+      "short": "中文"
+    }
   },
   "common": {
     "siteName": "MAP 计算器",
@@ -337,4 +347,6 @@
     "contactTitle": "联系方式",
     "contactContent": "如对条款有疑问，请发送邮件至 support@mapcalculator.org。"
   }
-}
+} as const;
+
+export default zh;

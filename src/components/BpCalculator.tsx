@@ -7,7 +7,9 @@ import { useLocale } from 'next-intl';
 import { calculateMap } from '@/lib/calculator';
 import type { MapStatus } from '@/lib/calculator';
 import { validateMapInput } from '@/lib/validator';
-import { Locale, defaultLocale } from '@/lib/i18n';
+import bpCalculatorContent from '@/messages/pages/bpCalculator';
+import type { BpCalculatorContent } from '@/messages/pages/bpCalculator/types';
+import { defaultLocale, resolveLocale } from '@/lib/i18n';
 
 type InputsState = {
   systolic: string;
@@ -20,27 +22,6 @@ type QuickSelectPreset = {
   label: string;
   systolic: string;
   diastolic: string;
-};
-
-type LocalizedStrings = {
-  systolicLabel: string;
-  diastolicLabel: string;
-  quickSelectHeading: string;
-  calculateCta: string;
-  resetCta: string;
-  copyCta: string;
-  copyFeedbackTemplate: string;
-  resultLabel: string;
-  resultPlaceholder: string;
-  interpretationHeading: string;
-  formulaNote: string;
-  professionalHeading: string;
-  professionalParagraphs: string[];
-  emergencyNotice: string;
-  disclaimerLinkLabel: string;
-  quickSelectLabel?: string;
-  statusLegend: Record<MapStatus, string>;
-  statusDescriptions: Record<MapStatus, string>;
 };
 
 const quickSelectPresets: QuickSelectPreset[] = [
@@ -59,90 +40,10 @@ const statusStyles: Record<MapStatus, string> = {
   high: 'border-rose-200 bg-rose-50 text-rose-800',
 };
 
-const localizedContent: Record<Locale, LocalizedStrings> = {
-  en: {
-    systolicLabel: 'Systolic BP (mmHg)',
-    diastolicLabel: 'Diastolic BP (mmHg)',
-    quickSelectHeading: 'Quick Select Common Values',
-    calculateCta: 'Calculate MAP',
-    resetCta: 'Reset',
-    copyCta: 'Copy Result',
-    copyFeedbackTemplate: 'Copied MAP {value} mmHg to clipboard',
-    resultLabel: 'Your MAP Result',
-    resultPlaceholder: 'Enter systolic and diastolic blood pressure to generate an instant MAP result.',
-    interpretationHeading: 'Interpretation Guide',
-    formulaNote: 'Calculated with the standard mean arterial pressure formula: (SBP + 2 × DBP) ÷ 3.',
-    professionalHeading: 'For Licensed Professionals',
-    professionalParagraphs: [
-      'This tool supports clinical decision making but does not replace bedside assessment, institutional protocols, or attending supervision.',
-      'Verify blood pressure measurements manually when results or patient presentation are incongruent.',
-    ],
-    emergencyNotice: 'In an emergency, call local emergency services or follow your facility escalation pathway.',
-    disclaimerLinkLabel: 'View full disclaimer',
-    statusLegend: {
-      criticalLow: 'MAP < 60 mmHg — Immediate escalation for perfusion support',
-      borderline: 'MAP 60-64 mmHg — Borderline perfusion, monitor closely',
-      normal: 'MAP 65-100 mmHg — Optimal perfusion for most adults',
-      elevated: 'MAP 101-110 mmHg — Mildly elevated, assess clinical context',
-      high: 'MAP > 110 mmHg — Hypertensive range, evaluate for urgency/emergency',
-    },
-    statusDescriptions: {
-      criticalLow:
-        'Critical low MAP suggests inadequate organ perfusion. Initiate rapid assessment, fluid resuscitation, and vasopressor support per protocol.',
-      borderline:
-        'Borderline MAP requires close surveillance. Trend vitals, assess lactate and urine output, and prepare to escalate therapy if perfusion markers decline.',
-      normal:
-        'MAP is within the typical target range for most adult patients. Continue current management and monitor for trends rather than isolated readings.',
-      elevated:
-        'MAP is mildly elevated. Correlate with patient history, pain scores, and perioperative status before initiating antihypertensive therapy.',
-      high:
-        'MAP is in a hypertensive range. Evaluate for end-organ symptoms and follow hypertensive emergency/urgency protocols as appropriate.',
-    },
-  },
-  zh: {
-    systolicLabel: '收缩压 (mmHg)',
-    diastolicLabel: '舒张压 (mmHg)',
-    quickSelectHeading: '常见血压快捷选择',
-    calculateCta: '计算 MAP',
-    resetCta: '重置',
-    copyCta: '复制结果',
-    copyFeedbackTemplate: '已复制 MAP {value} mmHg 到剪贴板',
-    resultLabel: 'MAP 计算结果',
-    resultPlaceholder: '输入收缩压与舒张压即可即时获得 MAP。',
-    interpretationHeading: '结果解释速览',
-    formulaNote: '采用标准平均动脉压公式计算：(收缩压 + 2 × 舒张压) ÷ 3。',
-    professionalHeading: '仅供专业人员使用',
-    professionalParagraphs: [
-      '本工具用于辅助临床判断，不能替代床旁评估、科室流程或上级医师的决策。',
-      '当结果与病情表现不一致时，请再次进行手动血压测量以确认读数。',
-    ],
-    emergencyNotice: '如遇紧急情况，请立即拨打急救电话或启动院内应急流程。',
-    disclaimerLinkLabel: '查看完整免责声明',
-    statusLegend: {
-      criticalLow: 'MAP < 60 mmHg — 立即升级干预以维持灌注',
-      borderline: 'MAP 60-64 mmHg — 临界值，需密切监测',
-      normal: 'MAP 65-100 mmHg — 大多数成人的最佳灌注范围',
-      elevated: 'MAP 101-110 mmHg — 轻度升高，结合临床情境评估',
-      high: 'MAP > 110 mmHg — 高血压区间，警惕靶器官损害',
-    },
-    statusDescriptions: {
-      criticalLow:
-        'MAP 过低提示器官灌注不足，应快速评估患者状态并按照流程给予补液或升压药物支持。',
-      borderline:
-        'MAP 较低，需要连续监测生命体征，关注乳酸、尿量等灌注指标，必要时提前准备上级干预。',
-      normal:
-        'MAP 处于常规目标范围，可维持当前治疗方案，更关注趋势变化而非单次数值。',
-      elevated:
-        'MAP 中度升高，先结合疼痛、焦虑、术后反应等情况综合判断，必要时再考虑降压处理。',
-      high:
-        'MAP 明显升高，应排查是否存在靶器官受损体征，并依照高血压急症/亚急症流程处理。',
-    },
-  },
-};
-
 export default function BpCalculator() {
-  const locale = (useLocale() as Locale) ?? defaultLocale;
-  const content = localizedContent[locale] ?? localizedContent[defaultLocale];
+  const locale = resolveLocale(useLocale());
+  const content: BpCalculatorContent =
+    bpCalculatorContent[locale] ?? bpCalculatorContent[defaultLocale];
   const localePrefix = locale === defaultLocale ? '' : `/${locale}`;
 
   const [inputs, setInputs] = useState<InputsState>({ systolic: '', diastolic: '' });
