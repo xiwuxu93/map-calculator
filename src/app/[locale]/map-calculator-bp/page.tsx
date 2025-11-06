@@ -53,6 +53,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       canonical: url,
       languages: {
         en: `${SITE_URL}/map-calculator-bp`,
+        es: `${SITE_URL}/es/map-calculator-bp`,
         zh: `${SITE_URL}/zh/map-calculator-bp`,
         'x-default': `${SITE_URL}/map-calculator-bp`,
       },

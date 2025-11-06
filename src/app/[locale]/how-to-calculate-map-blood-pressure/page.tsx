@@ -11,153 +11,30 @@ type PageProps = {
   params: { locale: string };
 };
 
-type LocalizedMeta = {
-  title: string;
-  description: string;
-  keywords: string[];
-  openGraphTitle: string;
-  openGraphDescription: string;
-  heroTitle: string;
-  heroDescription: string;
-  quickAnswerLabel: string;
-  readingTime: string;
-  skillLevel: string;
-  lastUpdated: string;
-};
-
-const localizedContent: Record<Locale, LocalizedMeta> = {
-  en: {
-    title: 'How to Calculate MAP from Blood Pressure: Complete Step-by-Step Guide (2025)',
-    description:
-      'Learn how to calculate Mean Arterial Pressure from blood pressure readings. Step-by-step tutorial with examples, formulas, and clinical applications for healthcare professionals.',
-    keywords: [
-      'how to calculate MAP',
-      'calculate MAP from blood pressure',
-      'MAP formula',
-      'mean arterial pressure calculation',
-    ],
-    openGraphTitle: 'How to Calculate MAP from Blood Pressure - Complete Guide',
-    openGraphDescription: 'Master MAP calculation with our comprehensive tutorial',
-    heroTitle: 'How to Calculate MAP from Blood Pressure: Complete Guide',
-    heroDescription:
-      'Master the essential skill of calculating Mean Arterial Pressure (MAP) so you can make confident, protocol-driven clinical decisions in any care setting.',
-    quickAnswerLabel: 'Quick Answer',
-    readingTime: 'Reading Time',
-    skillLevel: 'Skill Level',
-    lastUpdated: 'Last Updated',
-  },
-  zh: {
-    title: '如何通过血压计算平均动脉压（MAP）：完整图文步骤（2025 年版）',
-    description:
-      '系统学习如何由血压读数计算平均动脉压，包含计算公式、示例解析与临床应用要点，适用于各类医疗专业人员。',
-    keywords: ['如何计算 MAP', 'MAP 公式', '平均动脉压算法', '血压换算 MAP'],
-    openGraphTitle: '如何计算 MAP —— 完整图文指南',
-    openGraphDescription: '学习并掌握平均动脉压计算的全流程与临床应用',
-    heroTitle: '如何根据血压计算平均动脉压（MAP）',
-    heroDescription:
-      '掌握 MAP 计算技巧，帮助你在急危重症、围术期与日常护理评估中快速做出循证决策。',
-    quickAnswerLabel: '快速答案',
-    readingTime: '阅读时间',
-    skillLevel: '适用人群',
-    lastUpdated: '最后更新',
-  },
-};
-
-const schemaContent: Record<
-  Locale,
-  {
-    article: {
-      headline: string;
-      description: string;
-    };
-    howTo: {
-      name: string;
-      description: string;
-      steps: Array<{ name: string; text: string }>;
-    };
-    faq: Array<{ question: string; answer: string }>;
-  }
-> = {
-  en: {
-    article: {
-      headline: 'How to Calculate MAP from Blood Pressure: Complete Step-by-Step Guide',
-      description:
-        'Detailed tutorial for calculating mean arterial pressure (MAP) including formulas, worked examples, clinical interpretation, and advanced considerations.',
-    },
-    howTo: {
-      name: 'Calculate Mean Arterial Pressure (MAP)',
-      description: 'Step-by-step process to calculate MAP using the standard formula based on systolic and diastolic blood pressure.',
-      steps: [
-        { name: 'Record blood pressure', text: 'Obtain an accurate systolic and diastolic blood pressure reading.' },
-        { name: 'Double diastolic', text: 'Multiply the diastolic value by two to account for diastolic time.' },
-        { name: 'Add systolic', text: 'Add the systolic value to the doubled diastolic total.' },
-        { name: 'Divide by three', text: 'Divide the sum by three to find the mean arterial pressure.' },
-        { name: 'Document result', text: 'Round to the nearest whole number and chart the MAP with the original BP.' },
-      ],
-    },
-    faq: [
-      {
-        question: 'Why is MAP weighted toward diastolic pressure?',
-        answer: 'The heart spends about two-thirds of each cardiac cycle in diastole, so diastolic pressure contributes more to average arterial pressure.',
-      },
-      {
-        question: 'When should calculated MAP be verified with an arterial line?',
-        answer:
-          'Use invasive monitoring when patients are profoundly hypotensive, on high-dose vasopressors, or experiencing rapid hemodynamic changes.',
-      },
-    ],
-  },
-  zh: {
-    article: {
-      headline: '如何通过血压计算平均动脉压：完整分步指南',
-      description: '详解平均动脉压（MAP）的计算步骤，包含公式、示例、临床解读与进阶注意事项。',
-    },
-    howTo: {
-      name: '计算平均动脉压（MAP）',
-      description: '按照标准公式，基于收缩压与舒张压逐步计算 MAP 的方法。',
-      steps: [
-        { name: '记录血压', text: '准确获取一组收缩压与舒张压读数。' },
-        { name: '舒张压乘二', text: '将舒张压乘以 2，反映心动周期中舒张期的时长。' },
-        { name: '加上收缩压', text: '把收缩压加入刚才的结果。' },
-        { name: '除以三', text: '将总和除以 3，得到平均动脉压。' },
-        { name: '记录结果', text: '四舍五入到整数，并连同原始血压一起记录。' },
-      ],
-    },
-    faq: [
-      {
-        question: '为什么 MAP 的权重偏向舒张压？',
-        answer: '心脏在一个心动周期中约有三分之二时间处于舒张期，因此舒张压对平均动脉压的贡献更大。',
-      },
-      {
-        question: '何时需要用动脉导管验证计算出的 MAP？',
-        answer: '当患者出现严重低血压、使用大剂量血管活性药或血流动力学剧烈波动时，应使用有创监测核对 MAP。',
-      },
-    ],
-  },
-};
-
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const locale = (locales.includes(params.locale as Locale) ? params.locale : defaultLocale) as Locale;
-  const localized = localizedContent[locale] ?? localizedContent[defaultLocale];
+  const messages = localizedTexts[locale] ?? localizedTexts[defaultLocale];
+  const meta = messages.meta ?? localizedTexts[defaultLocale].meta;
   const localePrefix = getLocalePrefix(locale);
   const url = `${SITE_URL}${localePrefix}/how-to-calculate-map-blood-pressure`;
   const imageUrl = `${SITE_URL}/og-image.png`;
 
   return {
-    title: localized.title,
-    description: localized.description,
-    keywords: localized.keywords,
+    title: meta.title,
+    description: meta.description,
+    keywords: [...meta.keywords],
     alternates: {
       canonical: url,
       languages: {
         en: `${SITE_URL}/how-to-calculate-map-blood-pressure`,
+        es: `${SITE_URL}/es/how-to-calculate-map-blood-pressure`,
         zh: `${SITE_URL}/zh/how-to-calculate-map-blood-pressure`,
         'x-default': `${SITE_URL}/how-to-calculate-map-blood-pressure`,
       },
     },
     openGraph: {
-      title: localized.openGraphTitle,
-      description: localized.openGraphDescription,
+      title: meta.openGraphTitle,
+      description: meta.openGraphDescription,
       url,
       type: 'article',
       siteName: 'mapcalculator.org',
@@ -166,14 +43,14 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
           url: imageUrl,
           width: 1200,
           height: 630,
-          alt: localized.openGraphTitle,
+          alt: meta.openGraphTitle,
         },
       ],
     },
     twitter: {
       card: 'summary_large_image',
-      title: localized.openGraphTitle,
-      description: localized.openGraphDescription,
+      title: meta.openGraphTitle,
+      description: meta.openGraphDescription,
       images: [imageUrl],
     },
   };
@@ -183,8 +60,8 @@ export default function HowToCalculateMapPage({ params }: PageProps) {
   const locale = (locales.includes(params.locale as Locale) ? params.locale : defaultLocale) as Locale;
   const texts = localizedTexts[locale] ?? localizedTexts[defaultLocale];
   const localePrefix = getLocalePrefix(locale);
-  const localized = localizedContent[locale] ?? localizedContent[defaultLocale];
-  const schema = schemaContent[locale] ?? schemaContent[defaultLocale];
+  const meta = texts.meta ?? localizedTexts[defaultLocale].meta;
+  const schema = texts.schema ?? localizedTexts[defaultLocale].schema;
   const localizedPath = (path: string) => getLocalizedPath(locale, path);
   const imageUrl = `${SITE_URL}/og-image.png`;
 
@@ -243,14 +120,14 @@ export default function HowToCalculateMapPage({ params }: PageProps) {
                 {texts.t0001}
               </p>
               <h1 className="text-3xl font-semibold tracking-tight text-gray-900 md:text-4xl">
-                {localized.heroTitle}
+                {meta.heroTitle}
               </h1>
-              <p className="text-base text-gray-700 md:text-lg">{localized.heroDescription}</p>
+              <p className="text-base text-gray-700 md:text-lg">{meta.heroDescription}</p>
             </div>
             <div className="space-y-4 rounded-xl border border-blue-100 bg-blue-50 p-5 text-blue-900">
               <div>
                 <p className="text-xs uppercase tracking-wide font-semibold text-blue-700">
-                  {localized.quickAnswerLabel}
+                  {meta.quickAnswerLabel}
                 </p>
                 <p className="text-lg font-semibold">
                   {texts.t0002}{' '}
@@ -270,15 +147,15 @@ export default function HowToCalculateMapPage({ params }: PageProps) {
               </div>
               <div className="grid gap-3 text-sm md:grid-cols-3">
                 <div>
-                  <p className="text-xs uppercase tracking-wide text-blue-700">{localized.readingTime}</p>
+                  <p className="text-xs uppercase tracking-wide text-blue-700">{meta.readingTime}</p>
                   <p className="font-medium">{texts.t0009}</p>
                 </div>
                 <div>
-                  <p className="text-xs uppercase tracking-wide text-blue-700">{localized.skillLevel}</p>
+                  <p className="text-xs uppercase tracking-wide text-blue-700">{meta.skillLevel}</p>
                   <p className="font-medium">{texts.t0010}</p>
                 </div>
                 <div>
-                  <p className="text-xs uppercase tracking-wide text-blue-700">{localized.lastUpdated}</p>
+                  <p className="text-xs uppercase tracking-wide text-blue-700">{meta.lastUpdated}</p>
                   <p className="font-medium">{texts.t0011}</p>
                 </div>
               </div>

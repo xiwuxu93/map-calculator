@@ -38,6 +38,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       canonical: localizedUrl,
       languages: {
         en: SITE_URL,
+        es: `${SITE_URL}/es`,
         zh: `${SITE_URL}/zh`,
         'x-default': SITE_URL,
       },

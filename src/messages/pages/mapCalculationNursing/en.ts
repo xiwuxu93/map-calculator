@@ -1,4 +1,30 @@
 const MapCalculationNursingEn = {
+  meta: {
+    title: "MAP Calculation for Nurses: Quick Bedside Reference Guide (2025)",
+    description:
+      "Nursing-focused MAP calculator and guide. Learn MAP calculation, interpretation, and nursing interventions. Practical reference for ICU, ER, and floor nurses.",
+    keywords: [
+      "MAP calculation nursing",
+      "MAP for nurses",
+      "bedside MAP calculator",
+      "nursing MAP guide",
+      "ICU nursing MAP",
+    ],
+    openGraphTitle: "MAP Calculation for Nurses - Bedside Reference",
+    openGraphDescription: "Essential MAP guide designed specifically for nurses",
+    heroTitle: "MAP Calculation for Nurses: Bedside Reference",
+    heroDescription:
+      "Quick, practical MAP calculator and guide for nursing professionals working in ICU, ER, perioperative, or acute care environments.",
+    heroAudience: "👩‍⚕️ For: ICU Nurses • ER Nurses • Floor Nurses • Student Nurses",
+  },
+  schema: {
+    headline: "MAP Calculation for Nurses: Quick Bedside Reference Guide",
+    description:
+      "Nursing-focused guide covering MAP calculation, interpretation, and interventions for ICU, emergency, and floor nurses.",
+    audienceTypeLabel: "Nurse",
+    audienceDescription:
+      "Registered nurses, ICU nurses, ER nurses, floor nurses, and nursing students.",
+  },
   t0001: 'Bedside Reference',
   t0002: 'Quick Reference',
   t0003: 'Normal MAP: 65-100 mmHg',

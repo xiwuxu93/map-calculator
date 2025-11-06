@@ -1,4 +1,70 @@
 const HowToCalculateEn = {
+  meta: {
+    title: "How to Calculate MAP from Blood Pressure: Complete Step-by-Step Guide (2025)",
+    description:
+      "Learn how to calculate Mean Arterial Pressure from blood pressure readings. Step-by-step tutorial with examples, formulas, and clinical applications for healthcare professionals.",
+    keywords: [
+      "how to calculate MAP",
+      "calculate MAP from blood pressure",
+      "MAP formula",
+      "mean arterial pressure calculation",
+    ],
+    openGraphTitle: "How to Calculate MAP from Blood Pressure - Complete Guide",
+    openGraphDescription: "Master MAP calculation with our comprehensive tutorial",
+    heroTitle: "How to Calculate MAP from Blood Pressure: Complete Guide",
+    heroDescription:
+      "Master the essential skill of calculating Mean Arterial Pressure (MAP) so you can make confident, protocol-driven clinical decisions in any care setting.",
+    quickAnswerLabel: "Quick Answer",
+    readingTime: "Reading Time",
+    skillLevel: "Skill Level",
+    lastUpdated: "Last Updated",
+  },
+  schema: {
+    article: {
+      headline: "How to Calculate MAP from Blood Pressure: Complete Step-by-Step Guide",
+      description:
+        "Detailed tutorial for calculating mean arterial pressure (MAP) including formulas, worked examples, clinical interpretation, and advanced considerations.",
+    },
+    howTo: {
+      name: "Calculate Mean Arterial Pressure (MAP)",
+      description:
+        "Step-by-step process to calculate MAP using the standard formula based on systolic and diastolic blood pressure.",
+      steps: [
+        {
+          name: "Record blood pressure",
+          text: "Obtain an accurate systolic and diastolic blood pressure reading.",
+        },
+        {
+          name: "Double diastolic",
+          text: "Multiply the diastolic value by two to account for diastolic time.",
+        },
+        {
+          name: "Add systolic",
+          text: "Add the systolic value to the doubled diastolic total.",
+        },
+        {
+          name: "Divide by three",
+          text: "Divide the sum by three to find the mean arterial pressure.",
+        },
+        {
+          name: "Document result",
+          text: "Round to the nearest whole number and chart the MAP with the original BP.",
+        },
+      ],
+    },
+    faq: [
+      {
+        question: "Why is MAP weighted toward diastolic pressure?",
+        answer:
+          "The heart spends about two-thirds of each cardiac cycle in diastole, so diastolic pressure contributes more to average arterial pressure.",
+      },
+      {
+        question: "When should calculated MAP be verified with an arterial line?",
+        answer:
+          "Use invasive monitoring when patients are profoundly hypotensive, on high-dose vasopressors, or experiencing rapid hemodynamic changes.",
+      },
+    ],
+  },
   t0001: 'Step-by-Step Tutorial',
   t0002: 'Formula:',
   t0003: 'MAP = (Systolic BP + 2 × Diastolic BP) ÷ 3',

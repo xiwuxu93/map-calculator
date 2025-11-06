@@ -12,96 +12,30 @@ type PageProps = {
   params: { locale: string };
 };
 
-type LocalizedMeta = {
-  title: string;
-  description: string;
-  keywords: string[];
-  openGraphTitle: string;
-  openGraphDescription: string;
-  heroTitle: string;
-  heroDescription: string;
-  heroAudience: string;
-};
-
-const localizedContent: Record<Locale, LocalizedMeta> = {
-  en: {
-    title: 'MAP Calculation for Nurses: Quick Bedside Reference Guide (2025)',
-    description:
-      'Nursing-focused MAP calculator and guide. Learn MAP calculation, interpretation, and nursing interventions. Practical reference for ICU, ER, and floor nurses.',
-    keywords: [
-      'MAP calculation nursing',
-      'MAP for nurses',
-      'bedside MAP calculator',
-      'nursing MAP guide',
-      'ICU nursing MAP',
-    ],
-    openGraphTitle: 'MAP Calculation for Nurses - Bedside Reference',
-    openGraphDescription: 'Essential MAP guide designed specifically for nurses',
-    heroTitle: 'MAP Calculation for Nurses: Bedside Reference',
-    heroDescription:
-      'Quick, practical MAP calculator and guide for nursing professionals working in ICU, ER, perioperative, or acute care environments.',
-    heroAudience: '👩‍⚕️ For: ICU Nurses • ER Nurses • Floor Nurses • Student Nurses',
-  },
-  zh: {
-    title: '护理人员版 MAP 计算：床旁速查指南（2025）',
-    description:
-      '专为护士设计的 MAP 计算器与操作指南，涵盖计算方法、结果解读与护理干预提示，适用于 ICU、急诊与病房护理场景。',
-    keywords: ['护理 MAP 计算', '护理 MAP 指南', '床旁 MAP 工具', 'ICU 护理 MAP'],
-    openGraphTitle: '护理专用 MAP 计算指南',
-    openGraphDescription: '面向护士的平均动脉压床旁参考手册',
-    heroTitle: '护理人员专用的 MAP 计算与速查指南',
-    heroDescription:
-      '面向 ICU、急诊、围术期及普通病房护士的 MAP 计算工具，帮助你快速评估灌注并制定护理干预。',
-    heroAudience: '👩‍⚕️ 适用对象：ICU 护士・急诊护士・病房护士・护理学生',
-  },
-};
-
-const schemaContent: Record<
-  Locale,
-  {
-    headline: string;
-    description: string;
-    audienceTypeLabel: string;
-    audienceDescription: string;
-  }
-> = {
-  en: {
-    headline: 'MAP Calculation for Nurses: Quick Bedside Reference Guide',
-    description:
-      'Nursing-focused guide covering MAP calculation, interpretation, and interventions for ICU, emergency, and floor nurses.',
-    audienceTypeLabel: 'Nurse',
-    audienceDescription: 'Registered nurses, ICU nurses, ER nurses, floor nurses, and nursing students.',
-  },
-  zh: {
-    headline: '护理人员版 MAP 计算：床旁速查指南',
-    description: '面向 ICU、急诊与普通病房护士的 MAP 计算、解读与护理干预指南。',
-    audienceTypeLabel: '护士',
-    audienceDescription: '注册护士、ICU 护士、急诊护士、病房护士以及护理学生。',
-  },
-};
-
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const locale = (locales.includes(params.locale as Locale) ? params.locale : defaultLocale) as Locale;
-  const localized = localizedContent[locale] ?? localizedContent[defaultLocale];
+  const messages = localizedTexts[locale] ?? localizedTexts[defaultLocale];
+  const meta = messages.meta ?? localizedTexts[defaultLocale].meta;
   const localePrefix = getLocalePrefix(locale);
   const url = `${SITE_URL}${localePrefix}/map-calculation-nursing`;
   const imageUrl = `${SITE_URL}/og-image.png`;
 
   return {
-    title: localized.title,
-    description: localized.description,
-    keywords: localized.keywords,
+    title: meta.title,
+    description: meta.description,
+    keywords: [...meta.keywords],
     alternates: {
       canonical: url,
       languages: {
         en: `${SITE_URL}/map-calculation-nursing`,
+        es: `${SITE_URL}/es/map-calculation-nursing`,
         zh: `${SITE_URL}/zh/map-calculation-nursing`,
         'x-default': `${SITE_URL}/map-calculation-nursing`,
       },
     },
     openGraph: {
-      title: localized.openGraphTitle,
-      description: localized.openGraphDescription,
+      title: meta.openGraphTitle,
+      description: meta.openGraphDescription,
       url,
       type: 'article',
       siteName: 'mapcalculator.org',
@@ -110,14 +44,14 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
           url: imageUrl,
           width: 1200,
           height: 630,
-          alt: localized.openGraphTitle,
+          alt: meta.openGraphTitle,
         },
       ],
     },
     twitter: {
       card: 'summary_large_image',
-      title: localized.openGraphTitle,
-      description: localized.openGraphDescription,
+      title: meta.openGraphTitle,
+      description: meta.openGraphDescription,
       images: [imageUrl],
     },
   };
@@ -127,8 +61,8 @@ export default function MapCalculationNursingPage({ params }: PageProps) {
   const locale = (locales.includes(params.locale as Locale) ? params.locale : defaultLocale) as Locale;
   const texts = localizedTexts[locale] ?? localizedTexts[defaultLocale];
   const localePrefix = getLocalePrefix(locale);
-  const localized = localizedContent[locale] ?? localizedContent[defaultLocale];
-  const schema = schemaContent[locale] ?? schemaContent[defaultLocale];
+  const meta = texts.meta ?? localizedTexts[defaultLocale].meta;
+  const schema = texts.schema ?? localizedTexts[defaultLocale].schema;
   const localizedPath = (path: string) => getLocalizedPath(locale, path);
   const imageUrl = `${SITE_URL}/og-image.png`;
   const nursingLogLines = [texts.t0126, texts.t0127, texts.t0128, texts.t0129];
@@ -167,10 +101,10 @@ export default function MapCalculationNursingPage({ params }: PageProps) {
                 {texts.t0001}
               </p>
               <h1 className="text-3xl font-semibold tracking-tight text-gray-900 md:text-4xl">
-                {localized.heroTitle}
+                {meta.heroTitle}
               </h1>
-              <p className="text-base text-gray-700 md:text-lg">{localized.heroDescription}</p>
-              <p className="text-sm text-gray-600">{localized.heroAudience}</p>
+              <p className="text-base text-gray-700 md:text-lg">{meta.heroDescription}</p>
+              <p className="text-sm text-gray-600">{meta.heroAudience}</p>
              
             </div>
             <div className="space-y-4 rounded-xl border border-rose-100 bg-rose-50 p-5 text-sm text-rose-900 md:flex md:items-center md:justify-between">

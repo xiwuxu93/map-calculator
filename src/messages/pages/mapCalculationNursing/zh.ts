@@ -1,4 +1,22 @@
 const MapCalculationNursingZh = {
+  meta: {
+    title: "护理人员版 MAP 计算：床旁速查指南（2025）",
+    description:
+      "专为护士设计的 MAP 计算器与操作指南，涵盖计算方法、结果解读与护理干预提示，适用于 ICU、急诊与病房护理场景。",
+    keywords: ["护理 MAP 计算", "护理 MAP 指南", "床旁 MAP 工具", "ICU 护理 MAP"],
+    openGraphTitle: "护理专用 MAP 计算指南",
+    openGraphDescription: "面向护士的平均动脉压床旁参考手册",
+    heroTitle: "护理人员专用的 MAP 计算与速查指南",
+    heroDescription:
+      "面向 ICU、急诊、围术期及普通病房护士的 MAP 计算工具，帮助你快速评估灌注并制定护理干预。",
+    heroAudience: "👩‍⚕️ 适用对象：ICU 护士・急诊护士・病房护士・护理学生",
+  },
+  schema: {
+    headline: "护理人员版 MAP 计算：床旁速查指南",
+    description: "面向 ICU、急诊与普通病房护士的 MAP 计算、解读与护理干预指南。",
+    audienceTypeLabel: "护士",
+    audienceDescription: "注册护士、ICU 护士、急诊护士、病房护士以及护理学生。",
+  },
   t0001: '床旁参考',
   t0002: '速查信息',
   t0003: '正常 MAP：65-100 mmHg',
