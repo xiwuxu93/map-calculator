@@ -491,163 +491,163 @@ export default function MapCalculationNursingPage({ params }: PageProps) {
             </p>
             <div className="space-y-6">
               <article className="space-y-4 rounded-xl border border-gray-100 bg-gray-50 p-5">
-                <h3 className="text-xl font-semibold text-gray-900">Scenario 1: New Sepsis Admission</h3>
+                <h3 className="text-xl font-semibold text-gray-900">{texts.t0130}</h3>
                 <p className="text-sm text-gray-700">
-                  <strong>Patient:</strong> 72-year-old admitted from the ED with pneumonia and suspected sepsis.
+                  <strong>{texts.t0131}</strong> {texts.t0132}
                 </p>
                 <div className="rounded-lg border border-gray-200 bg-white p-4 text-sm text-gray-700">
-                  <p className="font-semibold text-gray-900">Vitals on arrival:</p>
+                  <p className="font-semibold text-gray-900">{texts.t0133}</p>
                   <ul className="mt-2 list-disc space-y-1 pl-5">
-                    <li>BP: 88/54 mmHg</li>
-                    <li>HR: 112 bpm</li>
-                    <li>Temperature: 39.2 C</li>
-                    <li>Respiratory rate: 24/min</li>
+                    <li>{texts.t0134}</li>
+                    <li>{texts.t0135}</li>
+                    <li>{texts.t0136}</li>
+                    <li>{texts.t0137}</li>
                   </ul>
                 </div>
                 <p className="text-sm text-gray-700">
-                  <strong>Your MAP calculation:</strong> (88 + 108) ÷ 3 = 65 mmHg
+                  <strong>{texts.t0138}</strong> {texts.t0139}
                 </p>
                 <div className="space-y-2 text-sm text-gray-700">
-                  <p className="font-semibold text-gray-900">Nursing assessment:</p>
+                  <p className="font-semibold text-gray-900">{texts.t0140}</p>
                   <ul className="list-disc space-y-1 pl-5">
-                    <li>MAP exactly at the sepsis threshold (65 mmHg)</li>
-                    <li>Patient alert but appearing ill</li>
-                    <li>Skin warm with fever present</li>
-                    <li>Received 2 L fluid bolus in the ED</li>
+                    <li>{texts.t0141}</li>
+                    <li>{texts.t0142}</li>
+                    <li>{texts.t0143}</li>
+                    <li>{texts.t0144}</li>
                   </ul>
                 </div>
                 <div className="space-y-2 text-sm text-gray-700">
-                  <p className="font-semibold text-gray-900">Your actions:</p>
+                  <p className="font-semibold text-gray-900">{texts.t0145}</p>
                   <ol className="list-decimal space-y-1 pl-5">
-                    <li>✅ Set up continuous monitoring if not already running</li>
-                    <li>✅ Notify the physician that MAP is at threshold</li>
-                    <li>✅ Increase vital signs to every 15–30 minutes</li>
-                    <li>✅ Prepare for a possible vasopressor order</li>
-                    <li>✅ Document interventions in the sepsis bundle flowsheet</li>
-                    <li>✅ Verify large-bore IV access is patent</li>
+                    <li>{texts.t0146}</li>
+                    <li>{texts.t0147}</li>
+                    <li>{texts.t0148}</li>
+                    <li>{texts.t0149}</li>
+                    <li>{texts.t0150}</li>
+                    <li>{texts.t0151}</li>
                   </ol>
                 </div>
                 <div className="rounded-lg border border-rose-100 bg-white p-4 text-sm text-gray-700">
-                  <p className="font-semibold text-gray-900">Documentation:</p>
+                  <p className="font-semibold text-gray-900">{texts.t0152}</p>
                   <p>
-                    “Patient admitted with sepsis. MAP 65 mmHg on arrival. Dr. [Name] aware. Sepsis bundle initiated in ED, antibiotics infusing. Monitoring MAP q30 min. Patient alert, following commands.”
+                    {texts.t0153}
                   </p>
                 </div>
               </article>
 
               <article className="space-y-4 rounded-xl border border-gray-100 bg-gray-50 p-5">
-                <h3 className="text-xl font-semibold text-gray-900">Scenario 2: Post-op Patient – Concerning Trend</h3>
+                <h3 className="text-xl font-semibold text-gray-900">{texts.t0154}</h3>
                 <p className="text-sm text-gray-700">
-                  <strong>Patient:</strong> Post-abdominal surgery, postoperative day 1 with escalating incision pain (8/10).
+                  <strong>{texts.t0131}</strong> {texts.t0155}
                 </p>
                 <div className="grid gap-4 md:grid-cols-2">
                   <div className="rounded-lg border border-gray-200 bg-white p-4 text-sm text-gray-700">
-                    <p className="font-semibold text-gray-900">MAP trend:</p>
+                    <p className="font-semibold text-gray-900">{texts.t0156}</p>
                     <ul className="mt-2 space-y-1 text-sm">
-                      <li>0600: BP 115/70 → MAP 85 mmHg</li>
-                      <li>0800: BP 108/65 → MAP 79 mmHg</li>
-                      <li>1000: BP 95/60 → MAP 72 mmHg</li>
-                      <li>1200: BP 90/55 → MAP 67 mmHg</li>
+                      <li>{texts.t0157}</li>
+                      <li>{texts.t0158}</li>
+                      <li>{texts.t0159}</li>
+                      <li>{texts.t0160}</li>
                     </ul>
                   </div>
                   <div className="rounded-lg border border-gray-200 bg-white p-4 text-sm text-gray-700">
-                    <p className="font-semibold text-gray-900">Additional findings:</p>
+                    <p className="font-semibold text-gray-900">{texts.t0161}</p>
                     <ul className="mt-2 list-disc space-y-1 pl-5">
-                      <li>Drain output 150 mL serosanguinous this shift</li>
-                      <li>Patient pale, skin slightly cool</li>
-                      <li>Heart rate climbing 78 → 88 → 96 bpm</li>
+                      <li>{texts.t0162}</li>
+                      <li>{texts.t0163}</li>
+                      <li>{texts.t0164}</li>
                     </ul>
                   </div>
                 </div>
                 <p className="text-sm text-gray-700">
-                  <strong>Interpretation:</strong> Trend suggests bleeding, hypovolemia, or early shock even though the latest MAP seems "okay."
+                  <strong>{texts.t0165}</strong> {texts.t0166}
                 </p>
                 <div className="space-y-2 text-sm text-gray-700">
-                  <p className="font-semibold text-gray-900">Your actions:</p>
+                  <p className="font-semibold text-gray-900">{texts.t0145}</p>
                   <ol className="list-decimal space-y-1 pl-5">
-                    <li>✅ Call the surgeon immediately—do not wait for next routine vital check</li>
-                    <li>✅ Review the most recent hemoglobin against pre-op values</li>
-                    <li>✅ Assess the surgical site and drain for active bleeding</li>
-                    <li>✅ Prepare for CBC, type and screen, and fluid bolus orders</li>
-                    <li>✅ Increase monitoring to every 15 minutes</li>
-                    <li>✅ Document the trend and physician notification</li>
+                    <li>{texts.t0167}</li>
+                    <li>{texts.t0168}</li>
+                    <li>{texts.t0169}</li>
+                    <li>{texts.t0170}</li>
+                    <li>{texts.t0171}</li>
+                    <li>{texts.t0172}</li>
                   </ol>
                 </div>
                 <div className="rounded-lg border border-amber-100 bg-white p-4 text-sm text-gray-700">
-                  <p className="font-semibold text-gray-900">Key nursing pearl:</p>
-                  <p>A 20% drop over several hours is a red flag. Trends drive escalation even if a single MAP value looks acceptable.</p>
+                  <p className="font-semibold text-gray-900">{texts.t0173}</p>
+                  <p>{texts.t0174}</p>
                 </div>
               </article>
 
               <article className="space-y-4 rounded-xl border border-gray-100 bg-gray-50 p-5">
-                <h3 className="text-xl font-semibold text-gray-900">Scenario 3: Vasopressor Weaning Challenge</h3>
+                <h3 className="text-xl font-semibold text-gray-900">{texts.t0175}</h3>
                 <p className="text-sm text-gray-700">
-                  <strong>Patient:</strong> ICU day 3, septic shock resolving, on norepinephrine.
+                  <strong>{texts.t0131}</strong> {texts.t0176}
                 </p>
                 <div className="rounded-lg border border-gray-200 bg-white p-4 text-sm text-gray-700">
-                  <p className="font-semibold text-gray-900">Current status:</p>
+                  <p className="font-semibold text-gray-900">{texts.t0177}</p>
                   <ul className="mt-2 list-disc space-y-1 pl-5">
-                    <li>Norepinephrine 4 mcg/min (was 12 mcg/min yesterday)</li>
-                    <li>BP 102/64 → MAP 77 mmHg</li>
-                    <li>Patient alert, urine output 70 mL/hr, lactate normalized</li>
+                    <li>{texts.t0178}</li>
+                    <li>{texts.t0179}</li>
+                    <li>{texts.t0180}</li>
                   </ul>
                 </div>
                 <p className="text-sm text-gray-700">
-                  <strong>Physician order:</strong> Wean norepinephrine by 2 mcg/min every hour as tolerated; maintain MAP &gt;65 mmHg.
+                  <strong>{texts.t0181}</strong> {texts.t0182}
                 </p>
                 <div className="space-y-2 text-sm text-gray-700">
-                  <p className="font-semibold text-gray-900">Weaning timeline:</p>
+                  <p className="font-semibold text-gray-900">{texts.t0183}</p>
                   <ul className="space-y-1">
-                    <li>1000: Start at 4 mcg/min → decrease to 2 mcg/min</li>
-                    <li>1015: MAP 73 mmHg → continue current dose</li>
-                    <li>1100: MAP 75 mmHg → discontinue vasopressor</li>
-                    <li>1130: MAP 69 mmHg → still above target, observe</li>
-                    <li>1200: MAP 72 mmHg → stable off pressors, notify provider</li>
+                    <li>{texts.t0184}</li>
+                    <li>{texts.t0185}</li>
+                    <li>{texts.t0186}</li>
+                    <li>{texts.t0187}</li>
+                    <li>{texts.t0188}</li>
                   </ul>
                 </div>
                 <div className="rounded-lg border border-blue-100 bg-white p-4 text-sm text-gray-700">
-                  <p className="font-semibold text-gray-900">Nursing pearl:</p>
-                  <p>Re-check MAP 15–30 minutes after every change. Catch drops early instead of waiting for the full hour.</p>
+                  <p className="font-semibold text-gray-900">{texts.t0189}</p>
+                  <p>{texts.t0190}</p>
                 </div>
               </article>
 
               <article className="space-y-4 rounded-xl border border-gray-100 bg-gray-50 p-5">
-                <h3 className="text-xl font-semibold text-gray-900">Scenario 4: Hypertensive Patient – When to Hold Medications</h3>
+                <h3 className="text-xl font-semibold text-gray-900">{texts.t0191}</h3>
                 <p className="text-sm text-gray-700">
-                  <strong>Patient:</strong> 68-year-old with CHF during routine morning med pass.
+                  <strong>{texts.t0131}</strong> {texts.t0192}
                 </p>
                 <div className="grid gap-4 md:grid-cols-2">
                   <div className="rounded-lg border border-gray-200 bg-white p-4 text-sm text-gray-700">
-                    <p className="font-semibold text-gray-900">Morning vitals:</p>
+                    <p className="font-semibold text-gray-900">{texts.t0193}</p>
                     <ul className="mt-2 list-disc space-y-1 pl-5">
-                      <li>BP 98/62 → MAP 74 mmHg</li>
-                      <li>Patient reports dizziness on standing</li>
+                      <li>{texts.t0194}</li>
+                      <li>{texts.t0195}</li>
                     </ul>
                   </div>
                   <div className="rounded-lg border border-gray-200 bg-white p-4 text-sm text-gray-700">
-                    <p className="font-semibold text-gray-900">Scheduled medications:</p>
+                    <p className="font-semibold text-gray-900">{texts.t0196}</p>
                     <ul className="mt-2 list-disc space-y-1 pl-5">
-                      <li>Metoprolol 50 mg PO</li>
-                      <li>Lisinopril 10 mg PO</li>
+                      <li>{texts.t0197}</li>
+                      <li>{texts.t0198}</li>
                     </ul>
                   </div>
                 </div>
                 <p className="text-sm text-gray-700">
-                  <strong>Assessment:</strong> Low-normal MAP with orthostatic symptoms. Antihypertensives likely to lower perfusion further.
+                  <strong>{texts.t0199}</strong> {texts.t0200}
                 </p>
                 <div className="space-y-2 text-sm text-gray-700">
-                  <p className="font-semibold text-gray-900">Your actions:</p>
+                  <p className="font-semibold text-gray-900">{texts.t0145}</p>
                   <ol className="list-decimal space-y-1 pl-5">
-                    <li>✅ Hold both medications per protocol (SBP &lt;100 mmHg and symptomatic)</li>
-                    <li>✅ Obtain full orthostatic vitals—lying, sitting, standing</li>
-                    <li>✅ Notify the physician with MAP values and symptoms</li>
-                    <li>✅ Document the hold reason and increase fall precautions</li>
+                    <li>{texts.t0201}</li>
+                    <li>{texts.t0202}</li>
+                    <li>{texts.t0203}</li>
+                    <li>{texts.t0204}</li>
                   </ol>
                 </div>
                 <div className="rounded-lg border border-rose-100 bg-white p-4 text-sm text-gray-700">
-                  <p className="font-semibold text-gray-900">Documentation:</p>
+                  <p className="font-semibold text-gray-900">{texts.t0152}</p>
                   <p>
-                    “BP 98/62 at 0800 (MAP 74). Patient reports dizziness standing. Orthostatic vitals positive (lying 98/62; sitting 92/58 MAP 69; standing 88/54 MAP 65). Metoprolol and lisinopril held per protocol. Dr. [Name] notified 0815. Fall precautions reinforced.”
+                    {texts.t0205}
                   </p>
                 </div>
               </article>
@@ -663,91 +663,91 @@ export default function MapCalculationNursingPage({ params }: PageProps) {
             </p>
             <div className="space-y-6">
               <div className="space-y-4 rounded-xl border border-gray-100 bg-gray-50 p-5">
-                <h3 className="text-xl font-semibold text-gray-900">NCLEX-Style Practice Questions</h3>
+                <h3 className="text-xl font-semibold text-gray-900">{texts.t0206}</h3>
                 <div className="space-y-3">
                   <div className="rounded-lg border border-gray-200 bg-white p-4 text-sm text-gray-700">
                     <p className="font-semibold text-gray-900">
-                      Question 1: A patient with sepsis has BP 84/52 mmHg. What is the MAP and priority nursing action?
+                      {texts.t0207}
                     </p>
                     <ul className="mt-2 list-[upper-alpha] space-y-1 pl-6">
-                      <li>MAP = 63 mmHg; continue monitoring</li>
-                      <li>MAP = 68 mmHg; notify physician</li>
-                      <li>MAP = 63 mmHg; notify physician immediately</li>
-                      <li>MAP = 68 mmHg; give fluid bolus</li>
+                      <li>{texts.t0208}</li>
+                      <li>{texts.t0209}</li>
+                      <li>{texts.t0210}</li>
+                      <li>{texts.t0211}</li>
                     </ul>
                     <details className="mt-3 rounded-lg border border-emerald-200 bg-emerald-50 p-3">
-                      <summary className="cursor-pointer font-semibold text-emerald-800">Show answer</summary>
+                      <summary className="cursor-pointer font-semibold text-emerald-800">{texts.t0212}</summary>
                       <p className="mt-2">
-                        <strong>Correct:</strong> C — MAP (84 + 104) ÷ 3 = 63 mmHg, below the sepsis goal of 65. Notify the physician immediately rather than “monitor only” or giving a bolus without orders.
+                        <strong>{texts.t0213}</strong> {texts.t0214}
                       </p>
                       <p className="mt-2">
-                        <strong>NCLEX tip:</strong> MAP below 65 in sepsis always triggers provider notification.
+                        <strong>{texts.t0215}</strong> {texts.t0216}
                       </p>
                     </details>
                   </div>
                   <div className="rounded-lg border border-gray-200 bg-white p-4 text-sm text-gray-700">
                     <p className="font-semibold text-gray-900">
-                      Question 2: A nurse titrating norepinephrine notes MAP 58 mmHg. What is the appropriate response?
+                      {texts.t0217}
                     </p>
                     <ul className="mt-2 list-[upper-alpha] space-y-1 pl-6">
-                      <li>Decrease norepinephrine dose</li>
-                      <li>Continue current dose</li>
-                      <li>Increase norepinephrine dose</li>
-                      <li>Discontinue norepinephrine</li>
+                      <li>{texts.t0218}</li>
+                      <li>{texts.t0219}</li>
+                      <li>{texts.t0220}</li>
+                      <li>{texts.t0221}</li>
                     </ul>
                     <details className="mt-3 rounded-lg border border-emerald-200 bg-emerald-50 p-3">
-                      <summary className="cursor-pointer font-semibold text-emerald-800">Show answer</summary>
+                      <summary className="cursor-pointer font-semibold text-emerald-800">{texts.t0212}</summary>
                       <p className="mt-2">
-                        <strong>Correct:</strong> C — Target MAP in shock is ≥65 mmHg. Increase the vasopressor per protocol; never reduce or discontinue while MAP is below target.
+                        <strong>{texts.t0213}</strong> {texts.t0222}
                       </p>
                       <p className="mt-2">
-                        <strong>Reminder:</strong> Document the new dose, MAP response, and next reassessment time.
+                        <strong>{texts.t0223}</strong> {texts.t0224}
                       </p>
                     </details>
                   </div>
                   <div className="rounded-lg border border-gray-200 bg-white p-4 text-sm text-gray-700">
-                    <p className="font-semibold text-gray-900">Question 3: Which MAP requires immediate intervention?</p>
+                    <p className="font-semibold text-gray-900">{texts.t0225}</p>
                     <ul className="mt-2 list-[upper-alpha] space-y-1 pl-6">
-                      <li>MAP 72 mmHg in an ICU patient</li>
-                      <li>MAP 58 mmHg in a post-op patient</li>
-                      <li>MAP 95 mmHg in a hypertensive patient</li>
-                      <li>MAP 105 mmHg in an elderly patient</li>
+                      <li>{texts.t0226}</li>
+                      <li>{texts.t0227}</li>
+                      <li>{texts.t0228}</li>
+                      <li>{texts.t0229}</li>
                     </ul>
                     <details className="mt-3 rounded-lg border border-emerald-200 bg-emerald-50 p-3">
-                      <summary className="cursor-pointer font-semibold text-emerald-800">Show answer</summary>
+                      <summary className="cursor-pointer font-semibold text-emerald-800">{texts.t0212}</summary>
                       <p className="mt-2">
-                        <strong>Correct:</strong> B — MAP 58 mmHg indicates inadequate perfusion. Assess immediately and escalate.
+                        <strong>{texts.t0213}</strong> {texts.t0230}
                       </p>
                       <p className="mt-2">
-                        <strong>Tip:</strong> Memorize MAP 60 mmHg as your “critical” threshold on exam day.
+                        <strong>{texts.t0231}</strong> {texts.t0232}
                       </p>
                     </details>
                   </div>
                 </div>
               </div>
               <div className="space-y-4 rounded-xl border border-gray-100 bg-gray-50 p-5 text-sm text-gray-700">
-                <h3 className="text-xl font-semibold text-gray-900">Key Formulas for Nursing School Exams</h3>
+                <h3 className="text-xl font-semibold text-gray-900">{texts.t0233}</h3>
                 <ul className="list-decimal space-y-2 pl-6">
                   <li>
-                    <strong>MAP formula:</strong> (SBP + 2 × DBP) ÷ 3
+                    <strong>{texts.t0234}</strong> {texts.t0235}
                   </li>
                   <li>
-                    <strong>Sepsis target:</strong> MAP ≥65 mmHg
+                    <strong>{texts.t0236}</strong> {texts.t0237}
                   </li>
                   <li>
-                    <strong>Critical low:</strong> MAP &lt;60 mmHg
+                    <strong>{texts.t0238}</strong> {texts.t0239}
                   </li>
                   <li>
-                    <strong>Normal range:</strong> MAP 60–100 mmHg
+                    <strong>{texts.t0240}</strong> {texts.t0241}
                   </li>
                 </ul>
                 <p>
-                  Exam tips: When calculators are not allowed, double the diastolic, add the systolic, and divide by three. Round to the nearest whole number and always include “mmHg.” Show your work for partial credit.
+                  {texts.t0242}
                 </p>
                 <div className="rounded-lg border border-gray-200 bg-white p-4">
-                  <p className="font-semibold text-gray-900">Clinical skills checkoff example:</p>
+                  <p className="font-semibold text-gray-900">{texts.t0243}</p>
                   <p className="mt-1">
-                    “BP 88/56 → MAP 67 mmHg using (88 + 112) ÷ 3. Slightly above the sepsis threshold. I will assess perfusion, increase monitoring frequency, and notify the physician if the MAP trends downward or perfusion worsens.”
+                    {texts.t0244}
                   </p>
                 </div>
               </div>
@@ -873,15 +873,15 @@ export default function MapCalculationNursingPage({ params }: PageProps) {
                 </div>
               </div>
               <div className="space-y-4 rounded-xl border border-gray-100 bg-gray-50 p-5 text-sm text-gray-700">
-                <h3 className="text-xl font-semibold text-gray-900">Shift Report Template</h3>
+                <h3 className="text-xl font-semibold text-gray-900">{texts.t0245}</h3>
                 <p>
-                  “MAP stable 70–75 mmHg overnight; currently 72 mmHg. On norepinephrine 3 mcg/min, weaning per protocol. Monitoring hourly. Next wean attempt at 1400 if MAP remains &gt;70.”
+                  {texts.t0246}
                 </p>
                 <ul className="list-disc space-y-1 pl-5">
-                  <li>Current MAP and trend for the shift</li>
-                  <li>Interventions completed (fluids, vasopressors)</li>
-                  <li>Monitoring frequency and pending orders</li>
-                  <li>Plan for the next nurse to continue</li>
+                  <li>{texts.t0247}</li>
+                  <li>{texts.t0248}</li>
+                  <li>{texts.t0249}</li>
+                  <li>{texts.t0250}</li>
                 </ul>
               </div>
             </div>
@@ -893,81 +893,81 @@ export default function MapCalculationNursingPage({ params }: PageProps) {
             </h2>
             <div className="grid gap-6 md:grid-cols-2">
               <div className="space-y-3 rounded-xl border border-gray-100 bg-gray-50 p-5 text-sm text-gray-700">
-                <h3 className="text-xl font-semibold text-gray-900">Calculation Tools</h3>
+                <h3 className="text-xl font-semibold text-gray-900">{texts.t0251}</h3>
                 <ul className="space-y-2">
                   <li>
                     <Link href={localizedPath('/')} className="font-semibold text-rose-700 hover:underline">
-                      Main MAP Calculator
+                      {texts.t0252}
                     </Link>{' '}
-                    — full calculator for all clinicians
+                    — {texts.t0253}
                   </li>
                   <li>
                     <Link href={localizedPath('/map-calculator-bp')} className="font-semibold text-rose-700 hover:underline">
-                      BP to MAP Converter
+                      {texts.t0254}
                     </Link>{' '}
-                    — quick bedside conversions
+                    — {texts.t0255}
                   </li>
                   <li>
                     <Link
                       href={localizedPath('/how-to-calculate-map-blood-pressure')}
                       className="font-semibold text-rose-700 hover:underline"
                     >
-                      Complete Calculation Guide
+                      {texts.t0256}
                     </Link>{' '}
-                    — step-by-step walkthrough
+                    — {texts.t0257}
                   </li>
                 </ul>
               </div>
               <div className="space-y-3 rounded-xl border border-gray-100 bg-gray-50 p-5 text-sm text-gray-700">
-                <h3 className="text-xl font-semibold text-gray-900">Clinical Guidelines</h3>
+                <h3 className="text-xl font-semibold text-gray-900">{texts.t0258}</h3>
                 <ul className="space-y-2">
                   <li>
                     <a href="https://www.sccm.org" className="font-semibold text-rose-700 hover:underline" rel="noreferrer" target="_blank">
-                      Surviving Sepsis Campaign
+                      {texts.t0259}
                     </a>{' '}
-                    — evidence-based protocols
+                    — {texts.t0260}
                   </li>
                   <li>
                     <a href="https://www.heart.org" className="font-semibold text-rose-700 hover:underline" rel="noreferrer" target="_blank">
-                      American Heart Association
+                      {texts.t0261}
                     </a>{' '}
-                    — blood pressure management
+                    — {texts.t0262}
                   </li>
-                  <li>Your facility’s critical care policies and rapid response procedures</li>
+                  <li>{texts.t0263}</li>
                 </ul>
               </div>
             </div>
             <div className="grid gap-6 md:grid-cols-2">
               <div className="space-y-3 rounded-xl border border-gray-100 bg-gray-50 p-5 text-sm text-gray-700">
-                <h3 className="text-xl font-semibold text-gray-900">For Nursing Students</h3>
+                <h3 className="text-xl font-semibold text-gray-900">{texts.t0264}</h3>
                 <ul className="space-y-2">
-                  <li>NCLEX review modules featuring MAP questions</li>
-                  <li>Clinical skills videos covering perfusion assessment (coming soon)</li>
-                  <li>Practice worksheets to build mental math speed</li>
+                  <li>{texts.t0265}</li>
+                  <li>{texts.t0266}</li>
+                  <li>{texts.t0267}</li>
                 </ul>
               </div>
               <div className="space-y-3 rounded-xl border border-gray-100 bg-gray-50 p-5 text-sm text-gray-700">
-                <h3 className="text-xl font-semibold text-gray-900">Professional Development</h3>
+                <h3 className="text-xl font-semibold text-gray-900">{texts.t0268}</h3>
                 <ul className="space-y-2">
-                  <li>ICU nursing continuing education credits</li>
-                  <li>Critical care certification prep courses</li>
-                  <li>Hemodynamic monitoring workshops</li>
+                  <li>{texts.t0269}</li>
+                  <li>{texts.t0270}</li>
+                  <li>{texts.t0271}</li>
                 </ul>
               </div>
             </div>
             <div className="rounded-xl border border-rose-100 bg-rose-50 p-5 text-sm text-rose-900">
-              <h3 className="text-xl font-semibold text-rose-900">Summary: MAP Essentials for Nurses</h3>
+              <h3 className="text-xl font-semibold text-rose-900">{texts.t0272}</h3>
               <ul className="mt-3 space-y-2">
-                <li>✅ Calculate MAP with (SBP + 2 × DBP) ÷ 3</li>
-                <li>✅ Normal range: 60–100 mmHg</li>
-                <li>✅ Sepsis target: MAP ≥65 mmHg</li>
-                <li>✅ Critical concern: MAP &lt;60 mmHg demands urgent action</li>
-                <li>✅ Watch the trend, not just a single reading</li>
-                <li>✅ Chart MAP, trend, interventions, and patient response</li>
-                <li>✅ Communicate clearly during handoff to prevent safety issues</li>
+                <li>{texts.t0273}</li>
+                <li>{texts.t0274}</li>
+                <li>{texts.t0275}</li>
+                <li>{texts.t0276}</li>
+                <li>{texts.t0277}</li>
+                <li>{texts.t0278}</li>
+                <li>{texts.t0279}</li>
               </ul>
               <p className="mt-3 font-semibold">
-                You are at the bedside—you are the first line of defense when perfusion changes.
+                {texts.t0280}
               </p>
             </div>
             <div className="flex flex-wrap gap-3 text-sm text-gray-700">
@@ -975,24 +975,24 @@ export default function MapCalculationNursingPage({ params }: PageProps) {
                 href={localizedPath('/')}
                 className="inline-flex items-center rounded-full border border-rose-600 px-4 py-2 font-semibold text-rose-700 transition hover:bg-rose-600 hover:text-white"
               >
-                Calculate MAP Now
+                {texts.t0281}
               </Link>
               <Link
                 href={localizedPath('/map-calculator-bp')}
                 className="inline-flex items-center rounded-full border border-rose-600 px-4 py-2 font-semibold text-rose-700 transition hover:bg-rose-600 hover:text-white"
               >
-                Print Reference Card
+                {texts.t0282}
               </Link>
               <span className="inline-flex items-center rounded-full border border-rose-600 px-4 py-2 font-semibold text-rose-700">
-                Share with Colleagues
+                {texts.t0283}
               </span>
             </div>
             <p className="text-sm text-gray-700">
-              Questions? Reach out to{' '}
-              <a href="/cdn-cgi/l/email-protection" className="font-semibold text-rose-700 hover:underline">
-                [email&nbsp;protected]
+              {texts.t0284}{' '}
+              <a href="mailto:support@mapcalculator.org" className="font-semibold text-rose-700 hover:underline">
+                support@mapcalculator.org
               </a>
-              . This guide is educational; always follow provider orders and facility policy.
+              {texts.t0285}
             </p>
           </section>
         </div>
