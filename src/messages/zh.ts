@@ -102,7 +102,6 @@ const zh = {
     "standardFormula": "MAP = (SBP + 2 × DBP) ÷ 3",
     "formulaExplanation": "强调舒张压能够体现心脏舒张期较长的特点，帮助获得稳定的灌注压力估计值。",
     "clinicalSignificance": "临床意义",
-    "clinicalSignificanceContent": "维持目标 MAP 对确保组织灌注至关重要，可指导麻醉、重症和急诊等场景下的治疗决策。",
     "normalRanges": "正常范围",
     "lowMapDescription": "MAP 低值（<60 mmHg）：提示器官灌注不足，需警惕休克或循环衰竭。",
     "normalMapDescription": "MAP 正常（60-100 mmHg）：多数成年患者可获得充分的灌注。",

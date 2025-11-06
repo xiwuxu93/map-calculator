@@ -102,7 +102,6 @@ const en = {
     "standardFormula": "MAP = (SBP + 2 × DBP) ÷ 3",
     "formulaExplanation": "Weighting diastolic pressure captures the longer relaxation phase of the cardiac cycle, producing a stable estimate of perfusion pressure.",
     "clinicalSignificance": "Clinical Significance",
-    "clinicalSignificanceContent": "Maintaining MAP within the target range safeguards tissue perfusion and guides interventions in anesthesia, critical care, and emergency medicine.",
     "normalRanges": "Normal Ranges",
     "lowMapDescription": "Low MAP (<60 mmHg): risk of organ hypoperfusion and potential shock.",
     "normalMapDescription": "Normal MAP (60-100 mmHg): supports adequate perfusion in most adult patients.",

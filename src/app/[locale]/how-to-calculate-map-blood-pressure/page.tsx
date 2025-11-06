@@ -234,7 +234,7 @@ export default function HowToCalculateMapPage({ params }: PageProps) {
 
   return (
     <div className="flex min-h-screen flex-col">
-      <Header />
+      <Header locale={locale} />
       <main className="flex-1 px-4 py-12">
         <div className="mx-auto flex w-full max-w-4xl flex-col gap-12">
           <section id="intro" className="space-y-6 rounded-2xl bg-white p-8 shadow-lg md:p-12">

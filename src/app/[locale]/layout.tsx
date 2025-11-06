@@ -1,7 +1,8 @@
 import { ReactNode } from 'react';
 import { notFound } from 'next/navigation';
-import { unstable_setRequestLocale } from 'next-intl/server';
-import { Locale, locales } from '@/lib/i18n';
+import { NextIntlClientProvider } from 'next-intl';
+import { getMessages, unstable_setRequestLocale } from 'next-intl/server';
+import { Locale, locales, resolveLocale } from '@/lib/i18n';
 
 export const dynamicParams = false;
 
@@ -22,7 +23,13 @@ export default async function LocaleLayout({
     notFound();
   }
 
-  unstable_setRequestLocale(locale as Locale);
+  const resolved = resolveLocale(locale);
+  unstable_setRequestLocale(resolved);
+  const messages = await getMessages({ locale: resolved });
 
-  return <>{children}</>;
+  return (
+    <NextIntlClientProvider key={resolved} locale={resolved} messages={messages}>
+      {children}
+    </NextIntlClientProvider>
+  );
 }

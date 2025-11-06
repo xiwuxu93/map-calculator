@@ -37,12 +37,12 @@ export type ErrorRow = {
 export type ScenarioCard = {
   heading: string;
   scenario: string;
-  points: string[];
+  points: ReadonlyArray<string>;
 };
 
 export type TrendingExample = {
   title: string;
-  timeline: string[];
+  timeline: ReadonlyArray<string>;
   summary: string;
 };
 
@@ -62,7 +62,7 @@ export type MapCalculatorBpContent = {
   metadata: {
     title: string;
     description: string;
-    keywords: string[];
+    keywords: readonly string[];
     openGraphTitle: string;
     openGraphDescription: string;
     heroTitle: string;
@@ -74,16 +74,16 @@ export type MapCalculatorBpContent = {
       description: string;
       aboutDescription: string;
       audienceLabel: string;
-      audienceTypes: string[];
+      audienceTypes: readonly string[];
     };
-    faq: Array<{ question: string; answer: string }>;
+    faq: ReadonlyArray<{ question: string; answer: string }>;
     breadcrumbs: { home: string; page: string };
   };
   hero: {
     title: string;
     description: string;
     snapshotHeading: string;
-    snapshotItems: SnapshotItem[];
+    snapshotItems: ReadonlyArray<SnapshotItem>;
   };
   sections: {
     whyCalculate: {
@@ -92,12 +92,12 @@ export type MapCalculatorBpContent = {
       clinicalReality: {
         heading: string;
         intro: string;
-        items: ListItem[];
+        items: ReadonlyArray<ListItem>;
       };
       usage: {
         heading: string;
         intro: string;
-        questions: string[];
+        questions: ReadonlyArray<string>;
         outro: string;
       };
     };
@@ -107,7 +107,7 @@ export type MapCalculatorBpContent = {
       formula: string;
       formulaExplanation: string;
       simpleAverageIntro: string;
-      simpleAveragePoints: string[];
+      simpleAveragePoints: ReadonlyArray<string>;
       simpleAverageConclusion: string;
       alternative: {
         heading: string;
@@ -118,7 +118,7 @@ export type MapCalculatorBpContent = {
       accuracy: {
         heading: string;
         intro: string;
-        items: string[];
+        items: ReadonlyArray<string>;
         note: string;
       };
     };
@@ -131,9 +131,9 @@ export type MapCalculatorBpContent = {
         map: string;
         interpretation: string;
       };
-      mapTable: MapInterpretationRow[];
+      mapTable: ReadonlyArray<MapInterpretationRow>;
       contextHeading: string;
-      contextCards: Array<{ heading: string; items: ListItem[] }>;
+      contextCards: ReadonlyArray<{ heading: string; items: ReadonlyArray<ListItem> }>;
       pulsePressureHeading: string;
       pulsePressureIntro: string;
       pulsePressureHeaders: {
@@ -142,21 +142,21 @@ export type MapCalculatorBpContent = {
         pulsePressure: string;
         note: string;
       };
-      pulsePressureTable: PulsePressureRow[];
-      pulsePressureNotes: ListItem[];
+      pulsePressureTable: ReadonlyArray<PulsePressureRow>;
+      pulsePressureNotes: ReadonlyArray<ListItem>;
     };
     measurement: {
       heading: string;
       intro: string;
       preparation: {
         heading: string;
-        steps: string[];
+        steps: ReadonlyArray<string>;
       };
       cuff: {
         heading: string;
-        bullets: string[];
+        bullets: ReadonlyArray<string>;
         processHeading: string;
-        steps: string[];
+        steps: ReadonlyArray<string>;
       };
       errorsHeading: string;
       errorTableHeaders: {
@@ -164,10 +164,10 @@ export type MapCalculatorBpContent = {
         bpEffect: string;
         mapEffect: string;
       };
-      errorsTable: ErrorRow[];
+      errorsTable: ReadonlyArray<ErrorRow>;
       whenInaccurate: {
         heading: string;
-        bullets: string[];
+        bullets: ReadonlyArray<string>;
         note: string;
       };
     };
@@ -175,26 +175,26 @@ export type MapCalculatorBpContent = {
       heading: string;
       intro: string;
       scenarioLabel: string;
-      scenarios: ScenarioCard[];
+      scenarios: ReadonlyArray<ScenarioCard>;
       trending: {
         heading: string;
         intro: string;
-        examples: TrendingExample[];
-        reminders: string[];
+        examples: ReadonlyArray<TrendingExample>;
+        reminders: ReadonlyArray<string>;
       };
     };
     faq: {
       heading: string;
-      items: Array<{ question: string; answer: string }>;
+      items: ReadonlyArray<{ question: string; answer: string }>;
     };
     resources: {
       heading: string;
       calculatorHeading: string;
-      calculatorItems: ResourceItem[];
+      calculatorItems: ReadonlyArray<ResourceItem>;
       guidelinesHeading: string;
-      guidelineLinks: GuidelineLink[];
+      guidelineLinks: ReadonlyArray<GuidelineLink>;
       futureAssetsHeading: string;
-      futureAssets: string[];
+      futureAssets: ReadonlyArray<string>;
       actions: {
         backToTop: string;
         print: string;

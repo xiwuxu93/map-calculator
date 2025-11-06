@@ -48,7 +48,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   return {
     title: content.metadata.title,
     description: content.metadata.description,
-    keywords: content.metadata.keywords,
+    keywords: [...content.metadata.keywords],
     alternates: {
       canonical: url,
       languages: {
@@ -170,7 +170,7 @@ export default function MapCalculatorBpPage({ params }: PageProps) {
 
   return (
     <div className="flex min-h-screen flex-col">
-      <Header />
+      <Header locale={locale} />
       <main className="flex-1 px-4 py-12">
         <div className="mx-auto flex w-full max-w-5xl flex-col gap-12">
           <section id="hero" className="space-y-6 rounded-2xl bg-white p-8 shadow-lg md:p-12">

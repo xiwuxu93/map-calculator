@@ -2,7 +2,7 @@ import { getRequestConfig } from "next-intl/server";
 
 export const localeConfigs = [
   { code: "en", currency: "USD" },
-  // { code: 'zh', currency: 'CNY' },
+  { code: "zh", currency: "CNY" },
 ] as const;
 
 export type Locale = (typeof localeConfigs)[number]["code"];

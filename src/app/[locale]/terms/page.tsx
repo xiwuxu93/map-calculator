@@ -86,7 +86,7 @@ export default async function TermsPage({ params }: PageProps) {
 
   return (
     <div className="flex min-h-screen flex-col">
-      <Header />
+      <Header locale={locale} />
       <main className="flex-1 px-4 py-12">
         <div className="mx-auto flex max-w-4xl flex-col gap-12">
           <div className="space-y-4 text-center">
