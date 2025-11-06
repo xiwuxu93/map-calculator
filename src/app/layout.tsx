@@ -6,6 +6,13 @@ import ResourceHints from '@/components/ResourceHints';
 import ThirdPartyScripts from '@/components/ThirdPartyScripts';
 import '@/styles/globals.css';
 
+export const viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  maximumScale: 5,
+  userScalable: true,
+};
+
 type RootLayoutProps = {
   children: ReactNode;
   params?: { locale?: string };

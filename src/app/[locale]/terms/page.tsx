@@ -59,13 +59,13 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       ],
     },
     twitter: {
-      card: 'summary',
+      card: 'summary_large_image',
       title: terms('title'),
       description: terms('description'),
       images: [imageUrl],
     },
     robots: {
-      index: true,
+      index: false,
       follow: true,
     },
     keywords: [terms('title'), metadata('siteName'), 'terms'],
