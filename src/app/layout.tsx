@@ -4,6 +4,7 @@ import { getLocale, getMessages, unstable_setRequestLocale } from 'next-intl/ser
 import { Locale, resolveLocale } from '@/lib/i18n';
 import ResourceHints from '@/components/ResourceHints';
 import ThirdPartyScripts from '@/components/ThirdPartyScripts';
+import SiteSchema from '@/components/SiteSchema';
 import '@/styles/globals.css';
 
 export const viewport = {
@@ -28,6 +29,7 @@ export default async function RootLayout({ children, params }: RootLayoutProps) 
     <html lang={locale}>
       <head>
         <ResourceHints />
+        <SiteSchema />
       </head>
       <body className="bg-gray-100 text-gray-900 antialiased">
         <ThirdPartyScripts />

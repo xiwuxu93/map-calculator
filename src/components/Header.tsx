@@ -14,7 +14,7 @@ export default async function Header({ locale }: HeaderProps) {
 
   return (
     <header className="border-b border-gray-200 bg-white/80 backdrop-blur">
-      <div className="mx-auto flex max-w-4xl flex-col gap-2 px-4 py-4 md:flex-row md:items-center md:justify-between">
+      <div className="mx-auto flex max-w-5xl flex-col gap-2 px-4 py-4 md:flex-row md:items-center md:justify-between">
         <Link href={homeHref} aria-label={t('siteName')} className="flex flex-col gap-1">
           <span className="text-lg font-semibold tracking-tight text-gray-900 md:text-xl">
             {t('siteName')}
@@ -23,7 +23,28 @@ export default async function Header({ locale }: HeaderProps) {
             {t('professionalUseOnly')}
           </span>
         </Link>
-        <LanguageSwitcher />
+
+        <nav className="flex items-center gap-4 text-sm text-gray-700">
+          <Link href={homeHref} className="transition hover:text-gray-900">
+            {t('nav.home')}
+          </Link>
+          <Link href={`${homeHref.replace(/\/$/, '')}/map-calculator-bp`} className="transition hover:text-gray-900">
+            {t('bpCalculatorLink')}
+          </Link>
+          <Link href={`${homeHref.replace(/\/$/, '')}/how-to-calculate-map-blood-pressure`} className="transition hover:text-gray-900">
+            {t('howToCalculateLink')}
+          </Link>
+          <Link href={`${homeHref.replace(/\/$/, '')}/map-calculation-nursing`} className="transition hover:text-gray-900">
+            {t('nursingGuideLink')}
+          </Link>
+          <Link href={`${homeHref.replace(/\/$/, '')}/about`} className="transition hover:text-gray-900">
+            {t('aboutLink')}
+          </Link>
+          <Link href={`${homeHref.replace(/\/$/, '')}/contact`} className="transition hover:text-gray-900">
+            {t('contactLink')}
+          </Link>
+          <LanguageSwitcher />
+        </nav>
       </div>
     </header>
   );

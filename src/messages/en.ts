@@ -8,6 +8,70 @@ const en = {
       "MAP calculator, mean arterial pressure, BP calculator, healthcare professionals, hemodynamics, clinical calculator",
     siteName: "MAP Calculator",
   },
+  editorial: {
+    title: "Editorial Policy",
+    description:
+      "How we create, review, and maintain medical content on mapcalculator.org.",
+    intro:
+      "We follow clear standards to ensure our tools and explanations are accurate, readable, and safe for clinical use by professionals.",
+    principlesHeading: "Principles",
+    p1: "Evidence-based and clinically relevant explanations with clear formulas and assumptions.",
+    p2: "Original writing aimed at clinicians; no plagiarism or thinly rewritten content.",
+    p3: "Clear audience restriction: for licensed medical professionals and supervised trainees.",
+    p4: "Regular updates with version notes and dates when material changes.",
+    processHeading: "Editorial process",
+    process1: "Author drafts content in plain language with references.",
+    process2: "Internal medical review for accuracy and clarity.",
+    process3:
+      "Localization review for meaning fidelity (not raw machine output).",
+    citationsHeading: "Citations and sources",
+    citationsBody:
+      "We cite trustworthy sources such as society guidelines, textbooks, and peer‑reviewed articles where appropriate.",
+    feedbackHeading: "Corrections and feedback",
+    feedbackBody:
+      "If you spot an issue, contact support@mapcalculator.org and we will review and update promptly with a public note when material.",
+    updatedLabel: "Last updated:",
+    updatedValue: "2025-11-12",
+  },
+  about: {
+    title: "About mapcalculator.org",
+    description:
+      "Our mission is to provide a fast, evidence‑based MAP calculator and plain‑language guidance for busy healthcare teams.",
+    missionHeading: "Our Mission",
+    missionBody:
+      "Help clinicians make safer decisions with clear formulas, transparent assumptions, and context‑aware interpretation — always alongside professional judgment.",
+    contentPolicyHeading: "Editorial Standards",
+    contentPolicy1:
+      "Original, non‑plagiarized explanations written for clinicians.",
+    contentPolicy2:
+      "Medical statements cross‑checked against reputable sources (guidelines, textbooks, peer‑reviewed literature).",
+    contentPolicy3:
+      "Pages include update dates, disclaimers, and clear audience labels.",
+    reviewHeading: "Clinical Review and Updates",
+    reviewBody:
+      "Content is periodically reviewed for clarity and medical accuracy. We improve examples, add FAQs, and incorporate feedback from practicing clinicians.",
+    sourcesHeading: "Primary Sources",
+    sourcesBody:
+      "Key references that inform the calculator formula and clinical rationale include:",
+    source1:
+      "LOINC 8478-0 Mean arterial pressure; standard hemodynamic definition.",
+    source2:
+      "Critical care and anesthesia texts on perfusion targets and vasoactive titration.",
+    source3:
+      "Society guidelines discussing MAP thresholds in shock and neurocritical care.",
+  },
+  contact: {
+    title: "Contact",
+    description:
+      "Questions, corrections, or suggestions — we welcome professional feedback.",
+    intro:
+      "We read every message and use feedback to improve clarity, safety notes, and clinical examples.",
+    emailHeading: "Email",
+    feedbackHeading: "Helpful context to include",
+    feedback1: "Page URL and the section you are referring to",
+    feedback2: "Your clinical use case or specialty (optional)",
+    feedback3: "What you expected vs. what you observed",
+  },
   locales: {
     en: {
       name: "English",
@@ -27,6 +91,7 @@ const en = {
     allRightsReserved: "All rights reserved.",
     privacyPolicy: "Privacy Policy",
     termsOfService: "Terms of Service",
+    editorialPolicy: "Editorial Policy",
     disclaimer: "Disclaimer",
     fullDisclaimer: "Full Medical Disclaimer",
     backToHome: "Back to calculator",
@@ -35,6 +100,12 @@ const en = {
     bpCalculatorLink: "BP Calculator",
     howToCalculateLink: "How to Calculate MAP",
     nursingGuideLink: "Nursing MAP Guide",
+    // Header navigation
+    nav: {
+      home: "Home",
+    },
+    aboutLink: "About",
+    contactLink: "Contact",
   },
   calculator: {
     systolic: "Systolic Blood Pressure (SBP)",

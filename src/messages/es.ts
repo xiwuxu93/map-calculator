@@ -5,6 +5,33 @@ const es = {
     "keywords": "Calculadora de PAM, presión arterial media, calculadora de PA, profesionales de la salud, hemodinámica, calculadora clínica",
     "siteName": "Calculadora MAP"
   },
+  "about": {
+    "title": "Acerca de mapcalculator.org",
+    "description": "Nuestra misión es ofrecer una calculadora de PAM rápida y basada en evidencia con explicaciones claras para equipos sanitarios ocupados.",
+    "missionHeading": "Misión",
+    "missionBody": "Ayudar a los clínicos con fórmulas claras, supuestos transparentes e interpretación según el contexto — siempre junto al juicio profesional.",
+    "contentPolicyHeading": "Estándares editoriales",
+    "contentPolicy1": "Explicaciones originales, no plagiadas, escritas para clínicos.",
+    "contentPolicy2": "Afirmaciones médicas contrastadas con fuentes reputadas (guías, libros de texto, literatura revisada por pares).",
+    "contentPolicy3": "Las páginas incluyen fecha de actualización, descargos y público objetivo claro.",
+    "reviewHeading": "Revisión clínica y actualizaciones",
+    "reviewBody": "Revisamos periódicamente la claridad y la exactitud médica; añadimos ejemplos, preguntas frecuentes e incorporamos comentarios de profesionales en ejercicio.",
+    "sourcesHeading": "Fuentes principales",
+    "sourcesBody": "Referencias clave que sustentan la fórmula y el razonamiento clínico:",
+    "source1": "LOINC 8478-0 Presión arterial media; definición hemodinámica estándar.",
+    "source2": "Textos de cuidados intensivos y anestesia sobre objetivos de perfusión y titulación de vasopresores.",
+    "source3": "Guías de sociedades científicas sobre umbrales de PAM en shock y neurocríticos."
+  },
+  "contact": {
+    "title": "Contacto",
+    "description": "Preguntas, correcciones o sugerencias: agradecemos sus comentarios profesionales.",
+    "intro": "Leemos cada mensaje y lo usamos para mejorar la claridad, las notas de seguridad y los ejemplos clínicos.",
+    "emailHeading": "Correo electrónico",
+    "feedbackHeading": "Información útil a incluir",
+    "feedback1": "URL de la página y sección concreta",
+    "feedback2": "Caso de uso clínico o especialidad (opcional)",
+    "feedback3": "Qué esperaba frente a lo que observó"
+  },
   "locales": {
     "en": {
       "name": "Inglés",
@@ -24,6 +51,7 @@ const es = {
     "allRightsReserved": "Reservados todos los derechos.",
     "privacyPolicy": "política de privacidad",
     "termsOfService": "Condiciones del servicio",
+    "editorialPolicy": "Política editorial",
     "disclaimer": "Descargo de responsabilidad",
     "fullDisclaimer": "Descargo de responsabilidad médica completo",
     "backToHome": "Volver a la calculadora",
@@ -31,7 +59,30 @@ const es = {
     "viewFullDisclaimer": "Ver el descargo de responsabilidad completo",
     "bpCalculatorLink": "Calculadora de presión arterial",
     "howToCalculateLink": "Cómo calcular el MAP",
-    "nursingGuideLink": "Guía MAP de enfermería"
+    "nursingGuideLink": "Guía MAP de enfermería",
+    "nav": { "home": "Inicio" },
+    "aboutLink": "Acerca de",
+    "contactLink": "Contacto"
+  },
+  "editorial": {
+    "title": "Política editorial",
+    "description": "Cómo creamos, revisamos y mantenemos el contenido médico en mapcalculator.org.",
+    "intro": "Seguimos estándares claros para que nuestras herramientas y explicaciones sean precisas, legibles y seguras para uso clínico por profesionales.",
+    "principlesHeading": "Principios",
+    "p1": "Explicaciones basadas en evidencia y clínicamente relevantes, con fórmulas y supuestos claros.",
+    "p2": "Redacción original dirigida a clínicos; sin plagio ni reescritura superficial.",
+    "p3": "Público claramente delimitado: profesionales con licencia y estudiantes supervisados.",
+    "p4": "Actualizaciones periódicas con notas y fechas cuando son materiales.",
+    "processHeading": "Proceso editorial",
+    "process1": "El autor redacta en lenguaje claro con referencias.",
+    "process2": "Revisión médica interna para precisión y claridad.",
+    "process3": "Revisión de localización para fidelidad de significado (no salida bruta de máquina).",
+    "citationsHeading": "Citas y fuentes",
+    "citationsBody": "Citamos fuentes confiables como guías de sociedades, libros de texto y artículos revisados por pares, cuando procede.",
+    "feedbackHeading": "Correcciones y comentarios",
+    "feedbackBody": "Si detecta un problema, escriba a support@mapcalculator.org y revisaremos y actualizaremos con prontitud, con nota pública cuando sea material.",
+    "updatedLabel": "Última actualización:",
+    "updatedValue": "2025-11-12"
   },
   "calculator": {
     "systolic": "Presión arterial sistólica (PAS)",
