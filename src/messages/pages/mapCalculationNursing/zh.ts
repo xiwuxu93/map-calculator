@@ -21,6 +21,12 @@ const MapCalculationNursingZh = {
     "audienceTypeLabel": "护士",
     "audienceDescription": "注册护士、ICU 护士、急诊护士、病房护士以及护理学生。"
   },
+  "refsHeading": "参考文献",
+  "refs": [
+    { "label": "2021 年《生存脓毒症运动》", "text": "Evans L, Rhodes A, Alhazzani W, et al. Surviving Sepsis Campaign: 2021 International Guidelines for Management of Sepsis and Septic Shock. Intensive Care Med. 2021;47:1181–1247. doi:10.1007/s00134-021-06506-y", "url": "https://link.springer.com/article/10.1007/s00134-021-06506-y" },
+    { "label": "AHA 2020 心脏骤停后治疗", "text": "Panchal AR, Bartos JA, Cabañas JG, et al. 2020 AHA Guidelines for CPR and ECC: Post–Cardiac Arrest Care. Circulation. 2020;142(16_suppl_2):S469–S523. doi:10.1161/CIR.0000000000000916", "url": "https://www.ahajournals.org/doi/10.1161/CIR.0000000000000916" },
+    { "label": "重度 TBI 指南（CPP）", "text": "Carney N, Totten AM, O’Reilly C, et al. Guidelines for the Management of Severe Traumatic Brain Injury, Fourth Edition. Neurosurgery. 2016;80(1):6–15. doi:10.1227/NEU.0000000000001432", "url": "https://doi.org/10.1227/NEU.0000000000001432" }
+  ],
   "t0001": "床旁参考",
   "t0002": "速查信息",
   "t0003": "正常 MAP：65-100 mmHg",
@@ -39,7 +45,7 @@ const MapCalculationNursingZh = {
   "t0016": "脓毒症流程：",
   "t0017": "血压 88/54 → MAP 65 mmHg —— 达到最低目标但需严密监测。",
   "t0018": "护士计算 MAP 的原因",
-  "t0019": "脓毒症护理流程要求 MAP ≥65 mmHg。",
+  "t0019": "脓毒症护理流程要求 MAP ≥65 mmHg。[1]",
   "t0020": "升压药滴定遵循 MAP 指引。",
   "t0021": "早期识别与快速反应依赖 MAP 趋势。",
   "t0022": "精确记录有助于团队沟通。",
@@ -88,7 +94,7 @@ const MapCalculationNursingZh = {
   "t0065": "特别注意事项",
   "t0066": "升压药滴定：",
   "t0067": "每次调整剂量后 15-30 分钟重新计算 MAP，并记录当前剂量与反应。",
-  "t0068": "脓毒症流程：",
+  "t0068": "脓毒症流程：[1]",
   "t0069": "在 1 小时流程内与乳酸、尿量、补液措施一并记录 MAP。",
   "t0070": "术后监测：",
   "t0071": "将 MAP 与术前基线比较，下降超过 20% 需立即检查引流、化验与容量状况。",

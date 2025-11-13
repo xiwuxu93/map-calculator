@@ -100,6 +100,7 @@ const en = {
     bpCalculatorLink: "BP Calculator",
     howToCalculateLink: "How to Calculate MAP",
     nursingGuideLink: "Nursing MAP Guide",
+    articlesLink: "Articles",
     // Header navigation
     nav: {
       home: "Home",

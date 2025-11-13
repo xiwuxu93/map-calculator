@@ -1,12 +1,23 @@
 const HowToCalculateZh = {
   "meta": {
     "title": "如何通过血压计算平均动脉压（MAP）：完整图文步骤（2025 年版）",
-    "description": "系统学习如何由血压读数计算平均动脉压，包含计算公式、示例解析与临床应用要点，适用于各类医疗专业人员。",
+    "description": "用清晰公式从血压快速计算 MAP，配合示例、心算技巧与临床目标（如脓毒症 ≥65）。为临床一线准备的高效指南。",
     "keywords": [
       "如何计算 MAP",
       "MAP 公式",
+      "MAP 公式",
       "平均动脉压算法",
-      "血压换算 MAP"
+      "血压换算 MAP",
+      "如何根据血压计算平均动脉压 (MAP)。",
+      "如何计算血压中的平均动脉压（MAP）",
+      "如何计算平均动脉压（MAP）",
+      "如何计算平均动脉压（MAP）",
+      "血压到平均动脉压转换器",
+      "MAP正常范围",
+      "MAP 目标脓毒症 65",
+      "平均动脉压 (MAP) 计算器血压",
+      "血压计算器地图",
+      "MAP 计算器"
     ],
     "openGraphTitle": "如何计算 MAP —— 完整图文指南",
     "openGraphDescription": "学习并掌握平均动脉压计算的全流程与临床应用",
@@ -56,6 +67,34 @@ const HowToCalculateZh = {
       {
         "question": "何时需要用动脉导管验证计算出的 MAP？",
         "answer": "当患者出现严重低血压、使用大剂量血管活性药或血流动力学剧烈波动时，应使用有创监测核对 MAP。"
+      },
+      {
+        "question": "如何根据血压读数计算平均动脉压（MAP）？",
+        "answer": "平均动脉压 = (收缩压 + 2 × 舒张压) ÷ 3。这使得舒张期的权重更高，因为它在心动周期中占据的时间更长。"
+      },
+      {
+        "question": "如何快速根据血压计算平均动脉压（MAP）？",
+        "answer": "运用心算：脉压 = 收缩压 − 舒张压。平均动脉压近似值 ≈ 舒张压 + (脉压 ÷ 3)。例如：120/80 → 脉压 40 → 80 + 13 ≈ 93。"
+      },
+      {
+        "question": "正常MAP范围是多少？",
+        "answer": "健康成年人静息状态下血压通常为 70–100 mmHg。临床目标值因病情而异；许多方案的目标是脓毒症患者的血压达到 ≥65 mmHg。"
+      },
+      {
+        "question": "MAP 计算方法在护理和医生工作流程中是否相同？",
+        "answer": "是的，公式完全相同。护理记录通常会将平均动脉压 (MAP) 与血压 (BP) 一起记录，并突出显示诸如脓毒症治疗方案中 MAP ≥65 等目标值。"
+      },
+      {
+        "question": "为什么不直接使用收缩压和舒张压的简单平均值呢？",
+        "answer": "简单的平均值忽略了舒张期比收缩期长这一事实，这会高估灌注量。对舒张期进行加权处理可以提供更符合生理实际情况的平均值。"
+      },
+      {
+        "question": "脓毒症患者的理想平均动脉压（MAP）是多少？",
+        "answer": "大多数指南建议初始 MAP 目标值 ≥65 mmHg，然后根据患者的合并症和灌注指标进行个体化调整。"
+      },
+      {
+        "question": "袖带式平均动脉压（MAP）与动脉导管式平均动脉压（MAP）相比，准确度如何？",
+        "answer": "在病情稳定的情况下，袖带测得的平均动脉压通常与动脉导管测得的平均动脉压相差在 5-10 mmHg 以内。当对准确性要求极高时，应使用有创监测。"
       }
     ]
   },
@@ -90,7 +129,7 @@ const HowToCalculateZh = {
   "t0029": "理解 MAP 公式",
   "t0030": "标准公式容易记忆，却深植于心脏生理学的基础：",
   "t0031": "MAP =（收缩压 + 2 × 舒张压）÷ 3",
-  "t0032": "由于心脏在一个心动周期中大约三分之一时间处于收缩期、三分之二处于舒张期，公式在求平均前会将舒张压加倍。该权重反映动脉系统实际承受各压力的时长。",
+  "t0032": "由于心脏在一个心动周期中大约三分之一时间处于收缩期、三分之二处于舒张期，公式在求平均前会将舒张压加倍。该权重反映动脉系统实际承受各压力的时长。[1]",
   "t0033": "简单平均 vs. 加权公式",
   "t0034": "以血压 120/80 为例：",
   "t0035": "简单平均（错误）：(120 + 80) ÷ 2 = 100 mmHg",
@@ -234,9 +273,9 @@ const HowToCalculateZh = {
   "t0173": "MAP 目标应该设定多少？",
   "t0174": "目标需根据病情调整：",
   "t0175": "普通成人：60-100 mmHg",
-  "t0176": "脓毒症：≥65 mmHg",
-  "t0177": "创伤性脑损伤：80-110 mmHg",
-  "t0178": "缺血性卒中：60-180 mmHg（宽松性高血压）",
+  "t0176": "脓毒症：≥65 mmHg [2]",
+  "t0177": "创伤性脑损伤：80-110 mmHg [3]",
+  "t0178": "缺血性卒中：60-180 mmHg（允许性高血压）[4]",
   "t0179": "心脏骤停后：≥65 mmHg",
   "t0180": "临床资源与工具",
   "t0181": "计算工具",
@@ -261,7 +300,14 @@ const HowToCalculateZh = {
   "t0200": "当准确性至关重要时，采用有创监测。",
   "t0201": "立即换算 MAP",
   "t0202": "护理参考",
-  "t0203": "为什么不能直接取收缩压和舒张压的平均值？"
+  "t0203": "为什么不能直接取收缩压和舒张压的平均值？",
+  "refsHeading": "参考文献",
+  "refs": [
+    { "label": "生理学参考", "text": "Hall JE. Guyton and Hall Textbook of Medical Physiology. 第14版. Elsevier; 2021.", "url": "https://www.elsevier.com/books/guyton-and-hall-textbook-of-medical-physiology" },
+    { "label": "2021 年《生存脓毒症运动》", "text": "Evans L, Rhodes A, Alhazzani W, et al. Surviving Sepsis Campaign: 2021 International Guidelines for Management of Sepsis and Septic Shock. Intensive Care Med. 2021;47:1181–1247. doi:10.1007/s00134-021-06506-y", "url": "https://link.springer.com/article/10.1007/s00134-021-06506-y" },
+    { "label": "重度 TBI 指南（CPP）", "text": "Carney N, Totten AM, O’Reilly C, et al. Guidelines for the Management of Severe Traumatic Brain Injury, Fourth Edition. Neurosurgery. 2016;80(1):6–15. doi:10.1227/NEU.0000000000001432", "url": "https://doi.org/10.1227/NEU.0000000000001432" },
+    { "label": "AHA/ASA 2019 急性缺血性卒中指南", "text": "Powers WJ, Rabinstein AA, Ackerson T, et al. 2019 AHA/ASA Guideline for the Early Management of Patients With Acute Ischemic Stroke. Stroke. 2019;50:e344–e418. doi:10.1161/STR.0000000000000211", "url": "https://www.ahajournals.org/doi/10.1161/STR.0000000000000211" }
+  ]
 } as const;
 
 export default HowToCalculateZh;

@@ -145,6 +145,24 @@ export default function MapCalculationNursingPage({ params }: PageProps) {
             </div>
           </section>
 
+          {(texts as any).refs && Array.isArray((texts as any).refs) && (
+            <section id="references" className="space-y-6 rounded-2xl bg-white p-8 shadow-lg md:p-12">
+              <h2 className="text-2xl font-semibold text-gray-900 md:text-3xl">{(texts as any).refsHeading ?? 'References'}</h2>
+              <ol className="list-decimal space-y-2 pl-6 text-sm text-gray-700">
+                {(texts as any).refs.map((ref: any, idx: number) => (
+                  <li key={idx}>
+                    <span className="block">{ref.text}</span>
+                    {ref.url && (
+                      <a href={ref.url} className="text-blue-700 underline" target="_blank" rel="noopener noreferrer">
+                        {ref.label || 'Link'}
+                      </a>
+                    )}
+                  </li>
+                ))}
+              </ol>
+            </section>
+          )}
+
           <section id="why-nurses" className="space-y-6 rounded-2xl bg-white p-8 shadow-lg md:p-12">
             <h2 className="text-2xl font-semibold text-gray-900 md:text-3xl">
               {texts.t0009}

@@ -2,7 +2,7 @@ const MapCalculationNursingEn = {
   meta: {
     title: "MAP Calculation for Nurses: Quick Bedside Reference Guide (2025)",
     description:
-      "Nursing-focused MAP calculator and guide. Learn MAP calculation, interpretation, and nursing interventions. Practical reference for ICU, ER, and floor nurses.",
+      "Nursing-focused MAP calculator and guide: calculation, interpretation, and actions. Fast bedside reference for ICU, ER, periop, and floor nurses.",
     keywords: [
       "MAP calculation nursing",
       "MAP for nurses",
@@ -25,6 +25,14 @@ const MapCalculationNursingEn = {
     audienceDescription:
       "Registered nurses, ICU nurses, ER nurses, floor nurses, and nursing students.",
   },
+  
+  // References
+  refsHeading: 'References',
+  refs: [
+    { label: 'Surviving Sepsis Campaign 2021', text: 'Evans L, Rhodes A, Alhazzani W, et al. Surviving Sepsis Campaign: 2021 International Guidelines for Management of Sepsis and Septic Shock. Intensive Care Med. 2021;47:1181–1247. doi:10.1007/s00134-021-06506-y', url: 'https://link.springer.com/article/10.1007/s00134-021-06506-y' },
+    { label: 'AHA Post–Cardiac Arrest Care 2020', text: 'Panchal AR, Bartos JA, Cabañas JG, et al. 2020 AHA Guidelines for CPR and ECC: Post–Cardiac Arrest Care. Circulation. 2020;142(16_suppl_2):S469–S523. doi:10.1161/CIR.0000000000000916', url: 'https://www.ahajournals.org/doi/10.1161/CIR.0000000000000916' },
+    { label: 'Brain Trauma Foundation / Severe TBI', text: 'Carney N, Totten AM, O’Reilly C, et al. Guidelines for the Management of Severe Traumatic Brain Injury, Fourth Edition. Neurosurgery. 2016;80(1):6–15. doi:10.1227/NEU.0000000000001432', url: 'https://doi.org/10.1227/NEU.0000000000001432' },
+  ],
   t0001: 'Bedside Reference',
   t0002: 'Quick Reference',
   t0003: 'Normal MAP: 65-100 mmHg',
@@ -43,7 +51,7 @@ const MapCalculationNursingEn = {
   t0016: 'Sepsis protocol:',
   t0017: 'BP 88/54 → MAP 65 mmHg — meets minimum target but needs close monitoring.',
   t0018: 'Why Nurses Calculate MAP',
-  t0019: 'Sepsis bundles require MAP ≥65 mmHg.',
+  t0019: 'Sepsis bundles require MAP ≥65 mmHg. [1]',
   t0020: 'Vasopressor titration relies on MAP-based protocols.',
   t0021: 'Early recognition and rapid response escalation depend on MAP trends.',
   t0022: 'Accurate documentation improves interdisciplinary communication.',
@@ -92,7 +100,7 @@ const MapCalculationNursingEn = {
   t0065: 'Special Considerations',
   t0066: 'Vasopressor titration:',
   t0067: 'Recalculate MAP 15-30 minutes after any dose change. Document current dose and response.',
-  t0068: 'Sepsis bundles:',
+  t0068: 'Sepsis bundles: [1]',
   t0069: 'Document MAP alongside lactate, urine output, and fluid resuscitation steps within the 1-hour bundle.',
   t0070: 'Post-op monitoring:',
   t0071: 'Compare MAP to preoperative baseline. A drop >20% warrants immediate review of drains, labs, and volume status.',

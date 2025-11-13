@@ -1,12 +1,23 @@
 const HowToCalculateEs = {
   "meta": {
     "title": "Cómo calcular la PAM a partir de la presión arterial: guía completa paso a paso (2025)",
-    "description": "Aprende a calcular la presión arterial media a partir de lecturas de presión arterial. Tutorial paso a paso con ejemplos, fórmulas y aplicaciones clínicas para profesionales sanitarios.",
+    "description": "Calcule la PAM a partir de la PA con fórmula clara, ejemplos, cálculo mental y objetivos clínicos (p. ej., ≥65 en sepsis). Guía ágil para clínicos.",
     "keywords": [
       "cómo calcular la PAM",
       "calcular PAM a partir de la presión arterial",
+      "calcular PAM a partir de la presión arterial",
       "fórmula de la PAM",
-      "cálculo de la presión arterial media"
+      "cálculo de la presión arterial media",
+      "Cómo calcular la PAM a partir de la PA",
+      "Cómo calcular la PAM en la presión arterial",
+      "Cómo calcular la PAM de la presión arterial",
+      "cómo calcular la presión arterial media (PAM)",
+      "Convertidor de BP a MAP",
+      "rango normal de PAM",
+      "MAP objetivo sepsis 65",
+      "Calculadora de presión arterial media (PAM)",
+      "Calculadora de presión arterial con mapa",
+      "calculadora de mapas bp"
     ],
     "openGraphTitle": "Cómo calcular la PAM a partir de la presión arterial - Guía completa",
     "openGraphDescription": "Domina el cálculo de la PAM con nuestro tutorial exhaustivo",
@@ -56,6 +67,34 @@ const HowToCalculateEs = {
       {
         "question": "¿Cuándo se debe verificar la PAM calculada con una línea arterial?",
         "answer": "Utiliza monitorización invasiva cuando los pacientes están profundamente hipotensos, requieren dosis altas de vasopresores o presentan cambios hemodinámicos rápidos."
+      },
+      {
+        "question": "¿Cuál es la fórmula de la PAM a partir de las lecturas de la presión arterial?",
+        "answer": "PAM = (PAS sistólica + 2 × PA diastólica) ÷ 3. Esto pondera más la diástole porque ocupa una mayor parte del ciclo cardíaco."
+      },
+      {
+        "question": "¿Cómo puedo calcular la PAM rápidamente a partir de la presión arterial?",
+        "answer": "Utilice el cálculo mental: presión del pulso = PAS − PAD. La PAM aproximada es ≈ PAD + (presión del pulso ÷ 3). Ejemplo: 120/80 → PP 40 → 80 + 13 ≈ 93."
+      },
+      {
+        "question": "¿Cuál es un rango normal de MAP?",
+        "answer": "Normalmente, la presión arterial en adultos sanos en reposo oscila entre 70 y 100 mmHg. Los objetivos clínicos varían según la afección; muchos protocolos buscan alcanzar valores ≥65 mmHg en casos de sepsis."
+      },
+      {
+        "question": "¿El cálculo de la PAM es el mismo para los flujos de trabajo de enfermería y médicos?",
+        "answer": "Sí. La fórmula es idéntica. La documentación de enfermería suele registrar la PAM junto con la PA y destaca objetivos como PAM ≥65 para los protocolos de sepsis."
+      },
+      {
+        "question": "¿Por qué no utilizar el promedio simple de la PAS y la PAD?",
+        "answer": "Un promedio simple ignora que la diástole dura más que la sístole, lo que sobreestimaría la perfusión. La ponderación de la diástole proporciona un promedio fisiológico más preciso."
+      },
+      {
+        "question": "¿Qué PAM debo establecer como objetivo en la sepsis?",
+        "answer": "La mayoría de las guías recomiendan un objetivo inicial de PAM ≥65 mmHg, para luego individualizarlo según las comorbilidades del paciente y los marcadores de perfusión."
+      },
+      {
+        "question": "¿Qué precisión tiene la PAM obtenida mediante manguito en comparación con la obtenida mediante línea arterial?",
+        "answer": "La PAM medida con manguito suele diferir en 5-10 mmHg de los valores de la línea arterial en condiciones estables. Utilice monitorización invasiva cuando la precisión sea fundamental."
       }
     ]
   },
@@ -90,7 +129,7 @@ const HowToCalculateEs = {
   "t0029": "Comprender la fórmula MAP",
   "t0030": "La fórmula estándar es fácil de recordar pero se basa en la fisiología cardíaca:",
   "t0031": "PAM = (Presión arterial sistólica + 2 × Presión arterial diastólica) ÷ 3",
-  "t0032": "Dado que el corazón pasa aproximadamente un tercio del ciclo cardíaco en sístole y dos tercios en diástole, la ecuación duplica el valor diastólico antes de calcular el promedio. Esta ponderación refleja la duración durante la cual el árbol arterial experimenta cada presión.",
+  "t0032": "Dado que el corazón pasa aproximadamente un tercio del ciclo cardíaco en sístole y dos tercios en diástole, la ecuación duplica el valor diastólico antes de calcular el promedio. Esta ponderación refleja la duración durante la cual el árbol arterial experimenta cada presión. [1]",
   "t0033": "Promedio simple frente a fórmula ponderada",
   "t0034": "Considere una presión arterial de 120/80:",
   "t0035": "Promedio simple (incorrecto): (120 + 80) ÷ 2 = 100 mmHg",
@@ -234,9 +273,9 @@ const HowToCalculateEs = {
   "t0173": "¿A qué objetivo de PAM debería aspirar?",
   "t0174": "Los objetivos varían según la condición:",
   "t0175": "Presión arterial en adultos: 60-100 mmHg",
-  "t0176": "Sepsis: ≥65 mmHg",
-  "t0177": "Lesión cerebral traumática: 80-110 mmHg",
-  "t0178": "Accidente cerebrovascular isquémico: 60-180 mmHg (hipertensión permisiva)",
+  "t0176": "Sepsis: ≥65 mmHg [2]",
+  "t0177": "Lesión cerebral traumática: 80-110 mmHg [3]",
+  "t0178": "Accidente cerebrovascular isquémico: 60-180 mmHg (hipertensión permisiva) [4]",
   "t0179": "Postparo cardíaco: ≥65 mmHg",
   "t0180": "Recursos y herramientas clínicas",
   "t0181": "Herramientas de cálculo",
@@ -261,7 +300,14 @@ const HowToCalculateEs = {
   "t0200": "Utilice la monitorización invasiva cuando la precisión sea fundamental.",
   "t0201": "Convierta ahora la presión arterial (PA) a presión media anual (PMA).",
   "t0202": "Referencia de enfermería",
-  "t0203": "¿Por qué no puedo usar un promedio simple de la presión sistólica y diastólica?"
+  "t0203": "¿Por qué no puedo usar un promedio simple de la presión sistólica y diastólica?",
+  "refsHeading": "Referencias",
+  "refs": [
+    { "label": "Referencia de fisiología", "text": "Hall JE. Guyton and Hall Textbook of Medical Physiology. 14th ed. Elsevier; 2021.", "url": "https://www.elsevier.com/books/guyton-and-hall-textbook-of-medical-physiology" },
+    { "label": "Campaña Sobreviviendo a la Sepsis 2021", "text": "Evans L, Rhodes A, Alhazzani W, et al. Surviving Sepsis Campaign: 2021 International Guidelines for Management of Sepsis and Septic Shock. Intensive Care Med. 2021;47:1181–1247. doi:10.1007/s00134-021-06506-y", "url": "https://link.springer.com/article/10.1007/s00134-021-06506-y" },
+    { "label": "Guía TCE grave (CPP)", "text": "Carney N, Totten AM, O’Reilly C, et al. Guidelines for the Management of Severe Traumatic Brain Injury, Fourth Edition. Neurosurgery. 2016;80(1):6–15. doi:10.1227/NEU.0000000000001432", "url": "https://doi.org/10.1227/NEU.0000000000001432" },
+    { "label": "Guía AHA/ASA de ictus isquémico 2019", "text": "Powers WJ, Rabinstein AA, Ackerson T, et al. 2019 AHA/ASA Guideline for the Early Management of Patients With Acute Ischemic Stroke. Stroke. 2019;50:e344–e418. doi:10.1161/STR.0000000000000211", "url": "https://www.ahajournals.org/doi/10.1161/STR.0000000000000211" }
+  ]
 } as const;
 
 export default HowToCalculateEs;

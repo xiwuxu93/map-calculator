@@ -9,6 +9,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: "/map-calculator-bp", changeFreq: "weekly" as const, priority: 0.8 },
     { path: "/how-to-calculate-map-blood-pressure", changeFreq: "weekly" as const, priority: 0.8 },
     { path: "/map-calculation-nursing", changeFreq: "weekly" as const, priority: 0.8 },
+    { path: "/articles", changeFreq: "weekly" as const, priority: 0.7 },
+    { path: "/map-targets-by-condition", changeFreq: "weekly" as const, priority: 0.8 },
     { path: "/about", changeFreq: "yearly" as const, priority: 0.5 },
     { path: "/contact", changeFreq: "yearly" as const, priority: 0.5 },
     { path: "/editorial-policy", changeFreq: "yearly" as const, priority: 0.5 },

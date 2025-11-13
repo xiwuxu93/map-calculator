@@ -1,19 +1,30 @@
 const HowToCalculateEn = {
   meta: {
-    title: "How to Calculate MAP from Blood Pressure: Complete Step-by-Step Guide (2025)",
+    title: "How to Calculate MAP (Mean Arterial Pressure) from BP: Step-by-Step Guide (2025)",
     description:
-      "Learn how to calculate Mean Arterial Pressure from blood pressure readings. Step-by-step tutorial with examples, formulas, and clinical applications for healthcare professionals.",
+      "Calculate MAP from BP with a clear formula, examples, mental math, and clinical targets (e.g., ≥65 in sepsis). Practical, fast guide for clinicians.",
     keywords: [
       "how to calculate MAP",
+      "how to calculate MAP BP",
       "calculate MAP from blood pressure",
       "MAP formula",
       "mean arterial pressure calculation",
+      "how to calculate MAP from BP",
+      "how to calculate MAP in blood pressure",
+      "how to calculate MAP of BP",
+      "how to calculate the MAP of blood pressure",
+      "BP to MAP converter",
+      "MAP normal range",
+      "MAP target sepsis 65",
+      "MAP calculator blood pressure",
+      "map blood pressure calculator",
+      "map calculator bp",
     ],
-    openGraphTitle: "How to Calculate MAP from Blood Pressure - Complete Guide",
-    openGraphDescription: "Master MAP calculation with our comprehensive tutorial",
-    heroTitle: "How to Calculate MAP from Blood Pressure: Complete Guide",
+    openGraphTitle: "How to Calculate MAP from BP (Blood Pressure) — Complete Guide",
+    openGraphDescription: "Master MAP calculation: formula, examples, nursing tips, and clinical targets.",
+    heroTitle: "How to Calculate MAP from Blood Pressure (BP): Complete Guide",
     heroDescription:
-      "Master the essential skill of calculating Mean Arterial Pressure (MAP) so you can make confident, protocol-driven clinical decisions in any care setting.",
+      "Master the essential skill of calculating Mean Arterial Pressure (MAP) from BP so you can make confident, protocol-driven clinical decisions in any care setting.",
     quickAnswerLabel: "Quick Answer",
     readingTime: "Reading Time",
     skillLevel: "Skill Level",
@@ -63,6 +74,41 @@ const HowToCalculateEn = {
         answer:
           "Use invasive monitoring when patients are profoundly hypotensive, on high-dose vasopressors, or experiencing rapid hemodynamic changes.",
       },
+      {
+        question: "What is the MAP formula from BP readings?",
+        answer:
+          "MAP = (Systolic BP + 2 × Diastolic BP) ÷ 3. This weights diastole more heavily because it occupies more of the cardiac cycle.",
+      },
+      {
+        question: "How do I calculate MAP from blood pressure quickly?",
+        answer:
+          "Use mental math: pulse pressure = SBP − DBP. Approximate MAP ≈ DBP + (pulse pressure ÷ 3). Example: 120/80 → PP 40 → 80 + 13 ≈ 93.",
+      },
+      {
+        question: "What is a normal MAP range?",
+        answer:
+          "Typically 70–100 mmHg in healthy adults at rest. Clinical targets vary by condition; many protocols aim for ≥65 mmHg in sepsis.",
+      },
+      {
+        question: "Is MAP calculation the same for nursing and physician workflows?",
+        answer:
+          "Yes. The formula is identical. Nursing documentation often records MAP alongside BP and highlights targets like MAP ≥65 for sepsis bundles.",
+      },
+      {
+        question: "Why not use the simple average of SBP and DBP?",
+        answer:
+          "A simple mean ignores that diastole lasts longer than systole, which would overestimate perfusion. Weighting diastole provides a better physiologic average.",
+      },
+      {
+        question: "What MAP should I target in sepsis?",
+        answer:
+          "Most guidelines recommend an initial MAP target ≥65 mmHg, then individualize to patient comorbidities and perfusion markers.",
+      },
+      {
+        question: "How accurate is cuff-derived MAP vs. arterial line?",
+        answer:
+          "Cuff-derived MAP is typically within 5–10 mmHg of arterial line values in stable conditions. Use invasive monitoring when accuracy is critical.",
+      },
     ],
   },
   t0001: 'Step-by-Step Tutorial',
@@ -75,7 +121,7 @@ const HowToCalculateEn = {
   t0008: 'MAP = 93 mmHg',
   t0009: '8 minutes',
   t0010: 'All healthcare professionals',
-  t0011: 'January 2025',
+  t0011: 'November 2025',
   t0012: 'Try the Interactive Calculator',
   t0013: 'Explore the Main MAP Tool',
   t0014: 'Why Every Healthcare Professional Needs to Calculate MAP',
@@ -96,7 +142,7 @@ const HowToCalculateEn = {
   t0029: 'Understanding the MAP Formula',
   t0030: 'The standard formula is simple to remember but rooted in cardiac physiology:',
   t0031: 'MAP = (Systolic BP + 2 × Diastolic BP) ÷ 3',
-  t0032: 'Because the heart spends approximately one-third of the cardiac cycle in systole and two-thirds in diastole, the equation doubles the diastolic value before averaging. This weighting mirrors how long the arterial tree experiences each pressure.',
+  t0032: 'Because the heart spends approximately one-third of the cardiac cycle in systole and two-thirds in diastole, the equation doubles the diastolic value before averaging. This weighting mirrors how long the arterial tree experiences each pressure. [1]',
   t0033: 'Simple Average vs. Weighted Formula',
   t0034: 'Consider blood pressure 120/80:',
   t0035: 'Simple average (incorrect): (120 + 80) ÷ 2 = 100 mmHg',
@@ -240,9 +286,9 @@ const HowToCalculateEn = {
   t0173: 'What MAP target should I aim for?',
   t0174: 'Targets vary by condition:',
   t0175: 'General adult: 60-100 mmHg',
-  t0176: 'Sepsis: ≥65 mmHg',
-  t0177: 'Traumatic brain injury: 80-110 mmHg',
-  t0178: 'Ischemic stroke: 60-180 mmHg (permissive hypertension)',
+  t0176: 'Sepsis: ≥65 mmHg [2]',
+  t0177: 'Traumatic brain injury: 80-110 mmHg [3]',
+  t0178: 'Ischemic stroke: 60-180 mmHg (permissive hypertension) [4]',
   t0179: 'Post-cardiac arrest: ≥65 mmHg',
   t0180: 'Clinical Resources & Tools',
   t0181: 'Calculation Tools',
@@ -268,6 +314,35 @@ const HowToCalculateEn = {
   t0201: 'Convert BP to MAP Now',
   t0202: 'Nursing Reference',
   t0203: "Why can't I use a simple average of systolic and diastolic?",
-  } as const;
+  
+  // References
+  refsHeading: 'References',
+  refs: [
+    {
+      label: 'Physiology reference',
+      text:
+        'Hall JE. Guyton and Hall Textbook of Medical Physiology. 14th ed. Elsevier; 2021.',
+      url: 'https://www.elsevier.com/books/guyton-and-hall-textbook-of-medical-physiology',
+    },
+    {
+      label: 'Surviving Sepsis Campaign 2021',
+      text:
+        'Evans L, Rhodes A, Alhazzani W, et al. Surviving Sepsis Campaign: 2021 International Guidelines for Management of Sepsis and Septic Shock. Intensive Care Med. 2021;47:1181–1247. doi:10.1007/s00134-021-06506-y',
+      url: 'https://link.springer.com/article/10.1007/s00134-021-06506-y',
+    },
+    {
+      label: 'Severe TBI Guidelines (CPP)',
+      text:
+        'Carney N, Totten AM, O’Reilly C, et al. Guidelines for the Management of Severe Traumatic Brain Injury, Fourth Edition. Neurosurgery. 2016;80(1):6–15. doi:10.1227/NEU.0000000000001432',
+      url: 'https://doi.org/10.1227/NEU.0000000000001432',
+    },
+    {
+      label: 'AHA/ASA Ischemic Stroke 2019',
+      text:
+        'Powers WJ, Rabinstein AA, Ackerson T, et al. 2019 AHA/ASA Guideline for the Early Management of Patients With Acute Ischemic Stroke. Stroke. 2019;50:e344–e418. doi:10.1161/STR.0000000000000211',
+      url: 'https://www.ahajournals.org/doi/10.1161/STR.0000000000000211',
+    },
+  ],
+} as const;
 
 export default HowToCalculateEn;

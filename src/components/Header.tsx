@@ -31,11 +31,8 @@ export default async function Header({ locale }: HeaderProps) {
           <Link href={`${homeHref.replace(/\/$/, '')}/map-calculator-bp`} className="transition hover:text-gray-900">
             {t('bpCalculatorLink')}
           </Link>
-          <Link href={`${homeHref.replace(/\/$/, '')}/how-to-calculate-map-blood-pressure`} className="transition hover:text-gray-900">
-            {t('howToCalculateLink')}
-          </Link>
-          <Link href={`${homeHref.replace(/\/$/, '')}/map-calculation-nursing`} className="transition hover:text-gray-900">
-            {t('nursingGuideLink')}
+          <Link href={`${homeHref.replace(/\/$/, '')}/articles`} className="transition hover:text-gray-900">
+            {t('articlesLink')}
           </Link>
           <Link href={`${homeHref.replace(/\/$/, '')}/about`} className="transition hover:text-gray-900">
             {t('aboutLink')}
