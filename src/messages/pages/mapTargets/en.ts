@@ -36,17 +36,22 @@ const MapTargetsEn = {
       {
         question: "Is MAP ≥65 always correct?",
         answer:
-          "No. 65 mmHg is a common initial target (e.g., sepsis bundles) but should be individualized using perfusion markers, comorbidities, and condition-specific evidence.",
+          "No. 65 mmHg is a common initial target (for example, in sepsis bundles) but should be individualized using perfusion markers, comorbidities, and condition-specific evidence.",
       },
       {
         question: "What is the MAP target in traumatic brain injury (TBI)?",
         answer:
-          "Target cerebral perfusion pressure (CPP) = MAP − ICP. Many protocols aim CPP 60–70 mmHg, which often requires MAP 80–110 depending on ICP and autoregulation.",
+          "Target cerebral perfusion pressure (CPP) = MAP − ICP. Many protocols aim for CPP 60–70 mmHg, which often requires MAP 80–110 depending on ICP and autoregulation.",
+      },
+      {
+        question: "What MAP should I target after cardiac arrest?",
+        answer:
+          "Most post–cardiac arrest protocols aim for MAP ≥65–75 mmHg, adjusted for neurologic status, comorbidities, and organ support goals. Avoid hypotension during early recovery.",
       },
       {
         question: "What MAP for ischemic stroke?",
         answer:
-          "Early after ischemic stroke, permissive hypertension is common to support penumbra perfusion. Protocols may tolerate elevated MAP; follow stroke guidelines and neuro team direction.",
+          "Early after ischemic stroke, permissive hypertension is often used to support penumbra perfusion. Protocols may tolerate elevated MAP; follow stroke guidelines and the recommendations of the neurology team.",
       },
       {
         question: "When should I use an arterial line for MAP?",

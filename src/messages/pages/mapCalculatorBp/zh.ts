@@ -2,16 +2,19 @@ import type { MapCalculatorBpContent } from "./types";
 
 const mapCalculatorBpZh: MapCalculatorBpContent = {
   "metadata": {
-    "title": "MAP 计算器（血压版）：由血压快速换算平均动脉压 | mapcalculator.org",
-    "description": "输入收缩压与舒张压，立即换算平均动脉压（MAP）。免费在线工具，附带临床意义解析，专为医疗专业人士设计。",
+    "title": "MAP 计算器（血压版）：由血压快速计算平均动脉压（含公式）| mapcalculator.org",
+    "description": "输入收缩压与舒张压，即可根据标准公式快速计算平均动脉压（MAP）。支持血压换算 MAP、查看平均动脉压公式与示例解读，适合 ICU、急诊及围术期护理使用。",
     "keywords": [
       "MAP 计算器",
       "血压换算 MAP",
       "平均动脉压计算",
-      "BP 转 MAP"
+      "平均动脉压公式",
+      "如何计算平均动脉压",
+      "BP 转 MAP",
+      "MAP 护理"
     ],
-    "openGraphTitle": "MAP 计算器（BP）—— 血压快速换算平均动脉压",
-    "openGraphDescription": "面向临床使用的快速 MAP 计算工具",
+    "openGraphTitle": "MAP 计算器（BP）—— 由血压快速计算平均动脉压",
+    "openGraphDescription": "输入血压，根据标准公式计算平均动脉压，并查看护理场景中的临床意义。",
     "heroTitle": "基于血压读数的 MAP 计算器",
     "heroDescription": "输入常规血压值即可即时获取平均动脉压，并附带临床意义提示，适合在 ICU、急诊及围术期护理中迅速评估灌注状况。"
   },

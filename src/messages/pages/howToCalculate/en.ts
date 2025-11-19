@@ -2,7 +2,7 @@ const HowToCalculateEn = {
   meta: {
     title: "How to Calculate MAP (Mean Arterial Pressure) from BP: Step-by-Step Guide (2025)",
     description:
-      "Calculate MAP from BP with a clear formula, examples, mental math, and clinical targets (e.g., ≥65 in sepsis). Practical, fast guide for clinicians.",
+      "Learn how to calculate MAP (mean arterial pressure) from blood pressure using the standard MAP formula. Includes worked examples, mental math shortcuts, normal MAP ranges, and clinical targets (e.g., MAP ≥65 in sepsis).",
     keywords: [
       "how to calculate MAP",
       "how to calculate MAP BP",
@@ -15,6 +15,7 @@ const HowToCalculateEn = {
       "how to calculate the MAP of blood pressure",
       "BP to MAP converter",
       "MAP normal range",
+      "normal MAP range",
       "MAP target sepsis 65",
       "MAP calculator blood pressure",
       "map blood pressure calculator",

@@ -1,26 +1,51 @@
 const MapCalculationNursingEs = {
   "meta": {
     "title": "Cálculo de la PAM para enfermería: guía rápida de cabecera (2025)",
-    "description": "Calculadora y guía de PAM para enfermería: cálculo, interpretación y acciones. Referencia ágil para UCI, urgencias, perioperatorio y planta.",
+    "description": "Calculadora y guía de presión arterial media (PAM) para enfermería: cómo calcular la PAM a partir de la presión arterial, interpretar valores y decidir intervenciones. Referencia ágil para UCI, urgencias, perioperatorio y planta.",
     "keywords": [
       "cálculo de la PAM enfermería",
-      "MAP para enfermeras",
+      "presión arterial media enfermería",
       "calculadora de PAM de cabecera",
+      "calculadora presión arterial media",
+      "calculadora PAM",
+      "MAP para enfermeras",
+      "calcular PAM",
+      "cómo calcular la PAM",
       "guía de MAP para enfermería",
       "PAM en UCI enfermería"
     ],
     "openGraphTitle": "Cálculo de la PAM para enfermería - Referencia de cabecera",
-    "openGraphDescription": "Guía esencial de PAM diseñada específicamente para enfermería",
+    "openGraphDescription": "Guía esencial de presión arterial media (PAM) y calculadora diseñadas específicamente para enfermería",
     "heroTitle": "Cálculo de la PAM para enfermería: referencia de cabecera",
-    "heroDescription": "Calculadora de PAM práctica y rápida para profesionales de enfermería en UCI, urgencias, perioperatorio o cuidados agudos.",
+    "heroDescription": "Calculadora de presión arterial media (PAM) práctica y rápida para profesionales de enfermería en UCI, urgencias, perioperatorio o cuidados agudos, basada en las lecturas de presión arterial.",
     "heroAudience": "👩‍⚕️ Para: enfermeras de UCI • enfermeras de urgencias • enfermeras de planta • estudiantes de enfermería"
   },
   "schema": {
     "headline": "Cálculo de la PAM para enfermería: guía rápida de cabecera",
     "description": "Guía para personal de enfermería sobre cálculo, interpretación e intervenciones basadas en la PAM en UCI, urgencias y planta.",
     "audienceTypeLabel": "Enfermero",
-    "audienceDescription": "Enfermeras tituladas, enfermeras de UCI, enfermeras de urgencias, enfermeras de planta y estudiantes de enfermería."
+    "audienceDescription": "Enfermeras tituladas, enfermeras de UCI, enfermeras de urgencias, enfermeras de planta y estudiantes de enfermería.",
+    "faq": [
+      {
+        "question": "¿Por qué debería calcular la PAM y no solo registrar la PA?",
+        "answer": "La PAM refleja la presión de perfusión media de los órganos y puede mostrar tendencias que no son evidentes si solo miramos la presión sistólica/diastólica. Traducir la PA en PAM ayuda a detectar hipoperfusión de forma precoz y a escalar la atención antes de una descompensación."
+      },
+      {
+        "question": "¿Qué rango de PAM es aceptable para la mayoría de los adultos?",
+        "answer": "En muchos adultos, una PAM de 65–100 mmHg es aceptable, y 65–75 mmHg suele usarse como objetivo mínimo en sepsis y cuidados críticos. Aun así, debe individualizarse según la hipertensión basal, el estado neurológico y marcadores de perfusión como diuresis, estado mental y signos cutáneos."
+      },
+      {
+        "question": "¿Cuándo debo avisar al médico por la PAM?",
+        "answer": "Avise sin demora si la PAM es <60 mmHg, desciende con rapidez o se mantiene <65 mmHg junto con signos de hipoperfusión (alteración del nivel de conciencia, oliguria, piel fría o moteada). También notifique valores muy altos de PAM (>110 mmHg) cuando se acompañen de síntomas preocupantes como dolor torácico, cefalea intensa o cambios neurológicos."
+      },
+      {
+        "question": "¿Importa la documentación de la PAM para auditorías y exámenes tipo NCLEX?",
+        "answer": "Sí. Una documentación de calidad vincula los valores de PAM con la valoración clínica, las intervenciones realizadas y la respuesta del paciente. Muchos escenarios de examen y auditoría esperan que enfermería reconozca una PAM anómala, escale adecuadamente y registre todo el ciclo asistencial."
+      }
+    ]
   },
+  "faqHeading": "Preguntas frecuentes sobre PAM para enfermería",
+  "faqIntro": "Respuestas rápidas a dudas frecuentes sobre monitorización, comunicación y registro de la PAM en la práctica diaria de enfermería.",
   "refsHeading": "Referencias",
   "refs": [
     { "label": "Campaña Sobreviviendo a la Sepsis 2021", "text": "Evans L, Rhodes A, Alhazzani W, et al. Surviving Sepsis Campaign: 2021 International Guidelines for Management of Sepsis and Septic Shock. Intensive Care Med. 2021;47:1181–1247. doi:10.1007/s00134-021-06506-y", "url": "https://link.springer.com/article/10.1007/s00134-021-06506-y" },

@@ -2,19 +2,23 @@ const MapCalculationNursingEn = {
   meta: {
     title: "MAP Calculation for Nurses: Quick Bedside Reference Guide (2025)",
     description:
-      "Nursing-focused MAP calculator and guide: calculation, interpretation, and actions. Fast bedside reference for ICU, ER, periop, and floor nurses.",
+      "Nursing-focused mean arterial pressure (MAP) calculator and guide: how to calculate MAP from blood pressure, interpret values, and choose nursing actions. Fast bedside reference for ICU, ER, perioperative, and floor nurses.",
     keywords: [
       "MAP calculation nursing",
+      "mean arterial pressure for nurses",
+      "how to calculate MAP from blood pressure",
+      "nursing MAP calculator",
       "MAP for nurses",
       "bedside MAP calculator",
       "nursing MAP guide",
       "ICU nursing MAP",
     ],
     openGraphTitle: "MAP Calculation for Nurses - Bedside Reference",
-    openGraphDescription: "Essential MAP guide designed specifically for nurses",
+    openGraphDescription:
+      "Bedside mean arterial pressure (MAP) guide and calculator designed specifically for nurses.",
     heroTitle: "MAP Calculation for Nurses: Bedside Reference",
     heroDescription:
-      "Quick, practical MAP calculator and guide for nursing professionals working in ICU, ER, perioperative, or acute care environments.",
+      "Quick, practical mean arterial pressure (MAP) calculator and guide for nursing professionals using blood pressure readings in ICU, ER, perioperative, or acute care settings.",
     heroAudience: "👩‍⚕️ For: ICU Nurses • ER Nurses • Floor Nurses • Student Nurses",
   },
   schema: {
@@ -24,7 +28,32 @@ const MapCalculationNursingEn = {
     audienceTypeLabel: "Nurse",
     audienceDescription:
       "Registered nurses, ICU nurses, ER nurses, floor nurses, and nursing students.",
+    faq: [
+      {
+        question: "Why should nurses calculate MAP instead of just charting BP?",
+        answer:
+          "MAP reflects the average organ perfusion pressure and can reveal trends that systolic/diastolic values alone may miss. Translating blood pressure into MAP helps nurses recognize early hypoperfusion and escalate care before a crash.",
+      },
+      {
+        question: "What MAP range is acceptable for most adult patients?",
+        answer:
+          "For many adults, MAP 65–100 mmHg is acceptable, with 65–75 mmHg often used as a minimum target in sepsis and critical care. Always individualize based on baseline hypertension, neurologic status, and perfusion markers such as mentation, urine output, and skin findings.",
+      },
+      {
+        question: "When should I call the provider about MAP?",
+        answer:
+          "Call promptly if MAP is below 60 mmHg, falling rapidly, or persistently below 65 mmHg with signs of hypoperfusion (altered mentation, oliguria, cool or mottled skin). Also notify for very high MAP (above ~110 mmHg) accompanied by concerning symptoms such as chest pain, severe headache, or neurologic changes.",
+      },
+      {
+        question: "Does MAP documentation matter for audits and NCLEX-style questions?",
+        answer:
+          "Yes. High‑quality documentation pairs MAP values with assessments, interventions, and patient response. Many NCLEX and chart‑audit scenarios expect nurses to recognize abnormal MAP, communicate with providers, intervene appropriately, and chart the full sequence of events.",
+      },
+    ],
   },
+  faqHeading: 'Common MAP Questions for Nurses',
+  faqIntro:
+    'Quick answers to frequent questions about MAP monitoring, escalation, and documentation in everyday nursing practice.',
   
   // References
   refsHeading: 'References',

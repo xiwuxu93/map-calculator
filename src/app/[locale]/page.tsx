@@ -369,6 +369,24 @@ export default async function HomePage({ params }: PageProps) {
             <p className="text-base text-gray-600 md:text-lg">{home('description')}</p>
           </div>
 
+          <div id="map-calculator" className="rounded-lg bg-white p-6 shadow-lg md:p-8">
+            <Calculator />
+            <div className="mt-4 flex flex-wrap gap-3 text-sm text-gray-700">
+              <Link
+                href={localizedPath('/how-to-calculate-map-blood-pressure')}
+                className="inline-flex items-center rounded-full border border-gray-900 px-4 py-2 font-semibold text-gray-900 transition hover:bg-gray-900 hover:text-white"
+              >
+                {home('resourceCards.howToLink')}
+              </Link>
+              <Link
+                href={localizedPath('/map-calculation-nursing')}
+                className="inline-flex items-center rounded-full border border-gray-900 px-4 py-2 font-semibold text-gray-900 transition hover:bg-gray-900 hover:text-white"
+              >
+                {home('resourceCards.nursingLink')}
+              </Link>
+            </div>
+          </div>
+
           <div className="space-y-4 rounded-xl border border-blue-100 bg-blue-50 p-6 text-left shadow-sm">
             <p className="text-sm font-semibold uppercase tracking-wide text-blue-800">
               {home('medicalBannerHeading')}
@@ -385,10 +403,6 @@ export default async function HomePage({ params }: PageProps) {
                 </span>
               ))}
             </div>
-          </div>
-
-          <div id="map-calculator" className="rounded-lg bg-white p-6 shadow-lg md:p-8">
-            <Calculator />
           </div>
 
           <div className="space-y-4 rounded-lg border border-slate-200 bg-white p-6 shadow-lg md:p-8">

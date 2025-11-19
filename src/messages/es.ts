@@ -1,8 +1,8 @@
 const es = {
   "metadata": {
     "title": "Calculadora de PAM: Calcula la presión arterial media (calculadora de PA) | mapcalculator.org",
-    "description": "Calculadora gratuita de PAM para profesionales sanitarios. Calcula la presión arterial media a partir de la presión arterial sistólica y diastólica. Herramienta basada en la evidencia utilizada por médicos, enfermeros y paramédicos en todo el mundo.",
-    "keywords": "Calculadora de PAM, presión arterial media, calculadora de PA, profesionales de la salud, hemodinámica, calculadora clínica",
+    "description": "Calculadora gratuita de presión arterial media (PAM) para profesionales sanitarios. Calcula la PAM a partir de la presión arterial sistólica y diastólica, muestra la fórmula estándar y explica cómo calcular la PAM en la práctica clínica.",
+    "keywords": "Calculadora de PAM, presión arterial media, calculadora presión arterial media, calculadora de PA, calculadora PAM, calcular PAM, cómo calcular la PAM, profesionales de la salud, hemodinámica, calculadora clínica",
     "siteName": "Calculadora de PAM"
   },
   "editorial": {

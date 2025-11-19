@@ -344,12 +344,15 @@ const mapCalculatorBpEn: MapCalculatorBpContent = {
     title:
       "MAP Calculator BP: Calculate Mean Arterial Pressure from Blood Pressure | mapcalculator.org",
     description:
-      "Quick MAP calculator from blood pressure readings. Convert systolic and diastolic BP to MAP instantly. Free tool for healthcare professionals with clinical interpretation.",
+      "Quick MAP calculator from blood pressure readings. Convert systolic and diastolic BP to MAP instantly, review the mean arterial pressure formula, and see how to calculate MAP from blood pressure step-by-step.",
     keywords: [
       "map calculator bp",
       "BP to MAP",
       "blood pressure MAP calculator",
+      "map blood pressure",
       "calculate MAP from BP",
+      "how to calculate MAP",
+      "mean arterial pressure formula",
     ],
     openGraphTitle: "MAP Calculator BP - Convert Blood Pressure to MAP",
     openGraphDescription:

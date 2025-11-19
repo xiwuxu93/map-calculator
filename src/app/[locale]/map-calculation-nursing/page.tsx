@@ -88,6 +88,18 @@ export default function MapCalculationNursingPage({ params }: PageProps) {
         description: schema.audienceDescription,
       },
     },
+    {
+      '@context': 'https://schema.org',
+      '@type': 'FAQPage',
+      mainEntity: (schema as any).faq?.map((item: any) => ({
+        '@type': 'Question',
+        name: item.question,
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: item.answer,
+        },
+      })),
+    },
   ];
 
   return (
@@ -902,6 +914,29 @@ export default function MapCalculationNursingPage({ params }: PageProps) {
                   <li>{texts.t0250}</li>
                 </ul>
               </div>
+            </div>
+          </section>
+
+          <section id="faq" className="space-y-6 rounded-2xl bg-white p-8 shadow-lg md:p-12">
+            <h2 className="text-2xl font-semibold text-gray-900 md:text-3xl">
+              {(texts as any).faqHeading ?? 'Nursing MAP FAQs'}
+            </h2>
+            {(texts as any).faqIntro && (
+              <p className="text-base text-gray-700">
+                {(texts as any).faqIntro}
+              </p>
+            )}
+            <div className="grid gap-4 md:grid-cols-2">
+              {Array.isArray((schema as any).faq) &&
+                (schema as any).faq.map((item: any, idx: number) => (
+                  <div
+                    key={item.question ?? idx}
+                    className="rounded-xl border border-gray-100 bg-gray-50 p-5 text-sm text-gray-700"
+                  >
+                    <h3 className="text-lg font-semibold text-gray-900">{item.question}</h3>
+                    <p className="mt-2">{item.answer}</p>
+                  </div>
+                ))}
             </div>
           </section>
 

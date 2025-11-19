@@ -36,7 +36,7 @@ const MapTargetsEs = {
       {
         question: "¿PAM ≥65 siempre es correcto?",
         answer:
-          "No. 65 mmHg es un objetivo inicial habitual (p. ej., en sepsis), pero debe individualizarse con marcadores de perfusión, comorbilidades y evidencia por condición.",
+          "No. 65 mmHg es un objetivo inicial habitual (por ejemplo, en sepsis), pero debe individualizarse con marcadores de perfusión, comorbilidades y evidencia específica por condición.",
       },
       {
         question: "¿Cuál es la meta de PAM en TCE?",
@@ -44,9 +44,14 @@ const MapTargetsEs = {
           "Apunte a CPP (presión de perfusión cerebral) = PAM − PIC. Muchos protocolos recomiendan CPP 60–70 mmHg, lo que suele requerir PAM 80–110 según la PIC y la autorregulación.",
       },
       {
+        question: "¿Qué objetivo de PAM tras una parada cardiaca?",
+        answer:
+          "La mayoría de los protocolos posparada cardiaca buscan PAM ≥65–75 mmHg, ajustando según el estado neurológico, las comorbilidades y los objetivos de soporte orgánico. Evite episodios de hipotensión en la fase temprana.",
+      },
+      {
         question: "¿Qué PAM en ictus isquémico?",
         answer:
-          "En fases tempranas, es frecuente la hipertensión permisiva para sostener la penumbra. Puede tolerarse PAM elevada; siga guías de ictus y al equipo de neuro.",
+          "En fases tempranas, es frecuente la hipertensión permisiva para sostener la penumbra. Puede tolerarse PAM elevada dentro de los límites de las guías; siga las recomendaciones del equipo de ictus/neuro.",
       },
       {
         question: "¿Cuándo usar una línea arterial para PAM?",

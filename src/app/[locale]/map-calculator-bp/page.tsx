@@ -3,6 +3,7 @@ import type { Metadata } from 'next';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import BpCalculator from '@/components/BpCalculator';
+import { getTranslations } from 'next-intl/server';
 import {
   getMapCalculatorBpContent,
 } from '@/messages/pages/mapCalculatorBp';
@@ -82,9 +83,10 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   };
 }
 
-export default function MapCalculatorBpPage({ params }: PageProps) {
+export default async function MapCalculatorBpPage({ params }: PageProps) {
   const locale = (locales.includes(params.locale as Locale) ? params.locale : defaultLocale) as Locale;
   const content = getMapCalculatorBpContent(locale);
+  const common = await getTranslations({ locale, namespace: 'common' });
   const localePrefix = getLocalePrefix(locale);
   const localizedPath = (path: string) => getLocalizedPath(locale, path);
   const imageUrl = `${SITE_URL}/og-image.png`;
@@ -194,6 +196,20 @@ export default function MapCalculatorBpPage({ params }: PageProps) {
             </div>
             <div className="rounded-xl border border-gray-200 bg-white p-6 shadow-sm md:p-8">
               <BpCalculator />
+            </div>
+            <div className="flex flex-wrap gap-3 text-sm text-gray-700">
+              <Link
+                href={localizedPath('/how-to-calculate-map-blood-pressure')}
+                className="inline-flex items-center rounded-full border border-gray-900 px-4 py-2 font-semibold text-gray-900 transition hover:bg-gray-900 hover:text-white"
+              >
+                {common('howToCalculateLink')}
+              </Link>
+              <Link
+                href={localizedPath('/map-calculation-nursing')}
+                className="inline-flex items-center rounded-full border border-gray-900 px-4 py-2 font-semibold text-gray-900 transition hover:bg-gray-900 hover:text-white"
+              >
+                {common('nursingGuideLink')}
+              </Link>
             </div>
           </section>
 

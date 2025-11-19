@@ -3,9 +3,9 @@ const en = {
     title:
       "MAP Calculator: Calculate Mean Arterial Pressure (BP Calculator) | mapcalculator.org",
     description:
-      "Free MAP calculator for healthcare professionals. Calculate mean arterial pressure from systolic and diastolic BP. Evidence-based tool used by doctors, nurses, and paramedics worldwide.",
+      "Free MAP calculator and guide for healthcare professionals. Calculate mean arterial pressure from blood pressure (MAP from BP), review the standard MAP formula, and learn how to calculate MAP step-by-step at the bedside.",
     keywords:
-      "MAP calculator, mean arterial pressure, BP calculator, healthcare professionals, hemodynamics, clinical calculator",
+      "MAP calculator, mean arterial pressure calculator, map blood pressure, how to calculate MAP, mean arterial pressure formula, BP calculator, healthcare professionals, hemodynamics, clinical calculator",
     siteName: "MAP Calculator",
   },
   editorial: {

@@ -1,16 +1,18 @@
 const MapCalculationNursingZh = {
   "meta": {
-    "title": "护理人员版 MAP 计算：床旁速查指南（2025）",
-    "description": "专为护士设计的 MAP 计算器与操作指南，涵盖计算方法、结果解读与护理干预提示，适用于 ICU、急诊与病房护理场景。",
+    "title": "护理人员版平均动脉压（MAP）计算：床旁速查指南（2025）",
+    "description": "专为护士设计的平均动脉压（MAP）计算器与操作指南，涵盖计算方法、结果解读与护理干预提示，适用于 ICU、急诊与病房护理场景。",
     "keywords": [
       "护理 MAP 计算",
       "护理 MAP 指南",
       "床旁 MAP 工具",
+      "平均动脉压 护理",
+      "平均动脉压 计算 护士",
       "ICU 护理 MAP",
       "ICU护理MAP"
     ],
-    "openGraphTitle": "护理专用 MAP 计算指南",
-    "openGraphDescription": "面向护士的平均动脉压床旁参考手册",
+    "openGraphTitle": "护理专用平均动脉压（MAP）计算指南",
+    "openGraphDescription": "面向护士的平均动脉压（MAP）床旁参考手册与快速计算工具",
     "heroTitle": "护理人员专用的 MAP 计算与速查指南",
     "heroDescription": "面向 ICU、急诊、围术期及普通病房护士的 MAP 计算工具，帮助你快速评估灌注并制定护理干预。",
     "heroAudience": "👩‍⚕️ 适用对象：ICU 护士・急诊护士・病房护士・护理学生"
@@ -19,8 +21,28 @@ const MapCalculationNursingZh = {
     "headline": "护理人员版 MAP 计算：床旁速查指南",
     "description": "面向 ICU、急诊与普通病房护士的 MAP 计算、解读与护理干预指南。",
     "audienceTypeLabel": "护士",
-    "audienceDescription": "注册护士、ICU 护士、急诊护士、病房护士以及护理学生。"
+    "audienceDescription": "注册护士、ICU 护士、急诊护士、病房护士以及护理学生。",
+    "faq": [
+      {
+        "question": "护士为什么要单独计算 MAP，而不是只记录血压？",
+        "answer": "MAP 直接反映器官灌注压，比单看收缩压/舒张压更能体现整体灌注状况。把血压换算成 MAP 能更早发现低灌注趋势，在“真正崩盘”前及时升级处理。"
+      },
+      {
+        "question": "大多数成年患者的 MAP 合理范围是多少？",
+        "answer": "许多成年人 MAP 65–100 mmHg 都是可接受的，其中 65–75 mmHg 常被用作重症和脓毒症的最低目标。具体目标需结合既往高血压史、神经状态和灌注指标（意识、尿量、皮肤灌注等）个体化。"
+      },
+      {
+        "question": "什么情况下需要就 MAP 及时通知医生？",
+        "answer": "当 MAP 低于 60 mmHg、短时间内持续下降，或在 MAP <65 mmHg 的同时出现意识改变、尿量减少、皮肤苍白冰冷/斑驳等低灌注征象时，应立即通知医生或启动快速反应。另外，当 MAP 明显偏高（如 >110 mmHg）且伴有胸痛、剧烈头痛或神经症状时也应及时汇报。"
+      },
+      {
+        "question": "MAP 相关记录对质控和考试（如 NCLEX）重要吗？",
+        "answer": "非常重要。高质量记录应将 MAP 数值与评估结果、采取的护理措施及患者反应对应起来。许多考试与病历质控情境都会考查护士能否识别异常 MAP、适当上报与干预，并完整记录全过程。"
+      }
+    ]
   },
+  "faqHeading": "护理常见 MAP 问题解答",
+  "faqIntro": "在床旁快速回顾 MAP 相关的监测、上报与记录要点，帮助你在忙碌的班次中做出更稳妥的护理决策。",
   "refsHeading": "参考文献",
   "refs": [
     { "label": "2021 年《生存脓毒症运动》", "text": "Evans L, Rhodes A, Alhazzani W, et al. Surviving Sepsis Campaign: 2021 International Guidelines for Management of Sepsis and Septic Shock. Intensive Care Med. 2021;47:1181–1247. doi:10.1007/s00134-021-06506-y", "url": "https://link.springer.com/article/10.1007/s00134-021-06506-y" },
