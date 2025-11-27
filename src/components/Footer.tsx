@@ -6,6 +6,31 @@ import { defaultLocale } from '@/lib/i18n';
 const getLocalePrefix = (locale: string, fallbackLocale: string) =>
   locale === fallbackLocale ? '' : `/${locale}`;
 
+type PartnerLink = {
+  name: string;
+  href: string;
+  badgeSrc?: string;
+  badgeAlt?: string;
+  badgeHeight?: number;
+};
+
+const partnerLinks: PartnerLink[] = [
+  {
+    name: 'Appa List',
+    href: 'https://appalist.com',
+    badgeSrc: 'https://appalist.com/assets/images/badge.png',
+    badgeAlt: 'Appa List',
+    badgeHeight: 54,
+  },
+  {
+    name: 'Hunt for Tools',
+    href: 'https://huntfortools.com',
+    badgeSrc: 'https://huntfortools.com/assets/images/badge.png',
+    badgeAlt: 'Hunt for Tools',
+    badgeHeight: 54,
+  },
+];
+
 export default async function Footer() {
   const [t, locale] = await Promise.all([getTranslations('common'), getLocale()]);
   const basePath = getLocalePrefix(locale, defaultLocale);
@@ -53,9 +78,34 @@ export default async function Footer() {
             {t('nursingGuideLink')}
           </Link>
         </div>
-        <span className="text-gray-500">
-          © <CurrentYear />. {t('allRightsReserved')}
-        </span>
+        <div className="mt-2 flex flex-col items-center gap-3 border-t border-gray-100 pt-4 text-gray-500 sm:flex-row sm:items-center sm:justify-between">
+          <span className="text-center sm:text-left">
+            © <CurrentYear /> {t('siteName')}. {t('allRightsReserved')}
+          </span>
+          <div className="flex flex-wrap justify-center gap-3 sm:justify-end">
+            {partnerLinks.map((link) => (
+              <a
+                key={link.href}
+                href={link.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={link.name}
+                className="inline-flex items-center justify-center text-gray-600 transition hover:text-gray-900"
+              >
+                {link.badgeSrc ? (
+                  // eslint-disable-next-line @next/next/no-img-element
+                  <img
+                    src={link.badgeSrc}
+                    alt={link.badgeAlt || link.name}
+                    style={{ height: `${link.badgeHeight ?? 54}px` }}
+                  />
+                ) : (
+                  <span className="text-sm underline-offset-2 hover:underline">{link.name}</span>
+                )}
+              </a>
+            ))}
+          </div>
+        </div>
       </div>
     </footer>
   );
