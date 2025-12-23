@@ -6,12 +6,13 @@ const mapCalculatorBpZh: MapCalculatorBpContent = {
     "description": "输入收缩压与舒张压，即可根据标准公式快速计算平均动脉压（MAP）。支持血压换算 MAP、查看平均动脉压公式与示例解读，适合 ICU、急诊及围术期护理使用。",
     "keywords": [
       "MAP 计算器",
-      "血压换算 MAP",
+      "MAP 计算器",
       "平均动脉压计算",
       "平均动脉压公式",
-      "如何计算平均动脉压",
       "BP 转 MAP",
-      "MAP 护理"
+      "BP 转 MAP",
+      "MAP 护理",
+      "血压计算器地图"
     ],
     "openGraphTitle": "MAP 计算器（BP）—— 由血压快速计算平均动脉压",
     "openGraphDescription": "输入血压，根据标准公式计算平均动脉压，并查看护理场景中的临床意义。",

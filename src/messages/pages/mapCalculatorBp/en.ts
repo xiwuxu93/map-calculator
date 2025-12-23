@@ -342,24 +342,26 @@ const futureAssets = [
 const mapCalculatorBpEn: MapCalculatorBpContent = {
   metadata: {
     title:
-      "MAP Calculator BP: Calculate Mean Arterial Pressure from Blood Pressure | mapcalculator.org",
+      "BP to MAP Calculator: Convert Blood Pressure to Mean Arterial Pressure (MAP) | mapcalculator.org",
     description:
-      "Quick MAP calculator from blood pressure readings. Convert systolic and diastolic BP to MAP instantly, review the mean arterial pressure formula, and see how to calculate MAP from blood pressure step-by-step.",
+      "Free BP to MAP calculator for clinicians. Convert systolic and diastolic blood pressure to MAP instantly, review the mean arterial pressure (MAP) formula, and see worked MAP blood pressure examples.",
     keywords: [
+      "BP to MAP calculator",
       "map calculator bp",
-      "BP to MAP",
       "blood pressure MAP calculator",
       "map blood pressure",
       "calculate MAP from BP",
-      "how to calculate MAP",
+      "mean arterial pressure calculator",
       "mean arterial pressure formula",
+      "map blood pressure calculator",
     ],
-    openGraphTitle: "MAP Calculator BP - Convert Blood Pressure to MAP",
+    openGraphTitle:
+      "BP to MAP Calculator – Convert Blood Pressure to Mean Arterial Pressure",
     openGraphDescription:
-      "Fast MAP calculation from blood pressure readings for clinical use",
-    heroTitle: "MAP Calculator from Blood Pressure Readings",
+      "Convert blood pressure (BP) readings to MAP in seconds with a clinical mean arterial pressure calculator and examples.",
+    heroTitle: "BP to MAP Calculator (Mean Arterial Pressure from Blood Pressure)",
     heroDescription:
-      "Convert systolic and diastolic blood pressure readings to Mean Arterial Pressure instantly. Designed for busy clinicians who need fast, accurate BP-to-MAP conversions with interpretation.",
+      "Convert systolic and diastolic blood pressure readings to Mean Arterial Pressure (MAP) instantly. Designed for busy clinicians who need fast, accurate BP-to-MAP conversions with interpretation.",
   },
   schema: {
     medicalWebPage: {

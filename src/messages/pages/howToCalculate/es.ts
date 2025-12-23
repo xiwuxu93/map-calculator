@@ -5,13 +5,16 @@ const HowToCalculateEs = {
     "keywords": [
       "cómo calcular la PAM",
       "calcular PAM a partir de la presión arterial",
+      "calcular PAM a partir de la presión arterial",
       "fórmula de la PAM",
       "cálculo de la presión arterial media",
-      "cómo calcular la presión arterial media",
-      "cómo calcular la PAM a partir de la PA",
-      "convertidor de PA a PAM",
+      "Cómo calcular la PAM a partir de la PA",
+      "Cómo calcular la PAM en la presión arterial",
+      "Cómo calcular la PAM de la presión arterial",
+      "cómo calcular la presión arterial media (PAM)",
+      "Convertidor de BP a MAP",
       "rango normal de PAM",
-      "rango normal de presión arterial media",
+      "Calculadora de presión arterial con mapa",
       "MAP objetivo sepsis 65",
       "Calculadora de presión arterial media (PAM)",
       "Calculadora de presión arterial con mapa",
@@ -301,10 +304,26 @@ const HowToCalculateEs = {
   "t0203": "¿Por qué no puedo usar un promedio simple de la presión sistólica y diastólica?",
   "refsHeading": "Referencias",
   "refs": [
-    { "label": "Referencia de fisiología", "text": "Hall JE. Guyton and Hall Textbook of Medical Physiology. 14th ed. Elsevier; 2021.", "url": "https://www.elsevier.com/books/guyton-and-hall-textbook-of-medical-physiology" },
-    { "label": "Campaña Sobreviviendo a la Sepsis 2021", "text": "Evans L, Rhodes A, Alhazzani W, et al. Surviving Sepsis Campaign: 2021 International Guidelines for Management of Sepsis and Septic Shock. Intensive Care Med. 2021;47:1181–1247. doi:10.1007/s00134-021-06506-y", "url": "https://link.springer.com/article/10.1007/s00134-021-06506-y" },
-    { "label": "Guía TCE grave (CPP)", "text": "Carney N, Totten AM, O’Reilly C, et al. Guidelines for the Management of Severe Traumatic Brain Injury, Fourth Edition. Neurosurgery. 2016;80(1):6–15. doi:10.1227/NEU.0000000000001432", "url": "https://doi.org/10.1227/NEU.0000000000001432" },
-    { "label": "Guía AHA/ASA de ictus isquémico 2019", "text": "Powers WJ, Rabinstein AA, Ackerson T, et al. 2019 AHA/ASA Guideline for the Early Management of Patients With Acute Ischemic Stroke. Stroke. 2019;50:e344–e418. doi:10.1161/STR.0000000000000211", "url": "https://www.ahajournals.org/doi/10.1161/STR.0000000000000211" }
+    {
+      "label": "Referencia de fisiología",
+      "text": "Hall JE. Guyton and Hall Textbook of Medical Physiology. 14th ed. Elsevier; 2021.",
+      "url": "https://www.elsevier.com/books/guyton-and-hall-textbook-of-medical-physiology"
+    },
+    {
+      "label": "Campaña para la Supervivencia a la Sepsis 2021",
+      "text": "Evans L, Rhodes A, Alhazzani W, et al. Campaña para la Supervivencia a la Sepsis: Guías Internacionales 2021 para el Manejo de la Sepsis y el Choque Séptico. Intensive Care Med. 2021;47:1181–1247. doi:10.1007/s00134-021-06506-y",
+      "url": "https://link.springer.com/article/10.1007/s00134-021-06506-y"
+    },
+    {
+      "label": "Pautas para el traumatismo craneoencefálico grave (CPP)",
+      "text": "Carney N, Totten AM, O’Reilly C, et al. Guía para el manejo del traumatismo craneoencefálico grave, cuarta edición. Neurocirugía. 2016;80(1):6–15. doi:10.1227/NEU.0000000000001432",
+      "url": "https://doi.org/10.1227/NEU.0000000000001432"
+    },
+    {
+      "label": "Guía AHA/ASA de ictus isquémico 2019",
+      "text": "Powers WJ, Rabinstein AA, Ackerson T, et al. Guía AHA/ASA 2019 para el manejo temprano de pacientes con accidente cerebrovascular isquémico agudo. Stroke. 2019;50:e344–e418. doi:10.1161/STR.0000000000000211",
+      "url": "https://www.ahajournals.org/doi/10.1161/STR.0000000000000211"
+    }
   ]
 } as const;
 

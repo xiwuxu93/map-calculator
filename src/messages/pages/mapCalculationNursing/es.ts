@@ -7,10 +7,8 @@ const MapCalculationNursingEs = {
       "presión arterial media enfermería",
       "calculadora de PAM de cabecera",
       "calculadora presión arterial media",
-      "calculadora PAM",
       "MAP para enfermeras",
-      "calcular PAM",
-      "cómo calcular la PAM",
+      "calculadora de PAM de cabecera",
       "guía de MAP para enfermería",
       "PAM en UCI enfermería"
     ],
@@ -48,9 +46,21 @@ const MapCalculationNursingEs = {
   "faqIntro": "Respuestas rápidas a dudas frecuentes sobre monitorización, comunicación y registro de la PAM en la práctica diaria de enfermería.",
   "refsHeading": "Referencias",
   "refs": [
-    { "label": "Campaña Sobreviviendo a la Sepsis 2021", "text": "Evans L, Rhodes A, Alhazzani W, et al. Surviving Sepsis Campaign: 2021 International Guidelines for Management of Sepsis and Septic Shock. Intensive Care Med. 2021;47:1181–1247. doi:10.1007/s00134-021-06506-y", "url": "https://link.springer.com/article/10.1007/s00134-021-06506-y" },
-    { "label": "Cuidados posparada cardiaca 2020 (AHA)", "text": "Panchal AR, Bartos JA, Cabañas JG, et al. 2020 AHA Guidelines for CPR and ECC: Post–Cardiac Arrest Care. Circulation. 2020;142(16_suppl_2):S469–S523. doi:10.1161/CIR.0000000000000916", "url": "https://www.ahajournals.org/doi/10.1161/CIR.0000000000000916" },
-    { "label": "Guía TCE grave (CPP)", "text": "Carney N, Totten AM, O’Reilly C, et al. Guidelines for the Management of Severe Traumatic Brain Injury, Fourth Edition. Neurosurgery. 2016;80(1):6–15. doi:10.1227/NEU.0000000000001432", "url": "https://doi.org/10.1227/NEU.0000000000001432" }
+    {
+      "label": "Campaña para la Supervivencia a la Sepsis 2021",
+      "text": "Evans L, Rhodes A, Alhazzani W, et al. Campaña para la Supervivencia a la Sepsis: Guías Internacionales 2021 para el Manejo de la Sepsis y el Choque Séptico. Intensive Care Med. 2021;47:1181–1247. doi:10.1007/s00134-021-06506-y",
+      "url": "https://link.springer.com/article/10.1007/s00134-021-06506-y"
+    },
+    {
+      "label": "Cuidados posparada cardiaca 2020 (AHA)",
+      "text": "Panchal AR, Bartos JA, Cabañas JG, et al. 2020 AHA Guidelines for CPR and ECC: Post–Cardiac Arrest Care. Circulation. 2020;142(16_suppl_2):S469–S523. doi:10.1161/CIR.0000000000000916",
+      "url": "https://www.ahajournals.org/doi/10.1161/CIR.0000000000000916"
+    },
+    {
+      "label": "Guía TCE grave (CPP)",
+      "text": "Carney N, Totten AM, O’Reilly C, et al. Guía para el manejo del traumatismo craneoencefálico grave, cuarta edición. Neurocirugía. 2016;80(1):6–15. doi:10.1227/NEU.0000000000001432",
+      "url": "https://doi.org/10.1227/NEU.0000000000001432"
+    }
   ],
   "t0001": "Referencia de cabecera",
   "t0002": "Guía de referencia rápida",

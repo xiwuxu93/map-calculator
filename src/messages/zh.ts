@@ -1,6 +1,6 @@
 const zh = {
   "metadata": {
-    "title": "MAP 计算器：平均动脉压计算公式与护理指南 | mapcalculator.org",
+    "title": "MAP 计算器：计算平均动脉压（血压计算器）| mapcalculator.org",
     "description": "面向医疗专业人士的免费平均动脉压（MAP）计算器。输入收缩压和舒张压即可计算 MAP，并查看标准平均动脉压公式、如何计算平均动脉压的步骤以及常见护理场景解读。",
     "keywords": "MAP 计算器, 平均动脉压计算, 平均动脉压公式, 如何计算平均动脉压, MAP 护理, 护理 MAP 指南, 血压计算器, 医疗专业人士, 血流动力学, 临床工具",
     "siteName": "MAP 计算器"

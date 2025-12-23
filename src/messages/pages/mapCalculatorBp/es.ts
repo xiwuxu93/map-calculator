@@ -6,9 +6,13 @@ const mapCalculatorBpEs: MapCalculatorBpContent = {
     "description": "Calculadora rápida de PAM a partir de lecturas de presión arterial. Convierte la presión arterial sistólica y diastólica a PAM al instante. Herramienta gratuita para profesionales sanitarios con interpretación clínica.",
     "keywords": [
       "calculadora de mapas bp",
-      "BP a MAP",
+      "calculadora de mapas bp",
       "Calculadora de presión arterial media (PAM)",
-      "Calcular la PAM a partir de la PA"
+      "Calcular la PAM a partir de la PA",
+      "Calcular la PAM a partir de la PA",
+      "mean arterial pressure calculator",
+      "mean arterial pressure formula",
+      "Calculadora de presión arterial con mapa"
     ],
     "openGraphTitle": "Calculadora de PAM - Convierte la presión arterial a PAM",
     "openGraphDescription": "Cálculo rápido de la PAM a partir de lecturas de presión arterial para uso clínico",

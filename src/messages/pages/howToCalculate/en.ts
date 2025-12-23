@@ -1,8 +1,9 @@
 const HowToCalculateEn = {
   meta: {
-    title: "How to Calculate MAP (Mean Arterial Pressure) from BP: Step-by-Step Guide (2025)",
+    title:
+      "How to Calculate MAP from Blood Pressure (BP) – MAP Formula & Mean Arterial Pressure Guide",
     description:
-      "Learn how to calculate MAP (mean arterial pressure) from blood pressure using the standard MAP formula. Includes worked examples, mental math shortcuts, normal MAP ranges, and clinical targets (e.g., MAP ≥65 in sepsis).",
+      "Step-by-step tutorial on how to calculate MAP (mean arterial pressure) from blood pressure. Covers the standard MAP formula, MAP blood pressure examples, normal MAP range, and clinical targets like MAP ≥65 mmHg in sepsis.",
     keywords: [
       "how to calculate MAP",
       "how to calculate MAP BP",
@@ -21,9 +22,12 @@ const HowToCalculateEn = {
       "map blood pressure calculator",
       "map calculator bp",
     ],
-    openGraphTitle: "How to Calculate MAP from BP (Blood Pressure) — Complete Guide",
-    openGraphDescription: "Master MAP calculation: formula, examples, nursing tips, and clinical targets.",
-    heroTitle: "How to Calculate MAP from Blood Pressure (BP): Complete Guide",
+    openGraphTitle:
+      "How to Calculate MAP from BP (Blood Pressure) – MAP Formula & Examples",
+    openGraphDescription:
+      "Learn the MAP (mean arterial pressure) formula, see worked MAP blood pressure examples, and review normal MAP ranges and clinical targets.",
+    heroTitle:
+      "How to Calculate MAP from Blood Pressure (BP): Formula, Examples, and Clinical Targets",
     heroDescription:
       "Master the essential skill of calculating Mean Arterial Pressure (MAP) from BP so you can make confident, protocol-driven clinical decisions in any care setting.",
     quickAnswerLabel: "Quick Answer",

@@ -1,17 +1,18 @@
 const MapCalculationNursingZh = {
   "meta": {
-    "title": "护理人员版平均动脉压（MAP）计算：床旁速查指南（2025）",
+    "title": "护理人员版 MAP 计算：床旁速查指南（2025）",
     "description": "专为护士设计的平均动脉压（MAP）计算器与操作指南，涵盖计算方法、结果解读与护理干预提示，适用于 ICU、急诊与病房护理场景。",
     "keywords": [
       "护理 MAP 计算",
       "护理 MAP 指南",
       "床旁 MAP 工具",
       "平均动脉压 护理",
-      "平均动脉压 计算 护士",
+      "护理 MAP 指南",
+      "床旁 MAP 工具",
       "ICU 护理 MAP",
       "ICU护理MAP"
     ],
-    "openGraphTitle": "护理专用平均动脉压（MAP）计算指南",
+    "openGraphTitle": "护理专用 MAP 计算指南",
     "openGraphDescription": "面向护士的平均动脉压（MAP）床旁参考手册与快速计算工具",
     "heroTitle": "护理人员专用的 MAP 计算与速查指南",
     "heroDescription": "面向 ICU、急诊、围术期及普通病房护士的 MAP 计算工具，帮助你快速评估灌注并制定护理干预。",
@@ -43,11 +44,23 @@ const MapCalculationNursingZh = {
   },
   "faqHeading": "护理常见 MAP 问题解答",
   "faqIntro": "在床旁快速回顾 MAP 相关的监测、上报与记录要点，帮助你在忙碌的班次中做出更稳妥的护理决策。",
-  "refsHeading": "参考文献",
+  "refsHeading": "参考",
   "refs": [
-    { "label": "2021 年《生存脓毒症运动》", "text": "Evans L, Rhodes A, Alhazzani W, et al. Surviving Sepsis Campaign: 2021 International Guidelines for Management of Sepsis and Septic Shock. Intensive Care Med. 2021;47:1181–1247. doi:10.1007/s00134-021-06506-y", "url": "https://link.springer.com/article/10.1007/s00134-021-06506-y" },
-    { "label": "AHA 2020 心脏骤停后治疗", "text": "Panchal AR, Bartos JA, Cabañas JG, et al. 2020 AHA Guidelines for CPR and ECC: Post–Cardiac Arrest Care. Circulation. 2020;142(16_suppl_2):S469–S523. doi:10.1161/CIR.0000000000000916", "url": "https://www.ahajournals.org/doi/10.1161/CIR.0000000000000916" },
-    { "label": "重度 TBI 指南（CPP）", "text": "Carney N, Totten AM, O’Reilly C, et al. Guidelines for the Management of Severe Traumatic Brain Injury, Fourth Edition. Neurosurgery. 2016;80(1):6–15. doi:10.1227/NEU.0000000000001432", "url": "https://doi.org/10.1227/NEU.0000000000001432" }
+    {
+      "label": "2021 年《生存脓毒症运动》",
+      "text": "Evans L、Rhodes A、Alhazzani W 等。《幸存脓毒症运动：2021 年脓毒症和脓毒性休克国际管理指南》。《重症监护医学》。2021;47:1181–1247。doi:10.1007/s00134-021-06506-y",
+      "url": "https://link.springer.com/article/10.1007/s00134-021-06506-y"
+    },
+    {
+      "label": "AHA 2020 心脏骤停后治疗",
+      "text": "Panchal AR, Bartos JA, Cabañas JG, et al. 2020 AHA Guidelines for CPR and ECC: Post–Cardiac Arrest Care. Circulation. 2020;142(16_suppl_2):S469–S523. doi:10.1161/CIR.0000000000000916",
+      "url": "https://www.ahajournals.org/doi/10.1161/CIR.00000000000000916"
+    },
+    {
+      "label": "重度 TBI 指南（CPP）",
+      "text": "Carney N、Totten AM、O’Reilly C 等。《严重创伤性脑损伤管理指南（第四版）》。神经外科杂志。2016;80(1):6–15。doi:10.1227/NEU.0000000000001432",
+      "url": "https://doi.org/10.1227/NEU.0000000000001432"
+    }
   ],
   "t0001": "床旁参考",
   "t0002": "速查信息",

@@ -4,14 +4,20 @@ const HowToCalculateZh = {
     "description": "学习如何根据血压计算平均动脉压（MAP）：从标准公式到心算技巧，配合示例、平均动脉压正常范围与典型护理场景（如脓毒症 MAP ≥65）临床目标说明。",
     "keywords": [
       "如何计算 MAP",
-      "平均动脉压公式",
-      "平均动脉压计算方法",
-      "如何根据血压计算平均动脉压",
+      "MAP 公式",
+      "MAP 公式",
+      "平均动脉压算法",
       "血压换算 MAP",
-      "平均动脉压正常范围",
-      "MAP 护理",
-      "脓毒症 MAP 目标 65",
-      "平均动脉压 计算器",
+      "如何根据血压计算平均动脉压 (MAP)。",
+      "如何计算血压中的平均动脉压（MAP）",
+      "如何计算平均动脉压（MAP）",
+      "如何计算平均动脉压（MAP）",
+      "血压到平均动脉压转换器",
+      "MAP正常范围",
+      "normal MAP range",
+      "MAP 目标脓毒症 65",
+      "平均动脉压 (MAP) 计算器血压",
+      "血压计算器地图",
       "MAP 计算器"
     ],
     "openGraphTitle": "如何计算 MAP —— 完整图文指南",
@@ -296,12 +302,28 @@ const HowToCalculateZh = {
   "t0201": "立即换算 MAP",
   "t0202": "护理参考",
   "t0203": "为什么不能直接取收缩压和舒张压的平均值？",
-  "refsHeading": "参考文献",
+  "refsHeading": "参考",
   "refs": [
-    { "label": "生理学参考", "text": "Hall JE. Guyton and Hall Textbook of Medical Physiology. 第14版. Elsevier; 2021.", "url": "https://www.elsevier.com/books/guyton-and-hall-textbook-of-medical-physiology" },
-    { "label": "2021 年《生存脓毒症运动》", "text": "Evans L, Rhodes A, Alhazzani W, et al. Surviving Sepsis Campaign: 2021 International Guidelines for Management of Sepsis and Septic Shock. Intensive Care Med. 2021;47:1181–1247. doi:10.1007/s00134-021-06506-y", "url": "https://link.springer.com/article/10.1007/s00134-021-06506-y" },
-    { "label": "重度 TBI 指南（CPP）", "text": "Carney N, Totten AM, O’Reilly C, et al. Guidelines for the Management of Severe Traumatic Brain Injury, Fourth Edition. Neurosurgery. 2016;80(1):6–15. doi:10.1227/NEU.0000000000001432", "url": "https://doi.org/10.1227/NEU.0000000000001432" },
-    { "label": "AHA/ASA 2019 急性缺血性卒中指南", "text": "Powers WJ, Rabinstein AA, Ackerson T, et al. 2019 AHA/ASA Guideline for the Early Management of Patients With Acute Ischemic Stroke. Stroke. 2019;50:e344–e418. doi:10.1161/STR.0000000000000211", "url": "https://www.ahajournals.org/doi/10.1161/STR.0000000000000211" }
+    {
+      "label": "生理学参考",
+      "text": "Hall JE. Guyton and Hall Textbook of Medical Physiology. 第14版. Elsevier; 2021.",
+      "url": "https://www.elsevier.com/books/guyton-and-hall-textbook-of-medical-physiology"
+    },
+    {
+      "label": "2021 年《生存脓毒症运动》",
+      "text": "Evans L、Rhodes A、Alhazzani W 等。《幸存脓毒症运动：2021 年脓毒症和脓毒性休克国际管理指南》。《重症监护医学》。2021;47:1181–1247。doi:10.1007/s00134-021-06506-y",
+      "url": "https://link.springer.com/article/10.1007/s00134-021-06506-y"
+    },
+    {
+      "label": "严重创伤性脑损伤指南（CPP）",
+      "text": "Carney N、Totten AM、O’Reilly C 等。《严重创伤性脑损伤管理指南（第四版）》。神经外科杂志。2016;80(1):6–15。doi:10.1227/NEU.0000000000001432",
+      "url": "https://doi.org/10.1227/NEU.0000000000001432"
+    },
+    {
+      "label": "AHA/ASA 2019 急性缺血性卒中指南",
+      "text": "Powers WJ、Rabinstein AA、Ackerson T 等。2019 年 AHA/ASA 急性缺血性卒中患者早期管理指南。《卒中》。2019;50:e344–e418。doi:10.1161/STR.0000000000000211",
+      "url": "https://www.ahajournals.org/doi/10.1161/STR.00000000000000211"
+    }
   ]
 } as const;
 
