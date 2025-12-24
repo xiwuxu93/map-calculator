@@ -165,7 +165,7 @@ export default function MapCalculationNursingPage({ params }: PageProps) {
                   <li key={idx}>
                     <span className="block">{ref.text}</span>
                     {ref.url && (
-                      <a href={ref.url} className="text-blue-700 underline" target="_blank" rel="noopener noreferrer">
+                      <a href={ref.url} className="text-blue-700 underline" target="_blank" rel="noopener noreferrer nofollow" >
                         {ref.label || 'Link'}
                       </a>
                     )}

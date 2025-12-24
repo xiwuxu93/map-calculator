@@ -88,7 +88,7 @@ export default async function Footer() {
                 key={link.href}
                 href={link.href}
                 target="_blank"
-                rel="noopener noreferrer"
+                rel="noopener noreferrer nofollow" 
                 aria-label={link.name}
                 className="inline-flex items-center justify-center text-gray-600 transition hover:text-gray-900"
               >

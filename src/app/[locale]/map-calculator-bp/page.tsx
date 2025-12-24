@@ -575,7 +575,7 @@ export default async function MapCalculatorBpPage({ params }: PageProps) {
                       <a
                         href={link.href}
                         target="_blank"
-                        rel="noopener noreferrer"
+                        rel="noopener noreferrer nofollow" 
                         className="text-blue-700 hover:underline"
                       >
                         {link.label}

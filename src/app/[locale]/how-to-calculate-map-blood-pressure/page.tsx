@@ -184,7 +184,7 @@ export default function HowToCalculateMapPage({ params }: PageProps) {
                   <li key={idx}>
                     <span className="block">{ref.text}</span>
                     {ref.url && (
-                      <a href={ref.url} className="text-blue-700 underline" target="_blank" rel="noopener noreferrer">
+                      <a href={ref.url} className="text-blue-700 underline" target="_blank" rel="noopener noreferrer nofollow" >
                         {ref.label || 'Link'}
                       </a>
                     )}
@@ -815,7 +815,7 @@ export default function HowToCalculateMapPage({ params }: PageProps) {
                     <a
                       href="https://www.sccm.org/SurvivingSepsisCampaign/Guidelines"
                       target="_blank"
-                      rel="noopener noreferrer"
+                      rel="noopener noreferrer nofollow" 
                       className="text-blue-700 hover:underline"
                     >
                       {texts.t0188}
@@ -825,7 +825,7 @@ export default function HowToCalculateMapPage({ params }: PageProps) {
                     <a
                       href="https://www.ahajournals.org"
                       target="_blank"
-                      rel="noopener noreferrer"
+                      rel="noopener noreferrer nofollow" 
                       className="text-blue-700 hover:underline"
                     >
                       {texts.t0189}
@@ -835,7 +835,7 @@ export default function HowToCalculateMapPage({ params }: PageProps) {
                     <a
                       href="https://www.braintrauma.org"
                       target="_blank"
-                      rel="noopener noreferrer"
+                      rel="noopener noreferrer nofollow" 
                       className="text-blue-700 hover:underline"
                     >
                       {texts.t0190}
