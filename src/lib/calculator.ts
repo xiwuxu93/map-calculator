@@ -1,8 +1,11 @@
 export type MapStatus = 'criticalLow' | 'borderline' | 'normal' | 'elevated' | 'high';
+export type PulsePressureStatus = 'narrow' | 'normal' | 'wide';
 
 export interface MapResult {
   value: number;
   status: MapStatus;
+  pulsePressure: number;
+  pulsePressureStatus: PulsePressureStatus;
 }
 
 /**
@@ -24,5 +27,13 @@ export function calculateMap(systolic: number, diastolic: number): MapResult {
     status = 'elevated';
   }
 
-  return { value, status };
+  const pulsePressure = systolic - diastolic;
+  let pulsePressureStatus: PulsePressureStatus = 'normal';
+  if (pulsePressure > 60) {
+    pulsePressureStatus = 'wide';
+  } else if (pulsePressure < 25) {
+    pulsePressureStatus = 'narrow';
+  }
+
+  return { value, status, pulsePressure, pulsePressureStatus };
 }

@@ -1,4 +1,4 @@
-import type { MapStatus } from '@/lib/calculator';
+import type { MapStatus, PulsePressureStatus } from '@/lib/calculator';
 
 export type BpCalculatorContent = {
   systolicLabel: string;
@@ -19,4 +19,7 @@ export type BpCalculatorContent = {
   quickSelectLabel?: string;
   statusLegend: Record<MapStatus, string>;
   statusDescriptions: Record<MapStatus, string>;
+  pulsePressureLabel: string;
+  ppStatusLegend: Record<PulsePressureStatus, string>;
+  ppStatusDescriptions: Record<PulsePressureStatus, string>;
 };

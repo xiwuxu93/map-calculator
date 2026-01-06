@@ -153,6 +153,19 @@ const en = {
       "Designed for licensed medical professionals, supervised trainees, and allied health teams.",
     emergencyNotice:
       "If this is an emergency, call your local emergency number immediately.",
+    pulsePressure: "Pulse Pressure",
+    ppStatusLabels: {
+      narrow: "Narrow",
+      normal: "Normal",
+      wide: "Wide",
+    },
+    ppStatusDescriptions: {
+      narrow:
+        "Pulse pressure < 25 mmHg. May indicate poor heart function or low volume.",
+      normal: "Pulse pressure 25–60 mmHg. Healthy range.",
+      wide:
+        "Pulse pressure > 60 mmHg. May indicate arterial stiffness or valve issues.",
+    },
   },
   home: {
     title: "Mean Arterial Pressure (MAP) Calculator",

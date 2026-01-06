@@ -32,6 +32,17 @@ const bpCalculatorZh: BpCalculatorContent = {
     "normal": "MAP 处于常规目标范围，可维持当前治疗方案，更关注趋势变化而非单次数值。",
     "elevated": "MAP 中度升高，先结合疼痛、焦虑、术后反应等情况综合判断，必要时再考虑降压处理。",
     "high": "MAP 明显升高，应排查是否存在靶器官受损体征，并依照高血压急症/亚急症流程处理。"
+  },
+  "pulsePressureLabel": "脉压差",
+  "ppStatusLegend": {
+    "narrow": "过窄 (< 25 mmHg)",
+    "normal": "正常 (25–60 mmHg)",
+    "wide": "过宽 (> 60 mmHg)"
+  },
+  "ppStatusDescriptions": {
+    "narrow": "可能提示心功能不全、低血容量或心包填塞。",
+    "normal": "成人脉压差的健康范围。",
+    "wide": "可能提示动脉硬化、瓣膜反流或甲状腺功能亢进。"
   }
 } as const;
 

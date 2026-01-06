@@ -121,8 +121,19 @@ const zh = {
       "high": ">110 mmHg：显著偏高——警惕高血压危象"
     },
     "disclaimer": "仅供教育参考，不能替代临床判断或专业医疗建议。",
-    "professionalNotice": "仅面向持证医疗专业人士、受监督的医护学员及相关团队。",
-    "emergencyNotice": "如遇紧急情况，请立即拨打当地急救电话。"
+    professionalNotice: "仅面向持证医疗专业人士、受监督的医护学员及相关团队。",
+    emergencyNotice: "如遇紧急情况，请立即拨打当地急救电话。",
+    pulsePressure: "脉压差",
+    ppStatusLabels: {
+      narrow: "过窄",
+      normal: "正常",
+      wide: "过宽"
+    },
+    ppStatusDescriptions: {
+      narrow: "脉压差 < 25 mmHg。可能提示心功能不佳或血容量不足。",
+      normal: "脉压差 25–60 mmHg。健康范围。",
+      wide: "脉压差 > 60 mmHg。可能提示动脉硬化或瓣膜问题。"
+    }
   },
   "home": {
     "title": "平均动脉压（MAP）计算器",

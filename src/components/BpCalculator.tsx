@@ -5,7 +5,7 @@ import { useEffect, useMemo, useState } from 'react';
 import type { ChangeEvent, FormEvent } from 'react';
 import { useLocale } from 'next-intl';
 import { calculateMap } from '@/lib/calculator';
-import type { MapStatus } from '@/lib/calculator';
+import type { MapStatus, PulsePressureStatus } from '@/lib/calculator';
 import { validateMapInput } from '@/lib/validator';
 import bpCalculatorContent from '@/messages/pages/bpCalculator';
 import type { BpCalculatorContent } from '@/messages/pages/bpCalculator/types';
@@ -38,6 +38,12 @@ const statusStyles: Record<MapStatus, string> = {
   normal: 'border-green-200 bg-green-50 text-green-700',
   elevated: 'border-amber-200 bg-amber-50 text-amber-800',
   high: 'border-rose-200 bg-rose-50 text-rose-800',
+};
+
+const ppStatusStyles: Record<PulsePressureStatus, string> = {
+  narrow: 'border-red-200 bg-red-50 text-red-800',
+  normal: 'border-green-200 bg-green-50 text-green-700',
+  wide: 'border-orange-200 bg-orange-50 text-orange-800',
 };
 
 export default function BpCalculator() {
@@ -270,6 +276,20 @@ export default function BpCalculator() {
             </span>
           </div>
           <p className="mt-4 text-base font-medium">{content.statusDescriptions[mapResult.status]}</p>
+
+          <div className={`mt-6 border-t pt-6 ${ppStatusStyles[mapResult.pulsePressureStatus]}`}>
+            <div className="text-sm font-semibold uppercase tracking-wide">{content.pulsePressureLabel}</div>
+            <div className="mt-2 flex flex-col items-center gap-2 text-3xl font-semibold">
+              <span>
+                {mapResult.pulsePressure}
+                <span className="ml-2 text-xl font-medium">mmHg</span>
+              </span>
+              <span className="inline-flex items-center gap-2 rounded-full bg-white/80 px-3 py-1 text-sm font-semibold text-current">
+                {content.ppStatusLegend[mapResult.pulsePressureStatus]}
+              </span>
+            </div>
+            <p className="mt-2 text-base font-medium">{content.ppStatusDescriptions[mapResult.pulsePressureStatus]}</p>
+          </div>
         </div>
       ) : (
         <div className="rounded-xl border border-gray-200 bg-gray-50 p-6 text-center text-gray-500 md:p-8">

@@ -121,8 +121,19 @@ const es = {
       "high": ">110 mmHg: Alta – evaluar la urgencia"
     },
     "disclaimer": "Únicamente con fines educativos. No sustituye el criterio clínico ni el consejo médico profesional.",
-    "professionalNotice": "Diseñado para profesionales médicos con licencia, estudiantes en prácticas supervisadas y equipos de profesionales sanitarios afines.",
-    "emergencyNotice": "Si se trata de una emergencia, llame inmediatamente al número de emergencias local."
+    professionalNotice: "Diseñado para profesionales médicos con licencia, estudiantes en prácticas supervisadas y equipos de profesionales sanitarios afines.",
+    emergencyNotice: "Si se trata de una emergencia, llame inmediatamente al número de emergencias local.",
+    pulsePressure: "Presión del pulso",
+    ppStatusLabels: {
+      narrow: "Estrecha",
+      normal: "Normal",
+      wide: "Amplia"
+    },
+    ppStatusDescriptions: {
+      narrow: "Presión del pulso < 25 mmHg. Puede indicar mala función cardíaca o bajo volumen.",
+      normal: "Presión del pulso 25–60 mmHg. Rango saludable.",
+      wide: "Presión del pulso > 60 mmHg. Puede indicar rigidez arterial o problemas valvulares."
+    }
   },
   "home": {
     "title": "Calculadora de presión arterial media (PAM)",

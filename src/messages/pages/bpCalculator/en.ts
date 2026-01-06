@@ -38,6 +38,17 @@ const bpCalculatorEn: BpCalculatorContent = {
     high:
       'MAP is in a hypertensive range. Evaluate for end-organ symptoms and follow hypertensive emergency/urgency protocols as appropriate.',
   },
+  pulsePressureLabel: 'Pulse Pressure',
+  ppStatusLegend: {
+    narrow: 'Narrow (< 25 mmHg)',
+    normal: 'Normal (25–60 mmHg)',
+    wide: 'Wide (> 60 mmHg)',
+  },
+  ppStatusDescriptions: {
+    narrow: 'May indicate poor heart function, low blood volume (hypovolemia), or tamponade.',
+    normal: 'Healthy range for adult pulse pressure.',
+    wide: 'May indicate arterial stiffness, valve regurgitation, or hyperthyroidism.',
+  },
 };
 
 export default bpCalculatorEn;

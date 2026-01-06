@@ -32,6 +32,17 @@ const bpCalculatorEs: BpCalculatorContent = {
     "normal": "La PAM se encuentra dentro del rango objetivo típico para la mayoría de los pacientes adultos. Continúe con el tratamiento actual y monitorice las tendencias en lugar de las lecturas aisladas.",
     "elevated": "La PAM está ligeramente elevada. Correlacionar con la historia clínica del paciente, la intensidad del dolor y el estado perioperatorio antes de iniciar el tratamiento antihipertensivo.",
     "high": "La presión arterial media se encuentra en rango hipertensivo. Evalúe la presencia de síntomas en órganos diana y siga los protocolos de emergencia/urgencia hipertensiva según corresponda."
+  },
+  "pulsePressureLabel": "Presión del pulso",
+  "ppStatusLegend": {
+    "narrow": "Estrecha (< 25 mmHg)",
+    "normal": "Normal (25–60 mmHg)",
+    "wide": "Amplia (> 60 mmHg)"
+  },
+  "ppStatusDescriptions": {
+    "narrow": "Puede indicar mala función cardíaca, bajo volumen sanguíneo (hipovolemia) o taponamiento.",
+    "normal": "Rango saludable para la presión del pulso en adultos.",
+    "wide": "Puede indicar rigidez arterial, regurgitación valvular o hipertiroidismo."
   }
 } as const;
 
