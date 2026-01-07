@@ -11,6 +11,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: "/map-calculation-nursing", changeFreq: "weekly" as const, priority: 0.8 },
     { path: "/map-formula", changeFreq: "weekly" as const, priority: 0.8 },
     { path: "/articles", changeFreq: "weekly" as const, priority: 0.7 },
+    { path: "/articles/pulse-pressure-vs-map", changeFreq: "weekly" as const, priority: 0.8 },
     { path: "/map-targets-by-condition", changeFreq: "weekly" as const, priority: 0.8 },
     { path: "/about", changeFreq: "yearly" as const, priority: 0.5 },
     { path: "/contact", changeFreq: "yearly" as const, priority: 0.5 },

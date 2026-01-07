@@ -11,6 +11,8 @@ const localized = {
   en,
   zh,
   es,
+  fr: en,
+  id: en,
 } satisfies Record<Locale, MapTargetsMessages>;
 
 export default localized;

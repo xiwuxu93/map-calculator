@@ -4,6 +4,8 @@ export const localeConfigs = [
   { code: "en", currency: "USD" },
   { code: "es", currency: "EUR" },
   { code: "zh", currency: "CNY" },
+  { code: "fr", currency: "EUR" },
+  { code: "id", currency: "IDR" },
 ] as const;
 
 export type Locale = (typeof localeConfigs)[number]["code"];

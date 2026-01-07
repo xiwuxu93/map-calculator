@@ -25,9 +25,6 @@ export default async function Header({ locale }: HeaderProps) {
         </Link>
 
         <nav className="flex items-center gap-4 text-sm text-gray-700">
-          <Link href={homeHref} className="transition hover:text-gray-900">
-            {t('nav.home')}
-          </Link>
           <Link href={`${homeHref.replace(/\/$/, '')}/map-calculator-bp`} className="transition hover:text-gray-900">
             {t('bpCalculatorLink')}
           </Link>
@@ -37,20 +34,11 @@ export default async function Header({ locale }: HeaderProps) {
           >
             {t('howToCalculateLink')}
           </Link>
-          <Link
-            href={`${homeHref.replace(/\/$/, '')}/map-calculation-nursing`}
-            className="transition hover:text-gray-900"
-          >
-            {t('nursingGuideLink')}
-          </Link>
           <Link href={`${homeHref.replace(/\/$/, '')}/articles`} className="transition hover:text-gray-900">
             {t('articlesLink')}
           </Link>
           <Link href={`${homeHref.replace(/\/$/, '')}/about`} className="transition hover:text-gray-900">
             {t('aboutLink')}
-          </Link>
-          <Link href={`${homeHref.replace(/\/$/, '')}/contact`} className="transition hover:text-gray-900">
-            {t('contactLink')}
           </Link>
           <LanguageSwitcher />
         </nav>

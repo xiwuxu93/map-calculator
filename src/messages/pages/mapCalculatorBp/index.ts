@@ -11,6 +11,8 @@ const mapCalculatorBpContent: MapCalculatorBpContentMap = {
   en: mapCalculatorBpEn,
   zh: mapCalculatorBpZh,
   es: mapCalculatorBpEs,
+  fr: mapCalculatorBpEn,
+  id: mapCalculatorBpEn,
 };
 
 export function getMapCalculatorBpContent(

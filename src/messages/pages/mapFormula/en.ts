@@ -2,197 +2,164 @@ import type { MapFormulaContent } from './types';
 
 const rows = [
   {
-    bp: '120/80 mmHg',
-    map: '93 mmHg',
-    notes: 'Healthy adult example — classic teaching value for a normal MAP.',
+    bp: 'Normal Heart Rate',
+    map: 'Diastole × 0.66',
+    notes: 'At 60-80 bpm, diastole is ~2/3 of the cycle. Standard formula works perfectly.',
   },
   {
-    bp: '100/60 mmHg',
-    map: '73 mmHg',
-    notes: 'Low-normal perfusion in many adults; context and trends matter.',
+    bp: 'Tachycardia (120 bpm)',
+    map: 'Diastole × 0.50',
+    notes: 'Diastole shortens dramatically. Standard formula underestimates true MAP.',
   },
   {
-    bp: '90/60 mmHg',
-    map: '70 mmHg',
-    notes: 'Borderline MAP — monitor closely, especially in shock or sepsis.',
-  },
-  {
-    bp: '80/50 mmHg',
-    map: '60 mmHg',
-    notes: 'Critical threshold where many guidelines recommend urgent action.',
-  },
-  {
-    bp: '160/100 mmHg',
-    map: '120 mmHg',
-    notes: 'Markedly elevated MAP with increased risk of hypertensive injury.',
+    bp: 'Bradycardia (40 bpm)',
+    map: 'Diastole × 0.75',
+    notes: 'Diastole lengthens. Standard formula may overestimate true MAP.',
   },
 ] as const;
 
 const mapFormulaEn: MapFormulaContent = {
   metadata: {
     title:
-      'MAP Formula: How to Calculate Mean Arterial Pressure (MAP) Step by Step',
+      'The Physiology Behind the MAP Formula: Why We Double the Diastolic',
     description:
-      'Learn the MAP formula for mean arterial pressure, see worked MAP blood pressure examples, and understand when to use MAP instead of systolic blood pressure alone.',
+      'Why is MAP = (SBP + 2DBP)/3? An in-depth physiological explanation of cardiac cycle timing, arterial compliance, and why the formula fails in tachycardia.',
     keywords: [
-      'map formula',
-      'map equation',
-      'map calculation formula',
-      'mean arterial pressure formula',
-      'mean arterial pressure calculation',
-      'map formula blood pressure',
-      'map equation bp',
-      'how is map calculated',
-      'mean arterial pressure map calculation',
+      'map formula physiology',
+      'why double diastolic for map',
+      'mean arterial pressure physics',
+      'cardiac cycle timing map',
+      'integration of arterial pressure curve',
+      'limitations of map formula',
     ],
     openGraphTitle:
-      'MAP Formula: How to Calculate Mean Arterial Pressure (MAP)',
+      'The Physics of MAP: Why the Standard Formula Works (And When It Fails)',
     openGraphDescription:
-      'Understand the MAP formula, why it weights diastolic pressure, and how to calculate mean arterial pressure from blood pressure with worked examples.',
-    heroTitle: 'MAP Formula for Mean Arterial Pressure',
+      'A deep dive into the hemodynamics behind (SBP + 2DBP)/3. Learn about the area under the curve, diastolic decay, and heart rate limitations.',
+    heroTitle: 'The Physiology Behind the MAP Formula',
     heroDescription:
-      'Review the standard MAP formula, understand why it works, and practice calculating mean arterial pressure from common blood pressure readings.',
+      'The standard MAP equation is not just arbitrary arithmetic—it is a simplified integration of the arterial pressure pulse wave. Understand the physics behind the numbers.',
   },
   schema: {
     article: {
       headline:
-        'MAP Formula: How to Calculate Mean Arterial Pressure from Blood Pressure',
+        'The Physiology Behind the Mean Arterial Pressure (MAP) Formula',
       description:
-        'A focused guide to the mean arterial pressure (MAP) formula, including physiology, examples, and practical calculation tips for clinicians.',
+        'Detailed hemodynamic explanation of the MAP formula derivation, derived from the area under the arterial pressure curve.',
     },
     faq: [
       {
-        question: 'What is the formula for MAP?',
+        question: 'Why is diastolic pressure weighted x2 in the MAP formula?',
         answer:
-          'The standard formula for mean arterial pressure (MAP) is MAP = (SBP + 2 × DBP) ÷ 3, where SBP is systolic blood pressure and DBP is diastolic blood pressure.',
+          'At a normal resting heart rate (60-80 bpm), the heart spends approximately two-thirds of the cardiac cycle in diastole (relaxation) and one-third in systole (ejection). Therefore, the average pressure is mathematically weighted closer to the diastolic value.',
       },
       {
-        question: 'Why does the MAP formula double the diastolic value?',
+        question: 'Is the standard MAP formula accurate for fast heart rates?',
         answer:
-          'The heart spends roughly twice as long in diastole as in systole. Doubling the diastolic value before averaging better reflects the true average driving pressure across the cardiac cycle.',
+          'No. As heart rate increases (tachycardia), the diastolic phase shortens disproportionately. The 1:2 systolic-to-diastolic ratio disappears, making the standard formula less accurate. In these cases, the "Area Under the Curve" method (used by arterial lines) is required.',
       },
       {
-        question: 'Is MAP just the simple average of systolic and diastolic pressure?',
+        question: 'What is the "Area Under the Curve" definition of MAP?',
         answer:
-          'No. A simple average like (SBP + DBP) ÷ 2 ignores the longer diastolic phase and typically overestimates perfusion pressure, especially in hypotensive patients.',
-      },
-      {
-        question: 'When should I calculate MAP from blood pressure readings?',
-        answer:
-          'Calculate MAP when protocols specify MAP targets (for example sepsis, shock, neurocritical care) or when you need a single perfusion pressure value to share across the team.',
+          'True MAP is the geometric mean of arterial pressure, calculated by integrating the pressure curve over time and dividing by the duration of the cardiac cycle. The formula (SBP + 2DBP)/3 is merely a bedside approximation of this integral.',
       },
     ],
     breadcrumbs: {
       home: 'Home',
-      page: 'MAP Formula',
+      page: 'Formula Physiology',
     },
   },
   hero: {
-    label: 'MAP Formula Guide',
+    label: 'Hemodynamic Theory',
     readingTimeLabel: 'Reading Time',
-    skillLevelLabel: 'Skill Level',
+    skillLevelLabel: 'Level',
     lastUpdatedLabel: 'Last Updated',
-    readingTime: '7 minutes',
-    skillLevel: 'All healthcare professionals',
+    readingTime: '6 minutes',
+    skillLevel: 'Advanced / Medical Student',
     lastUpdated: 'January 2025',
   },
   sections: {
     overview: {
-      heading: 'Standard MAP Formula',
+      heading: 'The Approximation of Integration',
       intro:
-        'Mean arterial pressure (MAP) represents the average pressure driving blood through the arterial tree during a single cardiac cycle. Clinically, it is often the primary perfusion target in sepsis, shock, and anesthesia protocols.',
-      formulaLabel: 'Standard equation',
-      standardFormula: 'MAP = (Systolic BP + 2 × Diastolic BP) ÷ 3',
+        'True Mean Arterial Pressure is not a simple arithmetic average. It is the integral of the arterial pressure wave over a single cardiac cycle—literally the "Area Under the Curve" (AUC).',
+      formulaLabel: 'The Bedside Short-Cut',
+      standardFormula: 'MAP ≈ DBP + 1/3(Pulse Pressure)',
       keyPoint:
-        'Think of MAP as a time-weighted average: diastole counts roughly twice as much as systole because it occupies more of each cardiac cycle.',
+        'This formula is an "estimate of an integral." It assumes a specific shape of the pressure wave that only exists at normal heart rates.',
     },
     physiology: {
-      heading: 'Why the MAP Formula Works',
+      heading: 'Why "Divided by 3"? The Rule of Thirds',
       intro:
-        'The MAP formula is more than a memorized equation. It encodes how long the arterial tree spends at systolic vs diastolic pressure over each heartbeat.',
-      systoleVsDiastoleHeading: 'Systole vs diastole in the cardiac cycle',
+        'The magic number "3" in the denominator comes from the timing of the heart valves.',
+      systoleVsDiastoleHeading: 'The Asymmetry of the Heartbeat',
       systoleVsDiastoleBody:
-        'In a normal heart rate range, the heart spends about one-third of each cardiac cycle in systole (ejection) and two-thirds in diastole (relaxation and filling). Because organs experience diastolic pressure for longer, diastolic blood pressure contributes more to the true average arterial pressure.',
-      simpleAverageHeading: 'Why simple averages are misleading',
+        'Blood flow is pulsatile, but organ perfusion is continuous. The aorta acts as a "Windkessel" (elastic reservoir), storing energy during systole and recoiling during diastole to maintain flow. Because recoil takes longer than ejection, the arteries spend more time draining (diastole) than filling (systole).',
+      simpleAverageHeading: 'The Geometric Reality',
       simpleAverageIntro:
-        'If you simply average systolic and diastolic values, you act as if the heart spends equal time at both pressures.',
+        'If the arterial pressure wave were a perfect square wave (spending equal time at SBP and DBP), a simple average would work. It is not.',
       simpleAverageFormulaWrong:
-        'For a blood pressure of 120/80 mmHg, a simple average gives (120 + 80) ÷ 2 = 100 mmHg — higher than the true mean arterial pressure.',
-      weightedFormulaHeading: 'Weighted formula reflects real timing',
+        'The pressure wave rises sharply (systolic upstroke) and falls slowly (diastolic decay). Most of the "time area" is under the diastolic portion of the curve.',
+      weightedFormulaHeading: 'Visualizing the Weighting',
       weightedFormulaBody:
-        'Using the weighted MAP formula for 120/80 mmHg — (120 + 2 × 80) ÷ 3 — yields 93 mmHg, which better matches invasive measurements and the physiologic time spent in diastole.',
+        'Imagine the cardiac cycle as 3 units of time. Systole occupies 1 unit. Diastole occupies 2 units. Thus, the average pressure is (1×SBP + 2×DBP) ÷ 3.',
     },
     examples: {
-      heading: 'MAP Formula Examples',
+      heading: 'When the Formula Fails: Heart Rate Impact',
       intro:
-        'These examples use the standard MAP formula to convert common blood pressure readings into mean arterial pressure values you can use at the bedside.',
+        'The most common error in clinical practice is blindly trusting this formula in patients with extreme heart rates.',
       tableHeaders: {
-        bloodPressure: 'Blood pressure (SBP/DBP)',
-        map: 'MAP (calculated)',
-        notes: 'Clinical interpretation',
+        bloodPressure: 'Condition',
+        map: 'Diastolic Weight',
+        notes: 'Physiological Impact',
       },
       rows,
       sbpDbpNote:
-        'Always make sure systolic and diastolic readings come from the same measurement and are recorded in mmHg before applying the MAP formula.',
+        'In severe tachycardia (>110 bpm), systole and diastole become nearly equal in duration. The formula should ideally shift to (SBP + DBP) ÷ 2, but monitors rarely adjust for this, leading to calculation errors.',
     },
     practice: {
-      heading: 'How to Use the MAP Formula in Practice',
+      heading: 'Clinical Implications',
       intro:
-        'Once you know the formula, the goal is to be quick and consistent so you can apply MAP targets in real clinical workflows.',
-      stepsHeading: 'Step-by-step calculation',
+        'Understanding the limitations of the formula changes how you interpret data at the bedside.',
+      stepsHeading: 'Key Takeaways for Clinicians',
       steps: [
-        'Record systolic (SBP) and diastolic (DBP) blood pressure from a reliable cuff or arterial line.',
-        'Double the diastolic value: 2 × DBP.',
-        'Add the systolic value: SBP + (2 × DBP).',
-        'Divide the total by 3 to obtain MAP.',
-        'Compare the MAP to your protocol target (for example ≥65 mmHg in sepsis) and the patient’s baseline.',
+        'The standard formula is an ESTIMATE, not a measurement.',
+        'In Tachycardia: The formula underestimates true perfusion (because diastole is shorter than the formula assumes).',
+        'In Bradycardia: The formula works well, or slightly overestimates.',
+        'Arterial Lines: They do not use this formula. They sample pressure 100+ times per second to calculate the true integral. This is why A-line MAPs often differ from cuff MAPs.',
+        'Wide Pulse Pressure: In elderly patients with stiff arteries, the "Windkessel" effect is lost. The pressure drops faster, meaning the standard formula might overestimate their true organ perfusion.',
       ],
-      tipsHeading: 'Mental math shortcuts',
-      tips: [
-        'Remember the pulse pressure version: MAP ≈ DBP + (pulse pressure ÷ 3), where pulse pressure = SBP − DBP.',
-        'Round intermediate numbers to keep mental math fast while staying within a few mmHg of the exact result.',
-        'Practice on stable patients first so the process feels automatic during emergencies.',
-      ],
+      tipsHeading: '',
+      tips: [],
     },
     verification: {
-      heading: 'When the Formula May Be Unreliable',
+      heading: 'Summary',
       intro:
-        'The standard MAP formula assumes a typical systole-to-diastole timing. In some situations, invasive monitoring or expert review is safer than relying on cuff-derived MAP alone.',
-      bullets: [
-        'Extreme tachycardia or bradycardia that dramatically changes diastolic filling time.',
-        'Significant valvular disease such as aortic regurgitation, where diastolic pressure may fall rapidly.',
-        'Very low perfusion states where noninvasive cuffs struggle to produce accurate readings.',
-        'Any time calculated MAP does not match the patient’s clinical presentation or other perfusion markers.',
-      ],
+        'Use the formula (SBP + 2DBP)/3 for stable patients with normal heart rates. For unstable, tachycardic, or stiff-artery patients, trust the trend more than the absolute number, or place an arterial line for direct measurement.',
+      bullets: [],
     },
     faq: {
-      heading: 'MAP Formula FAQs',
+      heading: 'Advanced FAQs',
       items: [
         {
-          question: 'Is the MAP formula the same for all adults?',
+          question: 'Does arterial stiffness (aging) affect the formula?',
           answer:
-            'The algebraic formula is the same, but the MAP target range varies by condition. For example, sepsis protocols often start at MAP ≥65 mmHg, while some neurocritical care pathways aim higher.',
+            'Yes. Stiff arteries recoil faster, causing pressure to drop more quickly during diastole. This means the "area under the curve" is smaller than the formula predicts. The standard formula often OVER-estimates perfusion in elderly patients.',
         },
         {
-          question: 'Can I rely on cuff-derived MAP instead of an arterial line?',
+          question: 'Why do A-line and Cuff MAPs disagree?',
           answer:
-            'In stable patients, noninvasive MAP is often close enough for decision-making. In unstable, critically ill patients, consider invasive monitoring when precision is critical.',
-        },
-        {
-          question: 'Do I need to recalculate MAP if heart rate changes?',
-          answer:
-            'Small heart rate changes do not require adjusting the formula. Large shifts (severe tachycardia or bradycardia) can change the systole/diastole ratio and may warrant invasive monitoring.',
+            'The cuff uses the oscillating amplitude to estimate MAP directly (often the most accurate cuff parameter), while the formula calculates it from SBP/DBP. The A-line measures the true integral. Disagreement is expected, especially in non-standard physiology.',
         },
       ],
     },
   },
   cta: {
-    calculatorLabel: 'Open the MAP Calculator',
+    calculatorLabel: 'Back to Calculator',
     calculatorHref: '/',
-    howToLabel: 'Read the step-by-step MAP guide',
+    howToLabel: 'See Calculation Steps',
     howToHref: '/how-to-calculate-map-blood-pressure',
   },
 };
 
 export default mapFormulaEn;
-

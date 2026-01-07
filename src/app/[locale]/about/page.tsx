@@ -84,6 +84,45 @@ export default async function AboutPage({ params }: PageProps) {
             <h2>{t('missionHeading')}</h2>
             <p>{t('missionBody')}</p>
 
+            <div className="not-prose my-12 rounded-xl border border-blue-100 bg-blue-50 p-8">
+              <h2 className="text-2xl font-bold text-gray-900">{t('teamHeading')}</h2>
+              <p className="mt-2 text-gray-700">{t('teamIntro')}</p>
+              
+              <div className="mt-8 grid gap-6 md:grid-cols-2">
+                {/* Methodology Step 1 */}
+                <div className="flex flex-col gap-4 rounded-lg bg-white p-6 shadow-sm border border-blue-100">
+                  <div className="flex items-center gap-4">
+                    <div className="flex h-12 w-12 items-center justify-center rounded-full bg-blue-100 text-xl font-bold text-blue-700">
+                      1
+                    </div>
+                    <div>
+                      <h3 className="text-lg font-bold text-gray-900">{t('member1Name')}</h3>
+                      <p className="text-sm font-medium text-blue-700">{t('member1Role')}</p>
+                    </div>
+                  </div>
+                  <p className="text-sm text-gray-600 leading-relaxed">
+                    {t('member1Bio')}
+                  </p>
+                </div>
+
+                {/* Methodology Step 2 */}
+                <div className="flex flex-col gap-4 rounded-lg bg-white p-6 shadow-sm border border-blue-100">
+                  <div className="flex items-center gap-4">
+                    <div className="flex h-12 w-12 items-center justify-center rounded-full bg-emerald-100 text-xl font-bold text-emerald-700">
+                      2
+                    </div>
+                    <div>
+                      <h3 className="text-lg font-bold text-gray-900">{t('member2Name')}</h3>
+                      <p className="text-sm font-medium text-emerald-700">{t('member2Role')}</p>
+                    </div>
+                  </div>
+                  <p className="text-sm text-gray-600 leading-relaxed">
+                    {t('member2Bio')}
+                  </p>
+                </div>
+              </div>
+            </div>
+
             <h3>{t('contentPolicyHeading')}</h3>
             <ul>
               <li>{t('contentPolicy1')}</li>

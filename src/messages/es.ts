@@ -27,20 +27,28 @@ const es = {
   },
   "about": {
     "title": "Acerca de mapcalculator.org",
-    "description": "Nuestra misión es ofrecer una calculadora de PAM rápida y basada en evidencia con explicaciones claras para equipos sanitarios ocupados.",
-    "missionHeading": "Misión",
-    "missionBody": "Ayudar a los clínicos con fórmulas claras, supuestos transparentes e interpretación según el contexto — siempre junto al juicio profesional.",
-    "contentPolicyHeading": "Estándares editoriales",
-    "contentPolicy1": "Explicaciones originales, no plagiadas, escritas para clínicos.",
-    "contentPolicy2": "Afirmaciones médicas contrastadas con fuentes reputadas (guías, libros de texto, literatura revisada por pares).",
-    "contentPolicy3": "Las páginas incluyen fecha de actualización, descargos y público objetivo claro.",
-    "reviewHeading": "Revisión clínica y actualizaciones",
-    "reviewBody": "Revisamos periódicamente la claridad y la exactitud médica; añadimos ejemplos, preguntas frecuentes e incorporamos comentarios de profesionales en ejercicio.",
-    "sourcesHeading": "Fuentes principales",
-    "sourcesBody": "Referencias clave que sustentan la fórmula y el razonamiento clínico:",
-    "source1": "LOINC 8478-0 Presión arterial media; definición hemodinámica estándar.",
-    "source2": "Textos de cuidados intensivos y anestesia sobre objetivos de perfusión y titulación de vasopresores.",
-    "source3": "Guías de sociedades científicas sobre umbrales de PAM en shock y neurocríticos."
+    "description": "Una referencia de cálculo clínico especializada para profesionales de la salud y estudiantes. Sintetizamos las guías hemodinámicas internacionales en herramientas accesibles y citadas.",
+    "missionHeading": "Nuestra misión: Precisión a través de la evidencia",
+    "missionBody": "En la educación clínica, la precisión es fundamental. mapcalculator.org fue creado para proporcionar una alternativa transparente y respaldada por referencias a las calculadoras de \"caja negra\". No brindamos consejos médicos; proporcionamos un acceso eficiente a fórmulas y pautas médicas establecidas.",
+    "teamHeading": "Metodología editorial y verificación",
+    "teamIntro": "Nuestro contenido no es generado por IA ni por escritores anónimos. Se cura meticulosamente a partir de literatura médica primaria utilizando un proceso de verificación de tres pasos:",
+    "member1Name": "1. Selección de fuentes primarias",
+    "member1Role": "Enfoque basado en guías",
+    "member1Bio": "Priorizamos datos de guías internacionales de primer nivel (Surviving Sepsis Campaign, AHA/ASA, Brain Trauma Foundation) y libros de texto de fisiología estándar (Guyton & Hall).",
+    "member2Name": "2. Verificación de fórmulas",
+    "member2Role": "Matemáticas transparentes",
+    "member2Bio": "Cada calculadora en este sitio muestra su fórmula y lógica subyacentes. No utilizamos \"algoritmos propietarios\". Siempre puede ver exactamente cómo se deriva el resultado.",
+    "contentPolicyHeading": "Estándares editoriales estrictos",
+    "contentPolicy1": "Transparencia: Distinguimos claramente entre fórmulas matemáticas estándar (por ejemplo, PAM) y rangos de interpretación clínica.",
+    "contentPolicy2": "Citas: Cada afirmación médica clave tiene una nota al pie con un enlace directo al DOI o entrada de PubMed del material fuente.",
+    "contentPolicy3": "Actualizaciones: Monitoreamos los lanzamientos de guías importantes (por ejemplo, actualizaciones de SSC) y revisamos nuestros objetivos y lógica en consecuencia.",
+    "reviewHeading": "Descargo de responsabilidad sobre el uso profesional",
+    "reviewBody": "Este sitio web es una ayuda educativa y una herramienta de referencia clínica. No reemplaza la formación profesional ni los protocolos institucionales. Los cálculos siempre deben verificarse de forma cruzada cuando se utilizan en entornos de cuidados intensivos.",
+    "sourcesHeading": "Bibliografía principal",
+    "sourcesBody": "Los siguientes textos y guías forman la base de la lógica de nuestra calculadora:",
+    "source1": "LOINC 8478-0: Definición estándar de presión arterial media.",
+    "source2": "Evans L, et al. Surviving Sepsis Campaign: International Guidelines for Management of Sepsis and Septic Shock (2021).",
+    "source3": "Hall JE. Guyton and Hall Textbook of Medical Physiology. 14th ed. Elsevier; 2021."
   },
   "contact": {
     "title": "Contacto",
@@ -64,6 +72,14 @@ const es = {
     "es": {
       "name": "Español",
       "short": "ES"
+    },
+    "fr": {
+      "name": "Francés",
+      "short": "FR"
+    },
+    "id": {
+      "name": "Indonesio",
+      "short": "ID"
     }
   },
   "common": {
@@ -77,8 +93,8 @@ const es = {
     "backToHome": "Volver a la calculadora",
     "professionalUseOnly": "Solo para profesionales médicos autorizados",
     "viewFullDisclaimer": "Ver el descargo de responsabilidad completo",
-    "bpCalculatorLink": "Calculadora de presión arterial",
-    "howToCalculateLink": "Cómo calcular el MAP",
+    "bpCalculatorLink": "Calculadora",
+    "howToCalculateLink": "Fórmula",
     "nursingGuideLink": "Guía MAP de enfermería",
     "articlesLink": "Artículos",
     "nav": {
@@ -121,18 +137,18 @@ const es = {
       "high": ">110 mmHg: Alta – evaluar la urgencia"
     },
     "disclaimer": "Únicamente con fines educativos. No sustituye el criterio clínico ni el consejo médico profesional.",
-    professionalNotice: "Diseñado para profesionales médicos con licencia, estudiantes en prácticas supervisadas y equipos de profesionales sanitarios afines.",
-    emergencyNotice: "Si se trata de una emergencia, llame inmediatamente al número de emergencias local.",
-    pulsePressure: "Presión del pulso",
-    ppStatusLabels: {
-      narrow: "Estrecha",
-      normal: "Normal",
-      wide: "Amplia"
+    "professionalNotice": "Diseñado para profesionales médicos con licencia, estudiantes en prácticas supervisadas y equipos de profesionales sanitarios afines.",
+    "emergencyNotice": "Si se trata de una emergencia, llame inmediatamente al número de emergencias local.",
+    "pulsePressure": "Presión del pulso",
+    "ppStatusLabels": {
+      "narrow": "Estrecha",
+      "normal": "Normal",
+      "wide": "Amplia"
     },
-    ppStatusDescriptions: {
-      narrow: "Presión del pulso < 25 mmHg. Puede indicar mala función cardíaca o bajo volumen.",
-      normal: "Presión del pulso 25–60 mmHg. Rango saludable.",
-      wide: "Presión del pulso > 60 mmHg. Puede indicar rigidez arterial o problemas valvulares."
+    "ppStatusDescriptions": {
+      "narrow": "Presión del pulso < 25 mmHg. Puede indicar mala función cardíaca o bajo volumen.",
+      "normal": "Presión del pulso 25–60 mmHg. Rango saludable.",
+      "wide": "Presión del pulso > 60 mmHg. Puede indicar rigidez arterial o problemas valvulares."
     }
   },
   "home": {
@@ -200,7 +216,7 @@ const es = {
     "privacyTitle": "política de privacidad",
     "privacyContent": "No recopilamos, almacenamos ni transmitimos datos personales de salud. Todos los cálculos se realizan directamente en su navegador, por lo que sus datos permanecen en su dispositivo. Es posible que se utilicen análisis básicos y anónimos para comprender el uso de las funciones y garantizar la fiabilidad de la herramienta.",
     "termsTitle": "Condiciones del servicio",
-    "termsContent": "Al utilizar esta herramienta, usted acepta que se proporciona «tal cual» con fines educativos. No sustituye el criterio médico profesional. Es su responsabilidad verificar los resultados antes de aplicarlos en la práctica clínica.",
+    "termsContent": "Al utilizar esta herramienta, usted acepta que se proporciona \"tal cual\" con fines educativos. No sustituye el criterio médico profesional. Es su responsabilidad verificar los resultados antes de aplicarlos en la práctica clínica.",
     "contactTitle": "Contacto",
     "contactContent": "¿Preguntas o comentarios? Comuníquese con el administrador del sitio en support@mapcalculator.org.",
     "disclaimerCta": "Revise el descargo de responsabilidad médica completo.",
@@ -407,7 +423,7 @@ const es = {
     "medicalDisclaimerTitle": "Descargo de responsabilidad médica",
     "medicalDisclaimerContent": "La calculadora MAP no ofrece asesoramiento médico. Consulte siempre con profesionales sanitarios cualificados antes de tomar decisiones sobre diagnósticos o tratamientos. Usted es responsable de verificar los resultados.",
     "limitationsTitle": "Limitaciones del servicio",
-    "limitationsContent": "La herramienta se proporciona «tal cual» sin garantías de precisión ni disponibilidad. Podemos modificar o interrumpir el servicio sin previo aviso.",
+    "limitationsContent": "La herramienta se proporciona \"tal cual\" sin garantías de precisión ni disponibilidad. Podemos modificar o interrumpir el servicio sin previo aviso.",
     "liabilityTitle": "Limitación de responsabilidad",
     "liabilityContent": "No nos hacemos responsables de los daños derivados del uso o la imposibilidad de usar esta herramienta. Su uso es bajo su propia responsabilidad.",
     "changesTitle": "Cambios en los términos",

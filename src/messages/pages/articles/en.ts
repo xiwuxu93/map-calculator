@@ -11,6 +11,13 @@ const ArticlesEn = {
   ctaHome: 'Back to Home',
   cards: [
     {
+      href: '/articles/pulse-pressure-vs-map',
+      title: 'Pulse Pressure vs. MAP: Which Vital Sign Tells You More?',
+      summary:
+        'Stop confusing these two metrics. Learn when to track MAP for perfusion vs. Pulse Pressure for stroke volume and stiffness.',
+      updated: 'Jan 2025',
+    },
+    {
       href: '/how-to-calculate-map-blood-pressure',
       title: 'How to Calculate MAP from Blood Pressure',
       summary:

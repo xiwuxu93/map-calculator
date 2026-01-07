@@ -10,6 +10,8 @@ const localized = {
   en,
   zh,
   es,
+  fr: en,
+  id: en,
 } satisfies Record<Locale, ArticlesMessages>;
 
 export default localized;

@@ -27,20 +27,28 @@ const zh = {
   },
   "about": {
     "title": "关于 mapcalculator.org",
-    "description": "我们的目标是为忙碌的一线医护提供快捷、循证的 MAP 计算器与通俗易懂的解读。",
-    "missionHeading": "使命",
-    "missionBody": "以清晰公式、透明假设与情境化解读，帮助临床团队更安全地决策（始终需结合专业判断）。",
-    "contentPolicyHeading": "编辑标准",
-    "contentPolicy1": "原创内容，面向临床读者撰写，拒绝抄袭。",
-    "contentPolicy2": "医学表述以权威资料为据（指南、教材、同行评议文献）。",
-    "contentPolicy3": "页面提供更新时间、免责声明与明确的受众标识。",
-    "reviewHeading": "临床审核与更新",
-    "reviewBody": "我们定期审阅内容的医学准确性与可读性，补充示例与常见问答，并吸纳一线临床反馈。",
-    "sourcesHeading": "主要参考",
-    "sourcesBody": "支撑计算公式与临床依据的核心参考包括：",
-    "source1": "LOINC 8478-0 平均动脉压；标准血流动力学定义。",
-    "source2": "重症医学、麻醉学教材关于灌注目标与血管活性药物滴定。",
-    "source3": "学会指南对休克与神经重症中 MAP 阈值的讨论。"
+    "description": "面向医疗专业人士与学生的专业临床计算参考工具。我们将国际血流动力学指南整合为易用、有据可查的工具。",
+    "missionHeading": "我们的使命：以证据求精准",
+    "missionBody": "在临床教育中，精准至关重要。创建 mapcalculator.org 的初衷是提供一个透明、有文献支持的工具，以替代“黑盒”计算器。我们不提供医疗建议，而是提供对既定医学公式和指南的高效访问。",
+    "teamHeading": "编辑方法论与验证流程",
+    "teamIntro": "我们的内容并非由 AI 或匿名作者生成，而是通过三步验证流程，从原始医学文献中精心整理而成：",
+    "member1Name": "1. 原始文献筛选",
+    "member1Role": "循证指南优先",
+    "member1Bio": "我们优先采用国际一线指南（Surviving Sepsis Campaign, AHA/ASA, Brain Trauma Foundation）及标准生理学教材（Guyton & Hall）的数据。",
+    "member2Name": "2. 公式验证",
+    "member2Role": "逻辑透明",
+    "member2Bio": "本站所有计算器均展示其底层公式与逻辑。我们拒绝“私有算法”，您永远可以看到结果是如何推导出来的。",
+    "contentPolicyHeading": "严格的编辑标准",
+    "contentPolicy1": "透明性：我们明确区分标准数学公式（如 MAP）与临床解读范围。",
+    "contentPolicy2": "引用：每一个关键医学主张均附有注脚，直接链接至源材料的 DOI 或 PubMed 条目。",
+    "contentPolicy3": "更新：我们会监测主要指南的发布（如 SSC 更新）并相应修订目标值与逻辑。",
+    "reviewHeading": "专业用途免责声明",
+    "reviewBody": "本网站为教育辅助与临床参考工具，不替代专业培训或机构流程。在重症监护环境中使用时，计算结果应始终进行交叉验证。",
+    "sourcesHeading": "主要参考文献",
+    "sourcesBody": "以下教材与指南构成了我们计算器逻辑的基础：",
+    "source1": "LOINC 8478-0：平均动脉压标准定义。",
+    "source2": "Evans L, 等。Surviving Sepsis Campaign：2021 年脓毒症与脓毒性休克管理国际指南。",
+    "source3": "Hall JE。Guyton and Hall 医学生理学教材。第 14 版。Elsevier；2021。"
   },
   "contact": {
     "title": "联系方式",
@@ -64,6 +72,14 @@ const zh = {
     "es": {
       "name": "Español",
       "short": "ES"
+    },
+    "fr": {
+      "name": "French",
+      "short": "FR"
+    },
+    "id": {
+      "name": "Indonesian",
+      "short": "ID"
     }
   },
   "common": {
@@ -77,8 +93,8 @@ const zh = {
     "backToHome": "返回计算器",
     "professionalUseOnly": "仅供持证医疗专业人士使用",
     "viewFullDisclaimer": "查看完整免责声明",
-    "bpCalculatorLink": "BP 计算器",
-    "howToCalculateLink": "如何计算 MAP",
+    "bpCalculatorLink": "计算器",
+    "howToCalculateLink": "计算公式",
     "nursingGuideLink": "护理 MAP 指南",
     "articlesLink": "文章",
     "nav": {
