@@ -19,6 +19,12 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const url = `${SITE_URL}${localePrefix}/how-to-calculate-map-blood-pressure`;
   const imageUrl = `${SITE_URL}/og-image.png`;
 
+  const languages = locales.reduce((acc, l) => {
+    const prefix = l === defaultLocale ? '' : `/${l}`;
+    acc[l] = `${SITE_URL}${prefix}/how-to-calculate-map-blood-pressure`;
+    return acc;
+  }, {} as Record<string, string>);
+
   return {
     title: meta.title,
     description: meta.description,
@@ -26,9 +32,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     alternates: {
       canonical: url,
       languages: {
-        en: `${SITE_URL}/how-to-calculate-map-blood-pressure`,
-        es: `${SITE_URL}/es/how-to-calculate-map-blood-pressure`,
-        zh: `${SITE_URL}/zh/how-to-calculate-map-blood-pressure`,
+        ...languages,
         'x-default': `${SITE_URL}/how-to-calculate-map-blood-pressure`,
       },
     },

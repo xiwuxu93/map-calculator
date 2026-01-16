@@ -19,6 +19,12 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const url = `${SITE_URL}${localePrefix}/map-formula`;
   const imageUrl = `${SITE_URL}/og-image.png`;
 
+  const languages = locales.reduce((acc, l) => {
+    const prefix = l === defaultLocale ? '' : `/${l}`;
+    acc[l] = `${SITE_URL}${prefix}/map-formula`;
+    return acc;
+  }, {} as Record<string, string>);
+
   return {
     title: content.metadata.title,
     description: content.metadata.description,
@@ -26,9 +32,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     alternates: {
       canonical: url,
       languages: {
-        en: `${SITE_URL}/map-formula`,
-        es: `${SITE_URL}/es/map-formula`,
-        zh: `${SITE_URL}/zh/map-formula`,
+        ...languages,
         'x-default': `${SITE_URL}/map-formula`,
       },
     },

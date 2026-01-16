@@ -22,6 +22,12 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const url = `${SITE_URL}${localePrefix}/articles/pulse-pressure-vs-map`;
   const imageUrl = `${SITE_URL}/og-image.png`;
 
+  const languages = locales.reduce((acc, l) => {
+    const prefix = l === defaultLocale ? '' : `/${l}`;
+    acc[l] = `${SITE_URL}${prefix}/articles/pulse-pressure-vs-map`;
+    return acc;
+  }, {} as Record<string, string>);
+
   return {
     title: text.meta.title,
     description: text.meta.description,
@@ -29,6 +35,9 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     authors: [{ name: 'Dr. Sarah Jenkins' }],
     alternates: {
       canonical: url,
+      languages: {
+        ...languages,
+      },
     },
     openGraph: {
       title: text.meta.openGraphTitle,

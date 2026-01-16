@@ -19,6 +19,12 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const localizedUrl = `${SITE_URL}${localePrefix}/terms`;
   const imageUrl = `${SITE_URL}/og-image.png`;
 
+  const languages = locales.reduce((acc, l) => {
+    const prefix = l === defaultLocale ? '' : `/${l}`;
+    acc[l] = `${SITE_URL}${prefix}/terms`;
+    return acc;
+  }, {} as Record<string, string>);
+
   return {
     title: `${terms('title')} | ${metadata('siteName')}`,
     description: terms('description'),
@@ -36,9 +42,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     alternates: {
       canonical: localizedUrl,
       languages: {
-        en: `${SITE_URL}/terms`,
-        es: `${SITE_URL}/es/terms`,
-        zh: `${SITE_URL}/zh/terms`,
+        ...languages,
         'x-default': `${SITE_URL}/terms`,
       },
     },

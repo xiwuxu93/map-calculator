@@ -15,15 +15,19 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const url = `${SITE_URL}${localePrefix}/articles`;
   const messages = localizedTexts[locale] ?? localizedTexts[defaultLocale];
 
+  const languages = locales.reduce((acc, l) => {
+    const prefix = l === defaultLocale ? '' : `/${l}`;
+    acc[l] = `${SITE_URL}${prefix}/articles`;
+    return acc;
+  }, {} as Record<string, string>);
+
   return {
     title: messages.meta.title,
     description: messages.meta.description,
     alternates: {
       canonical: url,
       languages: {
-        en: `${SITE_URL}/articles`,
-        es: `${SITE_URL}/es/articles`,
-        zh: `${SITE_URL}/zh/articles`,
+        ...languages,
         'x-default': `${SITE_URL}/articles`,
       },
     },

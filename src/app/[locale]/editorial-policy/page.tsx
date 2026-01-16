@@ -15,15 +15,20 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const localePrefix = locale === defaultLocale ? '' : `/${locale}`;
   const url = `${SITE_URL}${localePrefix}/editorial-policy`;
   const imageUrl = `${SITE_URL}/og-image.png`;
+
+  const languages = locales.reduce((acc, l) => {
+    const prefix = l === defaultLocale ? '' : `/${l}`;
+    acc[l] = `${SITE_URL}${prefix}/editorial-policy`;
+    return acc;
+  }, {} as Record<string, string>);
+
   return {
     title: `${t('title')} | ${meta('siteName')}`,
     description: t('description'),
     alternates: {
       canonical: url,
       languages: {
-        en: `${SITE_URL}/editorial-policy`,
-        es: `${SITE_URL}/es/editorial-policy`,
-        zh: `${SITE_URL}/zh/editorial-policy`,
+        ...languages,
         'x-default': `${SITE_URL}/editorial-policy`,
       },
     },
