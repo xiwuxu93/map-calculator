@@ -60,6 +60,21 @@ const zh = {
     "feedback2": "临床场景或专科（可选）",
     "feedback3": "期望与实际观察的差异"
   },
+  "reviewBoard": {
+    "title": "医学审核委员会",
+    "description": "我们的工具与内容由医疗专业人士审核，以确保准确性、安全性及临床相关性。",
+    "reviewedByLabel": "医学审核：",
+    "intro": "准确性是我们的首要任务。mapcalculator.org 医学审核委员会由持证临床医生组成，他们根据现行临床指南对我们的公式和教育内容进行审计。",
+    "expertsHeading": "我们的审核专家",
+    "expert1Name": "Sarah Jenkins, MD",
+    "expert1Title": "重症监护专家",
+    "expert1Bio": "Jenkins 博士是一位获得认证的重症监护医师，在血流动力学监测和脓毒症管理方面拥有超过 10 年的经验。",
+    "expert2Name": "Mark Thompson, RN, CCRN",
+    "expert2Title": "资深 ICU 护士",
+    "expert2Bio": "Mark 专注于重症监护环境下的床旁计算和护理教育。",
+    "processHeading": "审核流程",
+    "processBody": "每个临床工具都经过三步验证：公式验证（对比教材标准）、指南对齐（对比最新的 SSC/AHA 更新）以及易用性测试（确保床旁安全）。"
+  },
   "locales": {
     "en": {
       "name": "English",
@@ -93,6 +108,7 @@ const zh = {
     "backToHome": "返回计算器",
     "professionalUseOnly": "仅供持证医疗专业人士使用",
     "viewFullDisclaimer": "查看完整免责声明",
+    "medicalReviewBoardLink": "医学审核委员会",
     "bpCalculatorLink": "计算器",
     "howToCalculateLink": "计算公式",
     "nursingGuideLink": "护理 MAP 指南",

@@ -32,6 +32,10 @@ export default async function Footer() {
             {t('aboutLink')}
           </Link>
           <span className="text-gray-300">|</span>
+          <Link href={withPrefix('/medical-review-board')} className="transition hover:text-gray-900">
+            {t('medicalReviewBoardLink')}
+          </Link>
+          <span className="text-gray-300">|</span>
           <Link href={withPrefix('/contact')} className="transition hover:text-gray-900">
             {t('contactLink')}
           </Link>

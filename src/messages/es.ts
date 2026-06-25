@@ -60,6 +60,21 @@ const es = {
     "feedback2": "Caso de uso clínico o especialidad (opcional)",
     "feedback3": "Qué esperaba frente a lo que observó"
   },
+  "reviewBoard": {
+    "title": "Consejo de Revisión Médica",
+    "description": "Nuestras herramientas y contenidos son revisados por profesionales médicos para garantizar su precisión, seguridad y relevancia clínica.",
+    "reviewedByLabel": "Revisado por médicos por",
+    "intro": "La precisión es nuestra prioridad. El Consejo de Revisión Médica de mapcalculator.org está compuesto por médicos licenciados que auditan nuestras fórmulas y contenido educativo.",
+    "expertsHeading": "Nuestros revisores",
+    "expert1Name": "Sarah Jenkins, MD",
+    "expert1Title": "Especialista en Cuidados Críticos",
+    "expert1Bio": "Dr. Jenkins is a board-certified intensivist with over 10 years of experience in hemodynamic monitoring and sepsis management.",
+    "expert2Name": "Mark Thompson, RN, CCRN",
+    "expert2Title": "Enfermero Senior de UCI",
+    "expert2Bio": "Mark specializes in bedside calculation and nursing education for critical care environments.",
+    "processHeading": "Proceso de revisión",
+    "processBody": "Cada herramienta clínica se somete a una validación de tres pasos: verificación de fórmula, alineación con las guías y pruebas de usabilidad."
+  },
   "locales": {
     "en": {
       "name": "Inglés",
@@ -93,6 +108,7 @@ const es = {
     "backToHome": "Volver a la calculadora",
     "professionalUseOnly": "Solo para profesionales médicos autorizados",
     "viewFullDisclaimer": "Ver el descargo de responsabilidad completo",
+    "medicalReviewBoardLink": "Consejo de Revisión Médica",
     "bpCalculatorLink": "Calculadora",
     "howToCalculateLink": "Fórmula",
     "nursingGuideLink": "Guía MAP de enfermería",
